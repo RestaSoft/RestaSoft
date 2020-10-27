@@ -10,3 +10,5 @@ SW Restaurant
 * Alejandro Pérez Pizano
 * VEAN LOS VIDEOS
 * Ok enterado
+
+* test de editar con "credenciales"
