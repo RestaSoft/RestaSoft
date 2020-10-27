@@ -6,3 +6,6 @@ SW Restaurant
 
 * Mario David González Contreras 
 * TEST
+* Mario David González Contreras
+
+* Alejandro Pérez Pizano
