@@ -13,3 +13,4 @@ SW Restaurant
 
 * test de editar con "credenciales"
 * Editado desde GitHub
+* test otro sin nadie con commits
