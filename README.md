@@ -12,3 +12,4 @@ SW Restaurant
 * Ok enterado
 
 * test de editar con "credenciales"
+* Editado desde GitHub
