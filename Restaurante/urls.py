@@ -19,6 +19,6 @@ from Restaurante.views import LogIn
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', LogIn),
+    path('home/', LogIn),#probando
 
 ]
