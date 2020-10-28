@@ -9,5 +9,4 @@ urlpatterns = [
     path('alta/', altaProducto),
     path('editar/', editarProducto),
     path('inventario/', inventario),
-
 ]
