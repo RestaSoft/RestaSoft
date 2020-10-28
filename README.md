@@ -17,8 +17,6 @@ SW Restaurant
 * test de editar con "credenciales"
 * Editado desde GitHub
 * test otro sin nadie con commits
-<<<<<<< HEAD
+
 * test 
-=======
 * Brenda Liliana Gutierrez Ramirez
->>>>>>> 2b0fd2b50f3352e9d5475d3807bd89bb6a488e1e
