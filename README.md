@@ -6,7 +6,9 @@ SW Restaurant
 
 * Mario David González Contreras 
 * TEST
-* Luis Fernando Hernandez Piñon
+
+* Luis Fernando Hernández Piñón
+* Ya tenemos permisos
 
 * Alejandro Pérez Pizano
 * VEAN LOS VIDEOS
