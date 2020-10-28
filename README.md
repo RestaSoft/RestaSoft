@@ -20,6 +20,5 @@ SW Restaurant
 
 * test 
 * Brenda Liliana Gutierrez Ramirez
-
-*test con credential.helper winstore
-
+* test con credential.helper winstore
+* Segundo test con credential.helper winstore
