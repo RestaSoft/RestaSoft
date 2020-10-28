@@ -8,6 +8,3 @@ SW Restaurant
 * Luis Fernando Hernández Piñón
 * Alejandro Pérez Pizano
 * Brenda Liliana Gutierrez Ramirez
-
-Modificando desde dev!!!
-
