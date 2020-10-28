@@ -8,6 +8,6 @@ urlpatterns = [
     path('home/', home),
     path('alta/', altaProducto),
     path('editar/', editarProducto),
-    path('productos/', inventario),
+    path('inventario/', inventario),
 
 ]

@@ -1,21 +1,23 @@
 from django.shortcuts import render, HttpResponse
 
 def logIn(request):
-    return HttpResponse("Pantalla de inicio de Sesion")
+    return render(request, "Restaurante/login.html")
 
 
 def home(request):
-    return HttpResponse("Bienvenida Socio")
+    return  render(request, "Restaurante/home.html")
 
 
 
 def altaProducto(request):
-    return HttpResponse("Pantalla Alta Productos")
+    return  render(request, "Restaurante/alta.html")
+
 
 
 def inventario(request):
-    return HttpResponse("Inventario")
+    return  render(request, "Restaurante/inventario.html")
+
 
 
 def editarProducto(request):
-    return HttpResponse("Editar productos")
+    return  render(request, "Restaurante/editar.html")
