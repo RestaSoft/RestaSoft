@@ -4,7 +4,7 @@ from Restaurante.views import logIn,home,altaProducto,editarProducto,inventario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', logIn),
+    path('', logIn),
     path('home/', home),
     path('alta/', altaProducto),
     path('editar/', editarProducto),
