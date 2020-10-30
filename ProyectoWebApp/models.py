@@ -9,7 +9,7 @@ class Staffs(models.Model):
     email=models.EmailField()
     phone=models.IntegerField()
     store_id=models.IntegerField()
-    permissions=models.IntegerField()
+    permissions_id=models.IntegerField()
 
 
 class Permission(models.Model):
