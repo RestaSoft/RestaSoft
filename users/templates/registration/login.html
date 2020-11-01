@@ -1,0 +1,14 @@
+{% block content %}
+
+{% if form.errors %}
+    <h1>Your username and password didn't match. Please try again</h1>
+{% endif %}
+
+<form method="post" action="{% url 'users:login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Log In</button>
+    <input type="hidden" name="next" value="{% url 'WebApp:home' %}" />
+</form>
+
+{% endblock content %}
