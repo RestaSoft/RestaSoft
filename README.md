@@ -9,4 +9,5 @@ SW Restaurant
 * Alejandro Pérez Pizano (Back-end)
 * Brenda Liliana Gutierrez Ramirez (Back-end)
 
-* TEST
+## DB Diagram
+![](https://github.com/RestaSoft/RestaSoft/blob/dev/RestaSoft%20Diagram2.png?raw=true)
