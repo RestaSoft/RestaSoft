@@ -13,7 +13,7 @@ urlpatterns = [
     
 #urls de cada aplicacion
     path('products/',include('products.urls')),
-    path('users/',include('users.urls')),
+    path('',include('users.urls')),
     path('orders/',include('orders.urls')),
 
 # Restore password views
