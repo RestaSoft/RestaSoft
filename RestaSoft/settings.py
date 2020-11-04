@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Restaurante',
-    'WebApp',
+    'RestaSoft',
+    'products',
     'users',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Restaurante.urls'
+ROOT_URLCONF = 'RestaSoft.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Restaurante.wsgi.application'
+WSGI_APPLICATION = 'RestaSoft.wsgi.application'
 
 
 # Database
