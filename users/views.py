@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
@@ -22,3 +23,6 @@ def register(request):
 def logout(request):
     print("Hmmmmmm")
     return redirect('login')
+
+def registrar(request):
+    return HttpResponse  ('Inicio de sesion de usuario')

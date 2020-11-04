@@ -1,6 +1,7 @@
 from django.urls import path, include
 from django.shortcuts import render, redirect
-from products import views
+from orders import views
+
 
 urlpatterns = [
  # Django
