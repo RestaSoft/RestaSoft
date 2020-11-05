@@ -26,3 +26,6 @@ def logout(request):
 
 def registrar(request):
     return HttpResponse  ('Inicio de sesion de usuario')
+
+def altausuario(request):
+    return HttpResponse('PRUEBA')
