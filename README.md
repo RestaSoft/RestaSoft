@@ -12,9 +12,6 @@ SW Restaurant
 * Brenda Liliana Gutierrez Ramirez
 
 
-## ERM-RESTASOFT
-![](https://github.com/RestaSoft/RestaSoft/blob/dev/RestaSoft%20Diagram2.png?raw=true)
-
 Supported browsers
 ------------------
 
