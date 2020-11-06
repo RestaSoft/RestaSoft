@@ -60,7 +60,9 @@ h1 {
     font-family: 'Merienda One', cursive;
 }
 
-
+h3 {
+  text-align: center;
+}
 /*
  * Header
  */

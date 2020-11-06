@@ -10,14 +10,15 @@
 {% block container %}
         <form class="form-signin">
             <img
-                class="mb-4"
+               class="rounded mx-auto d-block"
                 {% load static %}
                 src="{% static 'img/logo.png' %}"
                 alt=""
                 width="72"
                 height="72"
             />
-            <h3 class="h3 mb-5 font-weight-normal">Please sign in</h3>
+            <h3 class="row justify-content-center">Please sign in</h3>
+            <p>
             <div class="mb-3">
                 <label for="inputEmail" class="sr-only">Email address</label>
                 <input
