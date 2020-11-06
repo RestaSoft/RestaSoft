@@ -24,8 +24,8 @@ def logout(request):
     print("Hmmmmmm")
     return redirect('login')
 
-def registrar(request):
-    return HttpResponse  ('Inicio de sesion de usuario')
+def login(request):
+    return render (request, 'users/login.html')
 
 def altausuario(request):
     return HttpResponse('PRUEBA')

@@ -40,3 +40,9 @@ Static files such as CSS, JavaScript or image files can be found in the
 
 Templates can be found in the ``Restasoft/templates`` subdirectory.
 
+<<<<<<< HEAD
+=======
+## ERM-RESTASOFT
+![](https://github.com/RestaSoft/RestaSoft/blob/dev/RestaSoft%20Diagram2.png?raw=true)
+
+>>>>>>> 6f64c3a03d59910b6d0bc8dfdf200861f3d17e1b
