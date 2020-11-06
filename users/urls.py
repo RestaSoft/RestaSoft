@@ -8,3 +8,7 @@ urlpatterns = [
     path('alta',register_views.altausuario),
 
 ] 
+
+
+
+
