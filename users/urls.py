@@ -4,7 +4,7 @@ from users import views as users_views
 urlpatterns = [
  # Django
     path('registrar', users_views.register, name="register"),
-    path('',users_views.registrar, name="login"),
+    path('',users_views.login, name="login"),
     path('alta',users_views.altausuario),
 
 ] 

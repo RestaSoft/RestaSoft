@@ -24,7 +24,7 @@ def logout(request):
     print("Hmmmmmm")
     return redirect('login')
 
-def registrar(request):
+def login(request):
     return render (request, 'users/login.html')
 
 def altausuario(request):
