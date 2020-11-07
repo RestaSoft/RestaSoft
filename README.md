@@ -1,6 +1,4 @@
 # RestaSoft
-SW Restaurant 
-------------------
 
 ## TEAM MEMBERS
 
