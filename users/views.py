@@ -21,7 +21,7 @@ def register(request):
     return render(request, 'registration/register.html', context)
 
 def logout(request):
-    print("Hmmmmmm")
+    print("Hmmmmmmm")
     return redirect('login')
 
 def login(request):
