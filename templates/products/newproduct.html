@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load static %} 
+
 {% block head_content %}
-    
 {% endblock head_content %}
 
 {% block title %}
@@ -8,9 +9,76 @@
 {% endblock title %}
 
 {% block title_dash %}
-     <h1 class="h2">Agregar un nuevo producto</h1>
+     <div class="col-6 mt-5">
+        <h1>Agregar un nuevo producto</h1>
+    </div>
 {% endblock title_dash %}
 
 {% block container %}
-        
+         
+    <div class="col-md-8 order-md-1">
+    <hr>
+      
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Nombre del platillo</label>
+            <input type="text" class="form-control" id="platillo" placeholder="Platillo" value="" required>
+            <div class="invalid-feedback">
+              Primero coloca el nombre del platillo
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="username">Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" id="username" placeholder="Username" required>
+            <div class="invalid-feedback" style="width: 100%;">
+              Your username is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email <span class="text-muted">(Optional)</span></label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="country">Categoria</label>
+            <select class="custom-select d-block w-100" id="country" required>
+              <option value="">Fast Food</option>
+              <option>Dessert</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir</button>
+      </form>
+    </div>
+  </div>
 {% endblock container %}
