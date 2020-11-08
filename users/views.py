@@ -62,11 +62,8 @@ def register(request):
     context = {'form': form}
     return render(request, 'register.html', context)
 
-<<<<<<< HEAD
-=======
 def registrar(request):
     return HttpResponse  ('Inicio de sesion de usuario')
 
 def altausuario(request):
     return HttpResponse('PRUEBA')
->>>>>>> 87583dfe8ab9d60c36cf9388039c5cdd948f5bd0
