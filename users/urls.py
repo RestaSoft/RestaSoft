@@ -8,5 +8,6 @@ urlpatterns = [
     path('',users_views.view_login, name="login"),
     path('alta',users_views.altausuario),
     path('newuser',users_views.newuser, name="newuser"),
+    path('home/', users_views.home_view, name="home"),
 
 ] 

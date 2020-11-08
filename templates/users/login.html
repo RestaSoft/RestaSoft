@@ -10,7 +10,7 @@
 {% endblock title %}
 
 {% block container %}
-        <form class="form-signin">
+        <form class="form-signin" action='/home/' method='GET'>
             <img
                class="rounded mx-auto d-block"                
                 src="{% static 'img/logo.png' %}"
@@ -28,6 +28,7 @@
                     id="inputEmail"
                     class="form-control"
                     placeholder="usuario"
+                    name="use"
                     required
                     autofocus
                 />

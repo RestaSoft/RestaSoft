@@ -67,7 +67,27 @@ def newuser(request):
     return render(request, 'users/signup.html')
 
 def view_login(request):
+    ''' Login view '''
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(request, username=username, password=password)
+
+        if user:
+            login(request, user)
+            return redirect ('home_view')
+        else:
+            return render(request,'users/login.html',{'error':'Invalid username and password'})
+
     return render (request, 'users/login.html')
 
 def altausuario(request):
     return HttpResponse('PRUEBA')
+
+def home_view(request):
+
+
+
+    return render (request, 'home.html')
