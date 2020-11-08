@@ -41,10 +41,12 @@
                 required
             />
             </div>
-            
             <button class="btn btn-lg btn-warning btn-block" type="submit">
                 Sign in
             </button>
+            <div class= "d-flex flex-column mt-3">
+            <p class="m-auto">You don't have an account, <a href={% url 'newuser' %}>Sign Up</a> now</p>
+        </div>
         </form>
 {% endblock container %}
 
