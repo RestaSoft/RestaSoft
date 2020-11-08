@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
@@ -23,8 +27,12 @@ from django.contrib.auth.models import User
 
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
+=======
+>>>>>>> brendadev
+>>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619
 
 def register(request):
     """ Register a new user """
@@ -44,6 +52,12 @@ def register(request):
     return render(request, 'registration/register.html', context)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+def logout(request):
+    print("Hmmmmmmm")
+=======
+>>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619
     
 def login_view(request):
     ''' Login view '''
@@ -68,10 +82,14 @@ def login_view(request):
 def logout_view(request):
     """ Logout a user """
     logout(request)
+<<<<<<< HEAD
 =======
 def logout(request):
     print("Hmmmmmmm")
 >>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
+=======
+>>>>>>> brendadev
+>>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619
     return redirect('login')
 
 def newuser(request):
@@ -81,6 +99,7 @@ def login(request):
     return render (request, 'users/login.html')
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 @login_required
 def home(request):
@@ -89,3 +108,12 @@ def home(request):
 def altausuario(request):
     return HttpResponse('PRUEBA')
 >>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
+=======
+def altausuario(request):
+    return HttpResponse('PRUEBA')
+=======
+@login_required
+def home(request):
+    return render(request, "users/home.html")
+>>>>>>> brendadev
+>>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619

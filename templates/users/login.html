@@ -41,10 +41,12 @@
                 required
             />
             </div>
-            
             <button class="btn btn-lg btn-warning btn-block" type="submit">
                 Sign in
             </button>
+            <div class= "d-flex flex-column mt-3">
+            <p class="m-auto">You don't have an account, <a href={% url 'newuser' %}>Sign Up</a> now</p>
+        </div>
         </form>
 {% endblock container %}
 
@@ -52,6 +54,7 @@
     <p class="alert alert-danger" role="alert">{{error}}</p>
 {% endif %}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <!-- <button type="submit" class="btn">Login</button>-->
     <button type="submit" class="button"><span>Login </span></button>
@@ -63,6 +66,8 @@
 </body>
 </html>
 =======
+=======
+>>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619
 <form method="POST" action="{% url "login" %}">
     {% csrf_token %}
     <div class="form-group">
@@ -81,4 +86,18 @@
         <a href="{% url 'password_reset'%}">here.</a> </p>
     </div>
 {% endif %} {% endcomment %}
+<<<<<<< HEAD
 >>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
+=======
+=======
+    <!-- <button type="submit" class="btn">Login</button>-->
+    <button type="submit" class="button"><span>Login </span></button>
+  
+  </form>
+</div>
+<div class="bg"></div>
+
+</body>
+</html>
+>>>>>>> brendadev
+>>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619
