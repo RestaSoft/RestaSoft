@@ -25,24 +25,19 @@
 
             </div>
 
-            <h2>Sidenav Push Example</h2>
-            <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+            <div class="row justify-content-center">
+                
+                {% block container %} {% endblock %}
+
+            </div>
+
+            
 
         </div>
 
         </div>
 
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-                document.getElementById("main").style.marginLeft= "0";
-            }
-        </script>
+        
 
     </body>
 </html>
