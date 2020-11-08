@@ -2,29 +2,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-<<<<<<< HEAD
-=======
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
-
-
-''' Users Views. '''
-# Django
-from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-
-# Exception
-from django.db.utils import IntegrityError
-
-# Models
-from django.contrib.auth.models import User
-
-
-
-
->>>>>>> brendadev
 
 def register(request):
     """ Register a new user """
@@ -43,35 +20,8 @@ def register(request):
     context = {'form': form}
     return render(request, 'registration/register.html', context)
 
-<<<<<<< HEAD
 def logout(request):
     print("Hmmmmmmm")
-=======
-    
-def login_view(request):
-    ''' Login view '''
-
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-
-        user = authenticate(request, username=username, password=password)
-
-        if user:
-            login(request, user)
-            return redirect ('home.html')
-        else:
-            return render(request,'users/login.html',{'error':'Invalid username and password'})
-
-    return render(request, 'users/login.html')
-
-
-
-@login_required
-def logout_view(request):
-    """ Logout a user """
-    logout(request)
->>>>>>> brendadev
     return redirect('login')
 
 def newuser(request):
@@ -80,11 +30,5 @@ def newuser(request):
 def login(request):
     return render (request, 'users/login.html')
 
-<<<<<<< HEAD
 def altausuario(request):
     return HttpResponse('PRUEBA')
-=======
-@login_required
-def home(request):
-    return render(request, "users/home.html")
->>>>>>> brendadev

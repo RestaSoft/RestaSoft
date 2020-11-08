@@ -1,13 +1,13 @@
 {% extends 'users/base.html' %}
 {% block head_content %}
-    <title>Register</title>
+    <title>Sign-up</title>
 {% endblock head_content %}
 
 {% block title %}
      <title>Signup</title>
 {% endblock title %}
-
 {% block container %}
+<div style="background-color:black;color:white;padding:20px;">
         <form class="form-signin">
             <img
                class="rounded mx-auto d-block"
@@ -37,6 +37,7 @@
             <div class="form-group">
                 <input class="form-control" type="email" placeholder="Email address" name="email" required="true" />
             </div>
-        <button class="btn btn-primary btn-block mt-5" type="submit">Register</button>
+        <button class="btn btn-primary btn-block mt-5" type="submit">Register!</button>
         </form>
+        </div>
 {% endblock container %}
