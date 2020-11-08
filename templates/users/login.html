@@ -1,4 +1,6 @@
 {% extends 'users/base.html' %}
+{% load static %}
+
 {% block head_content %}
     <title>Log In</title>
 {% endblock head_content %}
@@ -10,8 +12,7 @@
 {% block container %}
         <form class="form-signin">
             <img
-               class="rounded mx-auto d-block"
-                {% load static %}
+               class="rounded mx-auto d-block"                
                 src="{% static 'img/logo.png' %}"
                 alt=""
                 width="72"
