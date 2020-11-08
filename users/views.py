@@ -24,6 +24,9 @@ def logout(request):
     print("Hmmmmmmm")
     return redirect('login')
 
+def newuser(request):
+    return render(request, 'users/signup.html')
+
 def login(request):
     return render (request, 'users/login.html')
 
