@@ -1,3 +1,8 @@
+
+.main {
+  margin-left: 250px; /* Same as the width of the sidenav */
+}
+
 /* The sidenav */
 .sidenav {
   height: 100%;
@@ -14,18 +19,21 @@
 .sidenav a {
   padding: 6px 6px 6px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: #818181;
   display: block;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #FF7A00;
 }
 
-.main {
-  margin-left: 250px; /* Same as the width of the sidenav */
+.img-sidebar {
+  /* Centrar imagen*/
+  display:block;
+  margin:auto;
 }
+
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
