@@ -74,6 +74,9 @@ def logout(request):
 >>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
     return redirect('login')
 
+def newuser(request):
+    return render(request, 'users/signup.html')
+
 def login(request):
     return render (request, 'users/login.html')
 

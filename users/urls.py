@@ -12,6 +12,7 @@ urlpatterns = [
     path('registrar', users_views.register, name="register"),
     path('',users_views.login, name="login"),
     path('alta',users_views.altausuario),
+    path('newuser',users_views.newuser, name="newuser"),
 
 >>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
 ] 
