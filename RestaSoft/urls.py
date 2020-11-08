@@ -15,6 +15,7 @@ urlpatterns = [
     path('',include('products.urls')),
     path('',include('users.urls')),
     path('orders/',include('orders.urls')),
+    
 
 # Restore password views
     path('password_change/',
