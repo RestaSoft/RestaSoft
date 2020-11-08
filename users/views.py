@@ -6,6 +6,22 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
 
+''' Users Views. '''
+# Django
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+# Exception
+from django.db.utils import IntegrityError
+
+# Models
+from django.contrib.auth.models import User
+
+
+
+
 
 def register(request):
     """ Register a new user """
@@ -36,7 +52,7 @@ def login_view(request):
 
         if user:
             login(request, user)
-            return redirect ('feed')
+            return redirect ('home.html')
         else:
             return render(request,'users/login.html',{'error':'Invalid username and password'})
 
@@ -54,4 +70,4 @@ def logout_view(request):
 
 @login_required
 def home(request):
-    return render(request, "RestaSoft/home.html")
+    return render(request, "users/home.html")

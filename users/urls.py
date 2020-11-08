@@ -3,6 +3,6 @@ from users import views as user_views
 
 urlpatterns = [
  # Django
-    path('',user_views.login_view),
-    path('home/', user_views.home),
+    path('',user_views.login_view, name='login'),
+    path('home/', user_views.home, name='home'),
 ] 
