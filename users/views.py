@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
@@ -22,6 +23,8 @@ from django.contrib.auth.models import User
 
 
 
+=======
+>>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
 
 def register(request):
     """ Register a new user """
@@ -40,6 +43,7 @@ def register(request):
     context = {'form': form}
     return render(request, 'registration/register.html', context)
 
+<<<<<<< HEAD
     
 def login_view(request):
     ''' Login view '''
@@ -64,10 +68,21 @@ def login_view(request):
 def logout_view(request):
     """ Logout a user """
     logout(request)
+=======
+def logout(request):
+    print("Hmmmmmmm")
+>>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
     return redirect('login')
 
+def login(request):
+    return render (request, 'users/login.html')
 
+<<<<<<< HEAD
 
 @login_required
 def home(request):
     return render(request, "users/home.html")
+=======
+def altausuario(request):
+    return HttpResponse('PRUEBA')
+>>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab

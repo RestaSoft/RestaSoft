@@ -57,10 +57,12 @@ body {
 h1 {
     color: orange;
     /* font-family: 'Lobster', cursive; */
-    font-family: 'Merienda One', cursive;
+    font-family: 'Salsa';
 }
 
-
+h3 {
+  text-align: center;
+}
 /*
  * Header
  */
@@ -103,7 +105,6 @@ h1 {
   }
 }
 
-
 /*
  * Cover
  */
@@ -114,7 +115,6 @@ h1 {
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
-
 
 /*
  * Footer

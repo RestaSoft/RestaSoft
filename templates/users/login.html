@@ -1,20 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'users/base.html' %}
+{% block head_content %}
+    <title>Log In</title>
+{% endblock head_content %}
 
-</head>
-<body>
-<div class="bg-img">
-  <form action="/home.html" class="container">
-    <h1>Login</h1>
+{% block title %}
+     <title>ssss</title>
+{% endblock title %}
 
-    <label for="email"><b>Username</b></label>
-    <input type="text" placeholder="Username" name="Username" required>
+{% block container %}
+        <form class="form-signin">
+            <img
+               class="rounded mx-auto d-block"
+                {% load static %}
+                src="{% static 'img/logo.png' %}"
+                alt=""
+                width="72"
+                height="72"
+            />
+            <h3 class="row justify-content-center">Please sign in</h3>
+            <p>
+            <div class="mb-3">
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input
+                    type="email"
+                    id="inputEmail"
+                    class="form-control"
+                    placeholder="User"
+                    required
+                    autofocus
+                />
+            </div>
+            <div class="mb-5">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input
+                type="password"
+                id="inputPassword"
+                class="form-control"
+                placeholder="Password"
+                required
+            />
+            </div>
+            
+            <button class="btn btn-lg btn-warning btn-block" type="submit">
+                Sign in
+            </button>
+        </form>
+{% endblock container %}
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+{% comment %} {% if error %}
+    <p class="alert alert-danger" role="alert">{{error}}</p>
+{% endif %}
 
+<<<<<<< HEAD
     <!-- <button type="submit" class="btn">Login</button>-->
     <button type="submit" class="button"><span>Login </span></button>
   
@@ -24,3 +61,23 @@
 
 </body>
 </html>
+=======
+<form method="POST" action="{% url "login" %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <input class="form-control mb-2" type="text" placeholder="Username" name="username" />
+        <input class="form-control" type="text" placeholder="Password" name="password" />
+    </div>
+    <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+
+    <div class= "d-flex flex-column mt-3">
+        <p class="m-auto">You don't have an account, <a href={% url 'signup' %}>Sign Up</a> now</p>
+    </div>
+</form>
+{% if error %}
+    <div class="d-flex flex-column mt-3">
+        <p class="m-auto"> Forgot your password? Click
+        <a href="{% url 'password_reset'%}">here.</a> </p>
+    </div>
+{% endif %} {% endcomment %}
+>>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
