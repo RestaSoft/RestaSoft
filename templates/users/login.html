@@ -19,34 +19,34 @@
                 height="72"
             />
             <h3 class="text-center">Login</h3>
-            <h3 class="row justify-content-center">Please sign in</h3>
+            <h3 class="row justify-content-center">Ingresa sesion</h3>
             <p>
             <div class="mb-3">
-                <label for="inputUser" class="sr-only">Username</label>
+                <label for="inputUser" class="sr-only">Usuario</label>
                 <input
                     type="User"
                     id="inputEmail"
                     class="form-control"
-                    placeholder="User"
+                    placeholder="usuario"
                     required
                     autofocus
                 />
             </div>
             <div class="mb-5">
-            <label for="inputPassword" class="sr-only">Password</label>
+            <label for="inputPassword" class="sr-only">Contraseña</label>
             <input
                 type="password"
                 id="inputPassword"
                 class="form-control"
-                placeholder="Password"
+                placeholder="Contraseña"
                 required
             />
             </div>
             <button class="btn btn-lg btn-warning btn-block" type="submit">
-                Sign in
+                Acceder
             </button>
             <div class= "d-flex flex-column mt-3">
-            <p class="m-auto">You don't have an account, <a href={% url 'newuser' %}>Sign Up</a> now</p>
+            <p class="m-auto">Crea una cuenta,<a href={% url 'newuser' %}>Registrate</a> ahora</p>
         </div>
         </form>
 {% endblock container %}
