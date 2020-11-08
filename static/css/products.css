@@ -42,6 +42,18 @@
   height:20;
 }
 
+.img-tbl-prod {
+  width:50;
+  height:33;
+}
+
+.img-tbl-action {
+  width:40;
+  height:26;
+}
+
+
+
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
