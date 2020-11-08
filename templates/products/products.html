@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block head_content %}
     
 {% endblock head_content %}
@@ -8,7 +10,15 @@
 {% endblock title %}
 
 {% block title_dash %}
-     <h1 class="h2">Productos</h1>
+     
+    <div class="col-2 mt-5">
+        <h2>Productos</h2>
+    </div>
+
+     <div class="col-2 mt-5">
+        <a href="#">Salir</a>
+    </div>
+
 {% endblock title_dash %}
 
 {% block container %}
