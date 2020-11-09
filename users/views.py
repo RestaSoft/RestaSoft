@@ -18,53 +18,45 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 
-def login_view(request):
-    ''' Login view '''
-
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-
-        user = authenticate(request, username=username, password=password)
-
-        if user:
-            login(request, user)
-            return redirect ('feed')
-        else:
-            return render(request,'users/login.html',{'error':'Invalid username and password'})
-
-    return render(request, 'login.html')
-
 
 @login_required
 def logout_view(request):
     """ Logout a user """
     logout(request)
-    return redirect('login,html')
+    return redirect('login.html')
 
 
 
 
-def register(request):
-    """ Register a new user """
-    if request.method != 'POST':
-        # Display blank registration form.
-        form = UserCreationForm()
-    else:
-        # Process completed form.
-        form = UserCreationForm(data=request.POST)
-        if form.is_valid():
-            new_user = form.save()
-            login(request, new_user)
-            return redirect('WebApp:home')
-    
-    # Display a blank or invalid form.
-    context = {'form': form}
-    return render(request, 'registration/register.html', context)
 
 
 def newuser(request):
-    return render(request, 'users/signup.html')
+    """ Sign up view """
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['passwd']
+        password_confirmation = request.POST['passwd_confirmation']
+
+        if password != password_confirmation:
+            return render(request, 'users/signup.html', {'error': 'Password do not match'})
+
+        try:
+            user = User.objects.create_user(username=username, password=password)
+        except IntegrityError:
+            return render(request, 'users/signup.html', {'error': 'Username already taken'})
+
+        user.first_name = request.POST['first_name']
+        user.last_name = request.POST['last_name']
+        user.email = request.POST['email']
+        user.save()
+
+        return redirect('login')
+
+    return render(request,'users/signup.html')
+
+
+
+
 
 def view_login(request):
     ''' Login view '''
@@ -83,11 +75,8 @@ def view_login(request):
 
     return render (request, 'users/login.html')
 
-def altausuario(request):
-    return HttpResponse('PRUEBA')
+
 
 def home_view(request):
-
-
 
     return render (request, 'home.html')

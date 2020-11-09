@@ -7,7 +7,8 @@
      <title>Registro</title>
 {% endblock title %}
 {% block container %}
-        <form class="form-signin">
+        <form class="form-signin" action="{% url 'newuser' %}" method="POST">
+         {% csrf_token %}
             <img
                class="rounded mx-auto d-block"
                 {% load static %}
