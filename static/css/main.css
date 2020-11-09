@@ -42,6 +42,7 @@ body {
 
 }
 
+
 body {
   display: -ms-flexbox;
   display: flex;
@@ -57,10 +58,12 @@ body {
 h1 {
     color: orange;
     /* font-family: 'Lobster', cursive; */
-    font-family: 'Merienda One', cursive;
+    font-family: 'Salsa';
 }
 
-
+h3 {
+  text-align: center;
+}
 /*
  * Header
  */

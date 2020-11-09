@@ -1,0 +1,91 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head_content %} 
+{% endblock head_content %} 
+
+{% block title %}
+    <title>Editar</title>
+{% endblock title %} 
+
+{% block title_dash %}
+    <div class="col-4 mt-5">
+        <h1>Editar productos</h1>
+    </div>
+{% endblock title_dash %} 
+
+
+{% block container %}
+
+    <div class="row justify-content-start">
+        <div class="col-lg-2 mt-5 ml-5">
+            <input type="text" class="form-control" id="Search" name="search" placeholder="Producto..."/>
+        </div>
+        <div class="col-lg-1 mt-5">
+            <button type="button" class="btn btn-success btn-sm" id="Btn-search" name="btn-search" onclick="showDiv()">Buscar</button>
+        </div>
+    </div>
+
+    <div class="row justify-content-start mb-5" style="display:none" id="contenedor">
+                    
+        <div class="col-lg-5 mt-5 ml-5">
+            <div class="row">
+                <label for="name">Nombre</label>
+            </div>
+            <div class="row mb-3">
+                <input type="text" class="form-control" id="Name" name="name" />
+            </div>
+
+            <div class="row">
+                <label for="description">Descripción</label>
+            </div>
+            <div class="row mb-3">
+                <textarea class="form-control" id="Description" name="description" rows="3" cols="50" placeholder="¿Qué contiene? ¿Cómo se prepara?..."></textarea>
+            </div>
+
+            <div class="row">
+                <label for="categoría">Categoría</label>
+            </div>
+            <div class="row mb-3">
+                <select class="form-control" name="category" id="Category">
+                    <option>Comida rápida</option>
+                    <option>Cortes</option>
+                    <option>Del mar</option>
+                    <option>Sin alcohol</option>
+                    <option>Con alcohol</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <label for="price">Precio</label>
+            </div>
+            <div class="row mb-3">
+                <input type="text" class="form-control" id="Price" name="price" />
+            </div>
+        </div>
+
+        <div class="col-lg-5 mt-5 ml-5">
+            <div class="row">
+                <label for="file-upload" class="custom-file-upload ">Imagen</label>
+            </div>
+
+            <div class="row">
+                <span class="btn btn-dark btn-sm btn-file">
+                    Subir archivo <input type="file">
+                </span>
+            </div>
+
+            <div class="row">
+                <img class="img-edit-prod mt-2 mb-4" src="{% static 'img/img-shape.png' %}" alt="image" />
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-lg-4">
+                    <button type="button" class="btn btn-primary btn-block btn-sm" id="Save" name="save">Guardar</button>
+                </div>
+            </div >
+        </div>            
+        </div>
+        
+    </div>
+{% endblock container %}

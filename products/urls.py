@@ -3,6 +3,12 @@ from django.shortcuts import render, redirect
 from products import views as products_views
 
 urlpatterns = [
- # Django
-    path('', products_views.home, name="home"),
+ 
+    # path('', products_views.home, name="home"),
+
+    # products view
+    path('productos', products_views.productos, name="productos"),
+    path('nuevo', products_views.nuevo, name="nuevo"),
+    path('editar_prod',products_views.editar_prod, name="editar_prod"),
+
 ] 

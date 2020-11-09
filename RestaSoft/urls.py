@@ -12,9 +12,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
 #urls de cada aplicacion
-    path('products/',include('products.urls')),
+    path('',include('products.urls')),
     path('',include('users.urls')),
     path('orders/',include('orders.urls')),
+    
 
 # Restore password views
     path('password_change/',

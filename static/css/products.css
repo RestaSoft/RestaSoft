@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+.main {
+  margin-left: 250px; /* Same as the width of the sidenav */
+}
+
+h6 {
+  color:#00AE8F;
+}
+
+.resta-nav {
+  position: fixed;
+  bottom:25;
+  margin-left: 75;
+  font-family: 'Salsa', cursive;
+}
+
+/* The sidenav */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #FF7A00;
+}
+
+.img-sidebar {
+  /* Centrar imagen*/
+  display:block;
+  margin:auto;
+
+  width:60;
+  height:73;
+}
+
+.img-element-sidebar {
+  width:30;
+  height:20;
+}
+
+.img-tbl-prod {
+  width:50;
+  height:33;
+}
+
+.img-tbl-action {
+  width:40;
+  height:26;
+}
+
+.img-btn-out {
+  width:10;
+  height:10;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.img-edit-prod {
+  width: 300;
+  height: 198;
+}
+
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

@@ -44,6 +44,7 @@ class Staffs(models.Model):
     active = models.BooleanField(('active'), default=True)
     username = models.CharField(('username'), max_length=150, unique=True, help_text=('Requiered 150 characters or fewer. Letter digits and @/./+/_/, only.'))
     password = models.CharField(max_length=50)
+    imagen = models.ImageField(upload_to='img')
 
     def __str__(self):
         return str(self.first_name)
@@ -59,9 +60,6 @@ class CategoriesProduct(models.Model):
 
     def __str__(self):
         return str(self.category_name)
-
-    class Meta:
-        verbose_name_plural = 'CategoriesProducts'
 
 
 
@@ -138,6 +136,3 @@ class Stocks(models.Model):
     class Meta:
         verbose_name_plural = 'Stocks'
 
-
-
-        
