@@ -1,6 +1,7 @@
 #Imports
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from users.models import Products
 # from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationFor
 
