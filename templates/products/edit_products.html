@@ -5,32 +5,28 @@
 {% endblock head_content %} 
 
 {% block title %}
-    <title></title>
+    <title>Editar</title>
 {% endblock title %} 
 
 {% block title_dash %}
-    <div class="col-2 mt-5">
-        <h1></h1>
-    </div>
-
-    <div class="col-2 mt-5 mr-5 text-center">
-        <a class="btn btn-dark btn-block btn-sm" href="#">Salir
-            <img src="{% static 'img/log_out.png' %}" alt="log_out-icon" /></a>
+    <div class="col-4 mt-5">
+        <h1>Editar productos</h1>
     </div>
 {% endblock title_dash %} 
 
 
 {% block container %}
-    <div class="row justify-content-center">
+    <div class="row justify-content-start">
                     
-        <div class="col-lg-11 mt-2">
-            <div class="row justify-content-end">
-                
+        <div class="col-lg-5 mt-5 ml-5">
+            <div class="row">
+                <label for="name">Nombre</label>
+            </div>
+            <div class="row mb-3">
+                <input type="text" class="form-control" id="Name" name="name" />
             </div>
 
-            <div class="row">
-                
-            </div>
+                  
         </div>
         
     </div>
