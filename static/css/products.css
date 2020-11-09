@@ -1,6 +1,19 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
 .main {
   margin-left: 250px; /* Same as the width of the sidenav */
+}
+
+h6 {
+  color:#00AE8F;
+}
+
+.resta-nav {
+  position: fixed;
+  bottom:25;
+  margin-left: 75;
+  font-family: 'Salsa', cursive;
 }
 
 /* The sidenav */
@@ -51,6 +64,13 @@
   width:40;
   height:26;
 }
+
+.img-btn-out {
+  width:10;
+  height:10;
+}
+
+
 
 
 
