@@ -69,7 +69,7 @@ def view_login(request):
 
         if user:
             login(request, user)
-            return redirect ('home_view')
+            return redirect ('home')
         else:
             return render(request,'users/login.html',{'error':'Invalid username and password'})
 

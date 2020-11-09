@@ -10,7 +10,8 @@
 {% endblock title %}
 
 {% block container %}
-        <form class="form-signin" action='/home/' method='GET'>
+        <form class="form-signin" method="POST" action="{% url "login" %}">
+            {% csrf_token %}
             <img
                class="rounded mx-auto d-block"                
                 src="{% static 'img/logo.png' %}"
@@ -40,7 +41,7 @@
                 id="inputPassword"
                 class="form-control"
                 placeholder="Contraseña"
-                name="passowrd"
+                name="password"
                 required
             />
             </div>
@@ -51,6 +52,12 @@
             <p class="m-auto">Crea una cuenta.<a href={% url 'newuser' %}>Regístrate</a> ahora</p>
         </div>
         </form>
+            {% if error %}
+        <div class="d-flex flex-column mt-3">
+            <p class="m-auto"> Forgot your password? Click
+            <a href="{% url 'password_reset'%}">here.</a> </p>
+        </div>
+    {% endif %}
 {% endblock container %}
 
 {% comment %} {% if error %}
