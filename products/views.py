@@ -13,7 +13,7 @@ def productos(request):
 def nuevo(request):
     return render (request, 'products/newproduct.html')
 
-def edit_prod(request):
+def editar_prod(request):
     #redirect to templates in templates/products
-    return render (request, 'products/edit_prod.html')
+    return render (request, 'products/edit_products.html')
 
