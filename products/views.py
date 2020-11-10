@@ -42,10 +42,13 @@ def nuevo(request):
 def editar_prod(request):
     busqueda= request.GET["edit"]
     #redirect to templates in templates/products
-    edit = Products.objects.filter(product_name__icontains=busqueda)
-    return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda})
-
+    edit = Products.objects.filter(product_name=busqueda)
+    producto_a_modificar=edit.first()
     
+    return render (request, 'products/edit_products.html',
+    {"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
+
+
 def editar(request):
 
     

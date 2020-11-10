@@ -20,22 +20,29 @@
     <div class="row justify-content-start">
 
             <div class="col-lg-7 mt-5 ml-5">
-                
-                    <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/> 
+                {% if edit  %}
+                <input type="text" class="form-control" id="edit" name="edit"value={{query}} /> 
+                <label>Articulos encontrados:{{edit|length}}</label> 
+                {% else %}
+                <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/>
+                 <label>No se encontraron productos <strong>{{query}}</strong></label> 
+                {% endif %}
+            
+                    
                 </div>
                 <div class="col-lg-1 mt-5 " >
                 <button class="btn btn-outline-warning btn-sm form-control" type="submit">Buscar</button>
-             
             </div>
             
     </div>
 </form>
-    {% if edit  %}
+    <!-- {% if edit  %}
     <label>Articulos encontrados:{{edit|length}}</label> 
     {% else %}
-     <label>No se encontraron productos <strong>{{query}}</strong></label> 
-    {% endif %}
-
+     <label>No se encontraron productos <strong>{{query}}</strong></label> <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/> 
+    {% endif %} -->
+    
+    {% if query != None and query != '' and query != '/' %}
     <div class="row justify-content-start mb-5" id="contenedor">
             
         <div class="col-lg-5 mt-5 ml-5">
@@ -44,14 +51,14 @@
                 <label for="name">Nombre</label>
             </div>
             <div class="row mb-3">
-                <input type="text" class="form-control" id="Name" name="name" placeholder="Nombre del producto" />{{edit.product_name.GET   }}
+                <input type="text" class="form-control" id="Name" name="name" value={{prod_mod.product_name}} />
             </div>
 
             <div class="row">
                 <label for="description">Descripción</label>
             </div>
             <div class="row mb-3">
-                <textarea class="form-control" id="Description" name="description" rows="3" cols="50" placeholder="¿Qué contiene? ¿Cómo se prepara?..."></textarea>
+                <textarea class="form-control" id="Description" name="description" rows="3" cols="50"  value={{prod_mod.categoriesproduct.category_description}}>{{prod_mod.categoriesproduct.category_description}}</textarea>
             </div>
 
             <div class="row">
@@ -59,11 +66,16 @@
             </div>
             <div class="row mb-3">
                 <select class="form-control" name="category" id="Category">
-                    <option>Comida rápida</option>
-                    <option>Cortes</option>
-                    <option>Del mar</option>
-                    <option>Sin alcohol</option>
-                    <option>Con alcohol</option>
+                {% if prod_mod.categoriesproduct.id == 1 %}
+                    <option selected>Alcohol</option>
+                {% endif %}
+                {% if prod_mod.categoriesproduct.id == 2 %}
+                    <option selected>Comida corrida</option>
+                {% endif %}
+                {% if prod_mod.categoriesproduct.id == 3 %}
+                    <option selected>Comida en alsuper</option>
+                {% endif %}
+
                 </select>
             </div>
 
@@ -71,7 +83,7 @@
                 <label for="price">Precio</label>
             </div>
             <div class="row mb-3">
-                <input type="text" class="form-control" id="Price" name="price" />
+                <input type="text" class="form-control" id="Price" name="price" value="{{prod_mod.list_price}}" />
             </div>
         </div>
 
@@ -99,5 +111,6 @@
         </div>
         
     </div>
+    {% endif  %}
 
 {% endblock container %}
