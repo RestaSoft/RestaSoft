@@ -8,8 +8,8 @@ from .models import Permission
 
 # Register your models here.
 class StaffsAdmin(admin.ModelAdmin): #Muesta las variables que deseemos que se vean en el modelo administrativo
-    list_display=("first_name", "last_name","email","phone", "active", "username")
-    search_fields=("first_name", "username") #Campo de busqueda
+    list_display=("phone",)
+    search_fields=("phone",) #Campo de busqueda
 
 admin.site.register(Staffs, StaffsAdmin)
 

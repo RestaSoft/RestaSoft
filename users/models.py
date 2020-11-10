@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -23,7 +23,15 @@ class Stores(models.Model):
 
 
 class Permission(models.Model):
-    name_permission = models.CharField(max_length=50)
+
+    LIST_PERMISSION = [
+
+        ('Adm', 'Administrativo'),
+        ('Chef', 'Cocinero'),
+        ('Mes', 'Mesero'),
+    ]
+
+    name_permission = models.CharField(choices=LIST_PERMISSION, max_length=50, null=True)
 
     def __str__(self):
         return str(self.name_permission)
@@ -35,23 +43,23 @@ class Permission(models.Model):
 
 class Staffs(models.Model):
 
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    email = models.EmailField()
-    phone = models.IntegerField()
-    stores = models.ForeignKey(Stores, on_delete=models.CASCADE)
-    permission = models.ForeignKey(Permission, on_delete=models.CASCADE)
-    active = models.BooleanField(('active'), default=True)
-    username = models.CharField(('username'), max_length=150, unique=True, help_text=('Requiered 150 characters or fewer. Letter digits and @/./+/_/, only.'))
-    password = models.CharField(max_length=50)
-    imagen = models.ImageField(upload_to='img')
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    phone = models.IntegerField(blank=True, null=True)
+    stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
+    permission = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
+    active = models.BooleanField(('active'), default=True, null=True)
+    imagen = models.ImageField(
+        upload_to = 'users/pictrues',
+        blank= True,
+        null = True)
 
     def __str__(self):
-        return str(self.first_name)
-
+        return str(self.user.username)
+    
     class Meta:
         verbose_name_plural = 'Staffs'
-
+ 
 
 
 class CategoriesProduct(models.Model):
