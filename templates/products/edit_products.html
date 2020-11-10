@@ -19,7 +19,14 @@
 
     <div class="row justify-content-start">
         <div class="col-lg-2 mt-5 ml-5">
-            <input type="text" class="form-control" id="Search" name="search" placeholder="Producto..."/>
+            {% if edit  %}
+            <input type="text" class="form-control" id="Search" name="search" placeholder="{{query}}"/>
+                <p>Articulos encontrados:{{edit|length}}</p>  
+            {% else %}
+            <input type="text" class="form-control" id="Search" name="search" placeholder="Poducto..."/>
+            {% endif %}
+            
+
         </div>
         <div class="col-lg-1 mt-5">
             <button type="button" class="btn btn-success btn-sm" id="Btn-search" name="btn-search" onclick="showDiv()">Buscar</button>

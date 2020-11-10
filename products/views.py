@@ -40,6 +40,12 @@ def nuevo(request):
     return render (request, 'products/newproduct.html')
 
 def editar_prod(request):
+    busqueda= request.GET["edit"]
     #redirect to templates in templates/products
+    edit = Products.objects.filter(product_name__icontains=busqueda)
+    return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda})
+def editar(request):
+
+    
     return render (request, 'products/edit_products.html')
 
