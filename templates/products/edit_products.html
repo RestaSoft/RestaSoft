@@ -16,31 +16,35 @@
 
 
 {% block container %}
-
+<form class="form-inline" action="{% url 'editar_prod' %}" method ="GET">
     <div class="row justify-content-start">
-        <div class="col-lg-2 mt-5 ml-5">
-            {% if edit  %}
-            <input type="text" class="form-control" id="Search" name="search" placeholder="{{query}}"/>
-                <p>Articulos encontrados:{{edit|length}}</p>  
-            {% else %}
-            <input type="text" class="form-control" id="Search" name="search" placeholder="Producto..."/>
-            {% endif %}
+
+            <div class="col-lg-7 mt-5 ml-5">
+                
+                    <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/> 
+                </div>
+                <div class="col-lg-1 mt-5 " >
+                <button class="btn btn-outline-warning btn-sm form-control" type="submit">Buscar</button>
+             
+            </div>
             
-
-        </div>
-        <div class="col-lg-1 mt-5">
-            <button type="button" class="btn btn-success btn-sm" id="Btn-search" name="btn-search" onclick="showDiv()">Buscar</button>
-        </div>
     </div>
+</form>
+    {% if edit  %}
+    <label>Articulos encontrados:{{edit|length}}</label> 
+    {% else %}
+     <label>No se encontraron productos <strong>{{query}}</strong></label> 
+    {% endif %}
 
-    <div class="row justify-content-start mb-5" style="display:none" id="contenedor">
-                    
+    <div class="row justify-content-start mb-5" id="contenedor">
+            
         <div class="col-lg-5 mt-5 ml-5">
             <div class="row">
+  
                 <label for="name">Nombre</label>
             </div>
             <div class="row mb-3">
-                <input type="text" class="form-control" id="Name" name="name" />
+                <input type="text" class="form-control" id="Name" name="name" placeholder="Nombre del producto" />{{edit.product_name.GET   }}
             </div>
 
             <div class="row">
@@ -95,4 +99,5 @@
         </div>
         
     </div>
+
 {% endblock container %}
