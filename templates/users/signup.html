@@ -18,6 +18,9 @@
                 height="72"
             />
             <h3 class="row justify-content-center">Por favor regístrate</h3>
+             {% if error %}
+                <p class="alert alert-danger">{{ error }}</p>
+             {% endif %}
             <p>
             <div class="form-group">
                 <input class="form-control" type="text" placeholder="Usuario" name="username" required="true" />

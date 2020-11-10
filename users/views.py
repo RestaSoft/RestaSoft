@@ -10,7 +10,8 @@ from django.db.utils import IntegrityError
 
 # Models
 from django.contrib.auth.models import User
-
+from django.db import models
+from users.models import Staffs
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
@@ -28,8 +29,6 @@ def logout_view(request):
 
 
 
-
-
 def newuser(request):
     """ Sign up view """
     if request.method == 'POST':
@@ -41,7 +40,9 @@ def newuser(request):
             return render(request, 'users/signup.html', {'error': 'Password do not match'})
 
         try:
+            #from users.models import Staffs
             user = User.objects.create_user(username=username, password=password)
+         
         except IntegrityError:
             return render(request, 'users/signup.html', {'error': 'Username already taken'})
 
@@ -50,11 +51,12 @@ def newuser(request):
         user.email = request.POST['email']
         user.save()
 
+        staff=Staffs(user=user)
+        staff.save()
+
         return redirect('login')
 
     return render(request,'users/signup.html')
-
-
 
 
 

@@ -21,6 +21,9 @@
             />
             <h3 class="text-center">Login</h3>
             <h3 class="row justify-content-center">Ingresa sesión</h3>
+                {% if error %}
+                     <p class="alert alert-danger" role="alert">{{error}}</p>
+                 {% endif %}
             <p>
             <div class="mb-3">
                 <label for="inputUser" class="sr-only">Usuario</label>
