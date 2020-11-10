@@ -19,16 +19,24 @@
 {% block container %}
 
     <div class="row justify-content-center">
-                    
+                 
         <div class="col-lg-11 mt-2">
             <div class="row justify-content-end">
                 <nav class="navbar navbar-dark">
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search"/>
+                    <form class="form-inline" action="{% url 'buscar_prod' %}" method ="GET">
+                        <input class="form-control mr-sm-2" type="text" name= "prd"placeholder="Buscar..." aria-label="Search"/>
                         <button class="btn btn-outline-warning btn-sm my-4 my-sm-0" type="submit">Buscar</button>
                     </form>
                 </nav>
+             
             </div>
+            {% if prod %}
+            <p>Estas buscando: <strong>{{query}}</strong></p>
+                <p>Articulos encontrados:{{prod|length}}</p>  
+            {% else %}
+            <p>No se han encontrado articulos con ese nombre</p>
+            {% endif %}
+            
 
             <div class="row">
                 <table class="table table-hover table-sm">
@@ -45,106 +53,21 @@
                         </tr>
                     </thead>
                     <tbody>
+
+                     {% for producto in prod %}
+            
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
+                            <th scope="row">{{producto.id}}</th>
+                            <td>{{producto.product_name}}</td>
+                            <td>Carne de hamburguesa condimentada con especies</td>
+                            <td>{{producto.categoriesproduct}}</td>
+                            <td>${{producto.list_price}}.00</td>
                             <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
                             <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
                             <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
                         </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
-                            <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
-                            <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
-                            <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
-                            <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
-                            <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
-                            <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
-                            <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
-                            <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hamburguesa King</td>
-                            <td>Carne de hamburguesa condimentada con especies,</td>
-                            <td>Fast Food</td>
-                            <td>$70.00</td>
-                            <td><img class="img-tbl-prod mt-2 mb-4" src="{% static 'img/burguer.jpg' %}" alt="hamburguesa" /></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>
-                            <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"alt="delete-icon"/></a></td>
-                        </tr>
+                    {% endfor %}
+
                     </tbody>
                 </table>
             </div>
