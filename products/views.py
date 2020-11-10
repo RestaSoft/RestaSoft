@@ -37,12 +37,22 @@ def buscar_prod(request):
    # return HttpResponse(busqueda)
 
 def nuevo(request):
-    return render (request, 'products/newproduct.html')
+    form = Products()
+
+    if request.method == "POST":
+        form = Products(request.POST)
+        instancia = form.save(commit=False)
+            # Podemos guardarla cuando queramos
+        instancia.save()
+            # Después de guardar redireccionamos a la lista
+
+    # Si llegamos al final renderizamos el formulario
+    return render (request, 'products/newproduct.html', {'form': form})
 
 def editar_prod(request):
     busqueda= request.GET["edit"]
     #redirect to templates in templates/products
-    edit = Products.objects.filter(product_name=busqueda)
+    edit = Products.objects.filter(product_name__icontains=busqueda)
     producto_a_modificar=edit.first()
     
     return render (request, 'products/edit_products.html',
