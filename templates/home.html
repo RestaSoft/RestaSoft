@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block head_content %}
     
 {% endblock head_content %}
@@ -9,18 +11,30 @@
 
 {% block title_dash %}
           <div class="col-6 mt-5">
-          <h1>Bienvenido Socio {{user.username }}</h1>
+          <h1>Bienvenido {{user.username }}</h1>
           </div>
 {% endblock title_dash %}
 
 {% block container %}
-          <form>
-          <h2 class="align-bottom">Luigui´s Pizzas</h2>
-          <h4 class="align-bottom" name="Slogan">Una receta diferente para compartir</h4>
-          <p>Ubicación: </p>
-          <p>Telefono: </p>
-          <p>Sitio web: </p>
-          <p>Ubicado: </p>
-          <p>Ubicado: </p>
-          <ul>
+          <div class="row">
+               <div class="col-5 align-self-center">
+                    <div class="row" style="height:27vh"></div>
+                    <div class="row justify-content-center datos-card pt-4 pb-4">
+                         <h2>Luigui´s Pizzas</h2>
+                         <h4 class="mb-5" name="Slogan">Una receta diferente para compartir</h4>
+                         <label>Ubicación: <span id="ubi">Calle 4 no. 23402 Col. Centro</span></label>
+                         <label>Telefono: <span id="tel"></span>614-2218222</label>
+                         <label>Sitio web: <span id="web">www.pizzasluiguis.com</span></label>
+                         <label>Correo: <span id="email">luiguis@gmail.com</span></label>
+                    </div>
+                    <div class="row" style="height:27vh"></div>
+               </div>
+               <div class="col-7 align-self-center">
+                    <div class="row" style="height:27vh"></div>
+                    <div class="row justify-content-center">
+                         <img class="" src="{% static 'img/pizza.png' %}" alt="ticket_icon" />
+                    </div>
+                    <div class="row" style="height:27vh"></div>
+               </div>
+          </div>
 {% endblock container %}
