@@ -7,6 +7,8 @@ from users.models import Products
 from .forms import ProductsForm
 # from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationFor
+# Exception
+from django.db.utils import IntegrityError
 
 
 #vistas
@@ -43,9 +45,11 @@ def nuevo(request):
         #print(request.POST)
         form = ProductsForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect("productos")
-
+            try:
+                form.save()
+                return redirect("productos")
+            except IntegrityError:
+                return render(request, 'products/newproduct.html', {'error': 'Username already taken'})
 
 
     context = {'form':form}
