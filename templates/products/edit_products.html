@@ -67,13 +67,20 @@
             <div class="row mb-3">
                 <select class="form-control" name="category" id="Category">
                 {% if prod_mod.categoriesproduct.id == 1 %}
-                    <option selected>Alcohol</option>
+                <option selected>Bebidas alcoholicas</option>
+                <option>Comida corrida </option>
+                <option>Comida china </option>
+                    
                 {% endif %}
                 {% if prod_mod.categoriesproduct.id == 2 %}
-                    <option selected>Comida corrida</option>
+                <option>Bebidas alcoholicas</option>
+                <option selected>Comida corrida</option>
+                <option>Comida china</option>
                 {% endif %}
                 {% if prod_mod.categoriesproduct.id == 3 %}
-                    <option selected>Comida en alsuper</option>
+                <option>Bebidas alcoholicas</option>
+                <option>Comida corrida/option>
+                <option selected>Comida china </option>
                 {% endif %}
 
                 </select>

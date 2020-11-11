@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from users.models import Products
+from .forms import ProductsForm
 # from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationFor
 
@@ -37,17 +38,19 @@ def buscar_prod(request):
    # return HttpResponse(busqueda)
 
 def nuevo(request):
-    form = Products()
+    form = ProductsForm()
+    if request.method == 'POST':
+        #print(request.POST)
+        form = ProductsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("productos")
 
-    if request.method == "POST":
-        form = Products(request.POST)
-        instancia = form.save(commit=False)
-            # Podemos guardarla cuando queramos
-        instancia.save()
-            # Después de guardar redireccionamos a la lista
 
-    # Si llegamos al final renderizamos el formulario
-    return render (request, 'products/newproduct.html', {'form': form})
+
+    context = {'form':form}
+
+    return render (request, 'products/newproduct.html', context)
 
 def editar_prod(request):
     busqueda= request.GET["edit"]
