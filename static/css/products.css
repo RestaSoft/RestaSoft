@@ -9,6 +9,30 @@ h6 {
   color:#00AE8F;
 }
 
+.base-home {
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(17,17,17,1) 15%,rgba(17,17,17,1)30%, rgba(255,255,255,0)), url(../img/pizzeria_fondo.jpg);
+
+  /* Full height */
+  height: 100%;
+  opacity: 0.9;
+
+  color:white;
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.datos-card{
+  background-color: rgba(0,0,0,.4);
+  box-shadow: white;
+  border-radius: 10px;
+}
+
 .resta-nav {
   position: fixed;
   bottom:25;
