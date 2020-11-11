@@ -80,9 +80,9 @@
                                 alt="hamburguesa" /></td>
                         <form class="form-inline" action="{% url 'editar_prod' %}" method="GET">
                             {% csrf_token %}
-                            <td><button type="submit" name="edit" value="{{producto.product_name}}"><img
+                            <td><button type="submit" class="btn btn-sm" name="edit" value="{{producto.product_name}}"><img
                                         class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}"
-                                        alt="edit-icon" /></a></td>
+                                        alt="edit-icon" /></button></td>
                         </form>
                         <!-- Linea anterior a la modificacion de editar<td><a href=""><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>  -->
                         <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
