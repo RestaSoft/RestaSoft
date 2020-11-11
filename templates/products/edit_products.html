@@ -19,13 +19,16 @@
 <form class="form-inline" action="{% url 'editar_prod' %}" method ="GET">
     <div class="row justify-content-start">
 
+        
+
             <div class="col-lg-7 mt-5 ml-5">
-                {% if edit  %}
+                {% if edit and query != None and query != '' and query != '/'%}
                 <input type="text" class="form-control" id="edit" name="edit"value={{query}} /> 
+                
                 <label>Articulos encontrados:{{edit|length}}</label> 
                 {% else %}
                 <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/>
-                 <label>No se encontraron productos <strong>{{query}}</strong></label> 
+                 <label>No se encontraron productos: <strong>{{query}}</strong></label> 
                 {% endif %}
             
                     
@@ -42,7 +45,7 @@
      <label>No se encontraron productos <strong>{{query}}</strong></label> <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/> 
     {% endif %} -->
     
-    {% if query != None and query != '' and query != '/' %}
+    {% if query != None and query != '' and query != '/' and edit%}
     <div class="row justify-content-start mb-5" id="contenedor">
             
         <div class="col-lg-5 mt-5 ml-5">
