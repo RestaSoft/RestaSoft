@@ -1,7 +1,7 @@
 {% load static %}
 
 <div class="sidenav">
-    <img class="img-sidebar mt-2 mb-4" src="{% static 'img/socio_logo.png' %}" alt="socio_logo" />
+    <a href={% url 'home' %}><img class="img-sidebar mt-2 mb-1" src="{% static 'img/socio_logo.png' %}" alt="socio_logo" />
     <a href={% url 'nuevo' %}><img class="img-element-sidebar" src="{% static 'img/add.svg' %}" alt="new_prod_icon" /> Nuevo producto</a>
     <a href={% url 'productos' %}><img class="img-element-sidebar" src="{% static 'img/products.svg' %}" alt="products_icon" /> Productos</a>
     <a href={% url 'editar' %}><img class="img-element-sidebar" src="{% static 'img/edit.svg' %}" alt="edit_icon" /> Editar</a>
