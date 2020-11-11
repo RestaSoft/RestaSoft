@@ -45,8 +45,6 @@
 
         {% endif %}
 
-
-
         {% endif %}
 
 
@@ -84,9 +82,15 @@
                                         class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}"
                                         alt="edit-icon" /></a></td>
                         </form>
+
+                        
+                        <form class="form-inline" action="{% url 'delete_prod' %}" method="GET">
+                        {% csrf_token %}
                         <!-- Linea anterior a la modificacion de editar<td><a href=""><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>  -->
-                        <td><a href="#"><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
+                        <td><button type="submit" name="delete" value="{{producto.id}}" ><img 
+                                    class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
                                     alt="delete-icon" /></a></td>
+                        </form>
 
 
                     </tr>

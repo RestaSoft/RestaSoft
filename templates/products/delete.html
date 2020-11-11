@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head_content %} 
+
+{% endblock head_content %}  
+{% block title %}
+<title>Productos</title>
+{% endblock title %}
+
+
+{% block title_dash %}
+<div class="col-2 mt-5">
+    <h1>Productos</h1>
+</div>
+{% endblock title_dash %}
+
+
+{% block container %}
+
+<p>Estas seguro de borrar el producto: <strong>{{delete}}</strong> </p>
+<form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'productos'%}">Cancel</a>
+    <button type="submit" name="delete" value="{{delete.id}}" ><img 
+        class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
+        alt="delete-icon" /></a></td>
+</form>
+</form>
+
+
+
+
+{% endblock container %}

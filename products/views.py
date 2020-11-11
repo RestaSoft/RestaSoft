@@ -37,7 +37,7 @@ def buscar_prod(request):
     prod = Products.objects.filter(product_name__icontains=busqueda)
 
     return render(request,'products/products.html',{"prod":prod, "query":busqueda})
-   # return HttpResponse(busqueda)
+
 
 def nuevo(request):
     form = ProductsForm()
@@ -56,6 +56,26 @@ def nuevo(request):
 
     return render (request, 'products/newproduct.html', context)
 
+
+def delete_prod(request):
+    
+
+    if request.method=='GET':
+        delete= request.GET["delete"]
+        borrar = Products.objects.get(id = delete )
+
+        return render(request,'products/delete.html',{"delete":borrar})
+
+
+    if request.method== 'POST':
+        delete= request.POST["delete"]
+        borrar = Products.objects.get(id = delete )
+        borrar.delete()
+        return productos(request)
+        #return render(request,'products/products.html')
+    
+    return render(request,'products/delete.html')
+
 def editar_prod(request):
     busqueda= request.GET["edit"]
     #redirect to templates in templates/products
@@ -64,6 +84,7 @@ def editar_prod(request):
     
     return render (request, 'products/edit_products.html',
     {"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
+
 
 
 def editar(request):
