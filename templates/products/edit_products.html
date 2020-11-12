@@ -19,14 +19,14 @@
 
         
 
-            <div class="col-lg-7 mt-5 ml-5">
+            <div class="col-lg-9 mt-5 ml-5">
                 {% if edit and query != None and query != '' and query != '/'%}
-                <input type="text" class="form-control" id="edit" name="edit"value={{query}} /> 
-                
-                <label>Articulos encontrados:{{edit|length}}</label> 
+                <input type="text" class="form-control" id="edit" name="edit"value={{query}} />
+                            
+                <label class="mt-2 text-success">Articulos encontrados: <strong>&nbsp; {{edit|length}} </strong> </label> 
                 {% else %}
                 <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/>
-                 <label>No se encontraron productos: <strong>{{query}}</strong></label> 
+                <label class="mt-2 text-danger">No se encontró el producto: <strong>&nbsp; {{query}} </strong></label> 
                 {% endif %}
             
                     
