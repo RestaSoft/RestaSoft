@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+# Cloudinary models
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
@@ -15,6 +17,7 @@ class Stores(models.Model):
     zip_code = models.IntegerField(null=True)
     slogan = models.CharField(max_length=150,null=True)
     sitio_web = models.CharField(max_length=100, null=True)
+    image_stor = CloudinaryField('image')
 
     def __str__(self):
         return str(self.store_name)
@@ -51,10 +54,7 @@ class Staffs(models.Model):
     stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
     permission = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
     active = models.BooleanField(('active'), default=True, null=True)
-    imagen = models.ImageField(
-        upload_to = 'users/pictures',
-        blank= True,
-        null = True)
+    imagen_staf = CloudinaryField('image')
 
     def __str__(self):
         return str(self.user.username)
@@ -97,7 +97,7 @@ class Products(models.Model):
     categoriesproduct = models.ForeignKey(CategoriesProduct, on_delete=models.CASCADE)
     list_price = models.IntegerField()
     suppliers = models.ForeignKey(Suppliers, on_delete=models.CASCADE)
-
+    image_prod = CloudinaryField('image')
     def __str__(self):
         return str(self.product_name)
 
