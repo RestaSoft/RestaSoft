@@ -11,7 +11,7 @@ h6 {
 
 .base-home {
   height: 100%;
-  background-image: linear-gradient(to right, rgba(17,17,17,1) 15%,rgba(17,17,17,1)30%, rgba(255,255,255,0)), url(../img/pizzeria_fondo.jpg);
+  background-image: url(../img/pizzeria_fondo.jpg);
 
   /* Full height */
   height: 100%;
