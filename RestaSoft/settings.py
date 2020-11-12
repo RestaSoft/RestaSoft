@@ -149,7 +149,7 @@ STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
 
-STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -164,5 +164,5 @@ LOGIN_URL = 'login/'
 cloudinary.config( 
   cloud_name = "restasoft",
   api_key = "896216273392577", 
-  api_secret = "OCVM1eDls0Sn_KYWmM0usO2wXOg" 
+  api_secret = "OCVM1eDls0Sn_KYWmM0usO2wXOg",
 )
