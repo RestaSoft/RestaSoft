@@ -85,6 +85,7 @@ def view_login(request):
 @login_required
 def home_view(request):
 
+
      return render (request, 'home.html')
 
 
