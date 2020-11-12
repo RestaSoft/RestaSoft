@@ -1,4 +1,5 @@
 {% extends 'base_home.html' %}
+{% load cloudinary %}
 {% load static %}
 
 {% block head_content %}
@@ -32,7 +33,7 @@
                          <div class="col-7 align-self-center">
                               <div class="row" style="height:7vh"></div>
                               <div class="row justify-content-center">
-                                   <img class="" src="{% static 'img/pizza.png' %}" alt="ticket_icon" />
+                                   <img class="mr-3 rounded-circle" height="35" src="{{ user.staffs.stores.image_stor.url }}" alt="{{ user.get_full_name }}">
                               </div>
                               <div class="row" style="height:27vh"></div>
                          </div>

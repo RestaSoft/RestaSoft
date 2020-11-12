@@ -150,4 +150,8 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login/'
 
-
+cloudinary.config( 
+  cloud_name = "restasoft",
+  api_key = "896216273392577", 
+  api_secret = "OCVM1eDls0Sn_KYWmM0usO2wXOg" 
+)
