@@ -8,7 +8,10 @@
 
   /* Full height */
   height: 100%;
+  opacity: 0.9;
+
   color:white;
+
 
   /* Center and scale the image nicely */
   background-position: center;
