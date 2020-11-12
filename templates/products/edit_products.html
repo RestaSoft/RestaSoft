@@ -16,31 +16,52 @@
 
 
 {% block container %}
-
+<form class="form-inline" action="{% url 'editar_prod' %}" method ="GET">
     <div class="row justify-content-start">
-        <div class="col-lg-2 mt-5 ml-5">
-            <input type="text" class="form-control" id="Search" name="search" placeholder="Producto..."/>
-        </div>
-        <div class="col-lg-1 mt-5">
-            <button type="button" class="btn btn-success btn-sm" id="Btn-search" name="btn-search" onclick="showDiv()">Buscar</button>
-        </div>
-    </div>
 
-    <div class="row justify-content-start mb-5" style="display:none" id="contenedor">
+        
+
+            <div class="col-lg-7 mt-5 ml-5">
+                {% if edit and query != None and query != '' and query != '/'%}
+                <input type="text" class="form-control" id="edit" name="edit"value={{query}} /> 
+                
+                <label>Articulos encontrados:{{edit|length}}</label> 
+                {% else %}
+                <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/>
+                 <label>No se encontraron productos: <strong>{{query}}</strong></label> 
+                {% endif %}
+            
                     
+                </div>
+                <div class="col-lg-1 mt-5 " >
+                <button class="btn btn-outline-warning btn-sm form-control" type="submit">Buscar</button>
+            </div>
+            
+    </div>
+</form>
+    <!-- {% if edit  %}
+    <label>Articulos encontrados:{{edit|length}}</label> 
+    {% else %}
+     <label>No se encontraron productos <strong>{{query}}</strong></label> <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/> 
+    {% endif %} -->
+    
+    {% if query != None and query != '' and query != '/' and edit%}
+    <div class="row justify-content-start mb-5" id="contenedor">
+            
         <div class="col-lg-5 mt-5 ml-5">
             <div class="row">
+  
                 <label for="name">Nombre</label>
             </div>
             <div class="row mb-3">
-                <input type="text" class="form-control" id="Name" name="name" />
+                <input type="text" class="form-control" id="Name" name="name" value={{prod_mod.product_name}} />
             </div>
 
             <div class="row">
                 <label for="description">Descripción</label>
             </div>
             <div class="row mb-3">
-                <textarea class="form-control" id="Description" name="description" rows="3" cols="50" placeholder="¿Qué contiene? ¿Cómo se prepara?..."></textarea>
+                <textarea class="form-control" id="Description" name="description" rows="3" cols="50"  value={{prod_mod.categoriesproduct.category_description}}>{{prod_mod.categoriesproduct.category_description}}</textarea>
             </div>
 
             <div class="row">
@@ -48,11 +69,23 @@
             </div>
             <div class="row mb-3">
                 <select class="form-control" name="category" id="Category">
-                    <option>Comida rápida</option>
-                    <option>Cortes</option>
-                    <option>Del mar</option>
-                    <option>Sin alcohol</option>
-                    <option>Con alcohol</option>
+                {% if prod_mod.categoriesproduct.id == 1 %}
+                <option selected>Bebidas alcoholicas</option>
+                <option>Comida corrida </option>
+                <option>Comida china </option>
+                    
+                {% endif %}
+                {% if prod_mod.categoriesproduct.id == 2 %}
+                <option>Bebidas alcoholicas</option>
+                <option selected>Comida corrida</option>
+                <option>Comida china</option>
+                {% endif %}
+                {% if prod_mod.categoriesproduct.id == 3 %}
+                <option>Bebidas alcoholicas</option>
+                <option>Comida corrida/option>
+                <option selected>Comida china </option>
+                {% endif %}
+
                 </select>
             </div>
 
@@ -60,7 +93,7 @@
                 <label for="price">Precio</label>
             </div>
             <div class="row mb-3">
-                <input type="text" class="form-control" id="Price" name="price" />
+                <input type="text" class="form-control" id="Price" name="price" value="{{prod_mod.list_price}}" />
             </div>
         </div>
 
@@ -88,4 +121,6 @@
         </div>
         
     </div>
+    {% endif  %}
+
 {% endblock container %}
