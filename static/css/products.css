@@ -1,7 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merienda+One&display=swap');
 
 .main {
+  margin-left: 250px; /* Same as the width of the sidenav */
+}
+
+.main-home {
   margin-left: 250px; /* Same as the width of the sidenav */
 
   background-image: url(../img/pizzeria_fondo.jpg);
@@ -24,7 +29,16 @@ h6 {
   color:#00AE8F;
 }
 
+hr {
+  height: 3px;
+  background-color: rgb(94, 94, 94);
+}
 
+.title-home {
+  color: white;
+  text-shadow: 3px 3px 3px #000000;
+  /* font-family: 'Salsa'; */
+}
 
 .datos-card{
   background-color: rgba(0,0,0,.7);
