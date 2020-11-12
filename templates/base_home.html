@@ -17,25 +17,23 @@
     
         {% include "aside.html" %}
 
-        <div class="main" >
+        <div class="main main-home" >
 
             <div class="container">
 
                 <div class="row justify-content-between">
                     
-                    {% block title_dash %} {% endblock %}
+                    <div class="col-6 mt-5 ml-5">
+                        {% block title_dash %} {% endblock %}
+                    </div>
 
                     <div class="col-1 mt-5 mr-5 text-center">
                         <a class="btn btn-danger btn-block btn-sm"  href="{% url 'login' %}">Salir</a>
                     </div>
 
                 </div>
-                                
-                <hr>
-
-                {% block container %} {% endblock %}
-
-
+                    
+                    {% block container %} {% endblock %}
                 
 
             </div>
