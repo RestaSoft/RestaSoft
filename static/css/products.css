@@ -28,36 +28,6 @@ ul.nav a:hover {
   font-family: 'Salsa', cursive;
 }
 
-/* The sidenav */
-.sidenav {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-.sidenav a {
-  padding: 6px 6px 6px 32px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
-}
-
-.aside a:hover {
-  color: #FF7A00;
-}
-
-.img-element-sidebar {
-  width:30;
-  height:20;
-}
-
 .img-sidebar {
   /* Centrar imagen*/
   display:block;
