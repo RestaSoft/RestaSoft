@@ -14,29 +14,24 @@
 
 
 {% block container %}
-<form class="form-inline" action="{% url 'editar_prod' %}" method ="GET">
     <div class="row justify-content-start">
 
-        
-
-            <div class="col-lg-9 mt-5 ml-5">
+        <form class="form-inline" action="{% url 'editar_prod' %}" method ="GET">
+            <div class="form-group col-lg-9 mt-5 ml-5">
                 {% if edit and query != None and query != '' and query != '/'%}
-                <input type="text" class="form-control" id="edit" name="edit"value={{query}} />
-                            
-                <label class="mt-2 text-success">Articulos encontrados: <strong>&nbsp; {{edit|length}} </strong> </label> 
+                    <input type="text" class="form-control" id="edit" name="edit"value={{query}} />                            
+                    <label for="edit" class="mt-2 text-success">Articulos encontrados: <strong>&nbsp; {{edit|length}} </strong> </label> 
                 {% else %}
-                <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/>
-                <label class="mt-2 text-danger">No se encontró el producto: <strong>&nbsp; {{query}} </strong></label> 
-                {% endif %}
-            
-                    
-                </div>
-                <div class="col-lg-1 mt-5 " >
+                    <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/>
+                    <label class="mt-2 text-danger">No se encontró el producto: <strong>&nbsp; {{query}} </strong></label> 
+                {% endif %}                    
+            </div>
+            <div class="form-group col-lg-1 mt-5 " >
                 <button class="btn btn-outline-warning btn-sm form-control" type="submit">Buscar</button>
             </div>
-            
+        </form>    
+
     </div>
-</form>
     <!-- {% if edit  %}
     <label>Articulos encontrados:{{edit|length}}</label> 
     {% else %}
