@@ -50,7 +50,7 @@ class Staffs(models.Model):
     permission = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
     active = models.BooleanField(('active'), default=True, null=True)
     imagen = models.ImageField(
-        upload_to = 'users/pictrues',
+        upload_to = 'users/pictures',
         blank= True,
         null = True)
 

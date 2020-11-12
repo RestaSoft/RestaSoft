@@ -17,6 +17,9 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+#Forms
+from users.forms import StaffsForm
+
 
 
 
@@ -78,10 +81,21 @@ def view_login(request):
     return render (request, 'users/login.html')
 
 
-
+@login_required
 def home_view(request):
 
-    return render (request, 'home.html')
+    if request.method == 'GET':
+        return render(request, 'home.html')
+    elif request.method == 'POST':
+        form = StaffsForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_image = imagen(  image = form.cleaned_data["image"],
+                                name = form.cleaned_data["name"]
+                                )
+            new_image.save()
+    return HttpResponseRedirect('/home/')
+
+    #return render(request, 'home.html')
 
 
 def nosotros_view(request):
