@@ -10,31 +10,33 @@
 {% endblock title %}
 
 {% block title_dash %}
-          <div class="col-6 mt-5">
-          <h1>Bienvenido {{user.username }}</h1>
-          </div>
+     <h1 class="title-home">Bienvenido {{user.username }}</h1>
 {% endblock title_dash %}
 
 {% block container %}
-          <div class="row">
-               <div class="col-5 align-self-center">
-                    <div class="row" style="height:17vh"></div>
-                    <div class="row justify-content-center datos-card pt-3 pb-2">
-                         <h2> {{user.staffs.stores.store_name}} </h2>
-                         <h4 class="mb-4" name="Slogan">{{user.staffs.stores.slogan}}</h4>
-                         <label>Ubicación: <span id="ubi">{{user.staffs.stores.address}}</span></label>
-                         <label>Telefono de celular: <span id="phone">{{user.staffs.stores.phone}}</span></label>
-                         <label>Sitio web: <span id="web">{{user.staffs.stores.email}}</span></label>
-                         <label>Correo: <span id="email">{{user.staffs.stores.sitio_web}}</span></label>
+          <div class="row justify-content-center">
+               <div class="col-10 ">
+                    <div class="row">
+                         <div class="col-5 align-self-center">
+                              <div class="row" style="height:17vh"></div>
+                              <div class="row justify-content-center datos-card pt-4 pb-4">
+                                   <h2>{{user.staffs.stores.store_name}}</h2>
+                                   <h5 class="mb-4" name="Slogan">{{user.staffs.stores.slogan}}</h5>
+                                   <label>Ubicación: <span id="ubi">{{user.staffs.stores.address}}</span></label>
+                                   <label>Telefono de celular: <span id="phone">{{user.staffs.stores.phone}}</span></label>
+                                   <label>Sitio web: <span id="web">{{user.staffs.stores.email}}</span></label>
+                                   <label>Correo: <span id="email">{{user.staffs.stores.sitio_web}}</span></label>
+                              </div>
+                              <div class="row" style="height:27vh"></div>
+                         </div>
+                         <div class="col-7 align-self-center">
+                              <div class="row" style="height:7vh"></div>
+                              <div class="row justify-content-center">
+                                   <img class="" src="{% static 'img/pizza.png' %}" alt="ticket_icon" />
+                              </div>
+                              <div class="row" style="height:27vh"></div>
+                         </div>
                     </div>
-                    <div class="row" style="height:27vh"></div>
-               </div>
-               <div class="col-7 align-self-center">
-                    <div class="row" style="height:7vh"></div>
-                    <div class="row justify-content-center">
-                         <img class="" src="{% static 'img/pizza.png' %}" alt="ticket_icon" />
-                    </div>
-                    <div class="row" style="height:27vh"></div>
                </div>
           </div>
 {% endblock container %}

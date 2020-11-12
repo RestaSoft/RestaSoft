@@ -1,0 +1,30 @@
+{% load static %}
+
+<aside class="bg-dark p-4">
+    <a href={% url 'home' %}><img class="img-sidebar mt-2 mb-1" src="{% static 'img/socio_logo.png' %}" alt="socio_logo" ></a>
+    <ul class="nav flex-column mt-5 side-ul">
+        <li class="nav-item">
+            <a href="{% url 'nuevo' %}" class="nav-link text-light d-flex align-items-center">
+                <i class="material-icons mr-2">new_releases</i>Nuevo Producto
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'productos' %}" class="nav-link text-light d-flex align-items-center">
+                <i class="material-icons mr-2">local_dining</i>Productos
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'editar' %}" class="nav-link text-light d-flex align-items-center">
+                <i class="material-icons mr-2">edit</i>Editar
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-light d-flex align-items-center">
+                <i class="material-icons mr-2">assignment</i>Comandas
+            </a>
+        </li>
+    </ul>
+    <div class="row justify-content-center resta-nav">
+        <h6>by RestaSoft</h6>
+    </div>
+</aside>

@@ -1,12 +1,49 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merienda+One&display=swap');
 
 .main {
   margin-left: 250px; /* Same as the width of the sidenav */
 }
 
+.main-home {
+  margin-left: 250px; /* Same as the width of the sidenav */
+
+  background-image: url(../img/pizzeria_fondo.jpg);
+
+  /* Full height */
+  height: 100%;
+  opacity: 0.9;
+
+  color:white;
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+}
+
 h6 {
   color:#00AE8F;
+}
+
+hr {
+  height: 3px;
+  background-color: rgb(94, 94, 94);
+}
+
+.title-home {
+  color: white;
+  text-shadow: 3px 3px 3px #000000;
+  /* font-family: 'Salsa'; */
+}
+
+.datos-card{
+  background-color: rgba(0,0,0,.7);
+  box-shadow: white;
+  border-radius: 10px;
 }
 
 .resta-nav {
@@ -17,28 +54,23 @@ h6 {
 }
 
 /* The sidenav */
-.sidenav {
-  height: 100%;
+aside {
   width: 250px;
+  height: 100%;
   position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
+  top:0;
+  bottom: 0;
 }
 
-.sidenav a {
-  padding: 6px 6px 6px 32px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
+ul.nav a:hover { 
+  color: #FF7A00 !important; 
 }
 
-.sidenav a:hover {
-  color: #FF7A00;
+.resta-nav {
+  position: fixed;
+  bottom:25;
+  margin-left: 50;
+  font-family: 'Salsa', cursive;
 }
 
 .img-sidebar {
@@ -48,11 +80,6 @@ h6 {
 
   width:60;
   height:73;
-}
-
-.img-element-sidebar {
-  width:30;
-  height:20;
 }
 
 .img-tbl-prod {
@@ -93,6 +120,10 @@ h6 {
 .img-edit-prod {
   width: 300;
   height: 198;
+}
+
+.btn {
+  border-radius: 50px;
 }
 
 
