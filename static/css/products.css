@@ -9,10 +9,22 @@ h6 {
   color:#00AE8F;
 }
 
+aside {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top:0;
+  bottom: 0;
+}
+
+ul.nav a:hover { 
+  color: #FF7A00 !important; 
+}
+
 .resta-nav {
   position: fixed;
   bottom:25;
-  margin-left: 75;
+  margin-left: 50;
   font-family: 'Salsa', cursive;
 }
 
@@ -37,8 +49,13 @@ h6 {
   display: block;
 }
 
-.sidenav a:hover {
+.aside a:hover {
   color: #FF7A00;
+}
+
+.img-element-sidebar {
+  width:30;
+  height:20;
 }
 
 .img-sidebar {
@@ -48,11 +65,6 @@ h6 {
 
   width:60;
   height:73;
-}
-
-.img-element-sidebar {
-  width:30;
-  height:20;
 }
 
 .img-tbl-prod {
