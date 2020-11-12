@@ -46,6 +46,10 @@ hr {
   border-radius: 10px;
 }
 
+.data-home {
+  margin-top: -60px;
+}
+
 .resta-nav {
   position: fixed;
   bottom:25;
