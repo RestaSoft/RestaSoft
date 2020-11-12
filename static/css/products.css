@@ -109,6 +109,10 @@ ul.nav a:hover {
   height: 198;
 }
 
+.btn {
+  border-radius: 50px;
+}
+
 
 
 
