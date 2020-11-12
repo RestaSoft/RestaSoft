@@ -10,9 +10,11 @@ class Stores(models.Model):
     phone = models.IntegerField()
     email = models.EmailField()
     address = models.CharField(max_length=100)
-    city = models.CharField(max_length=50)
-    state = models.CharField(max_length=50)
-    zip_code = models.IntegerField()
+    city = models.CharField(max_length=50, null=True)
+    state = models.CharField(max_length=50, null=True)
+    zip_code = models.IntegerField(null=True)
+    slogan = models.CharField(max_length=150,null=True)
+    sitio_web = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return str(self.store_name)

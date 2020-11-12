@@ -10,33 +10,6 @@
 {% endblock title %}
 
 {% block title_dash %}
-<<<<<<< HEAD
-          <h1>Bienvenida Socio {{user.username }}</h1>
-  
-{% endblock title_dash %}
-
-{% block container %}
-
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Upload Image</title>
-  </head>
-  <body>
-    <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      <p>
-          <input id="id_image" type="file" accept="image/socio_logo.png" name="image" required>
-      </p>
-      <p>
-          Image name:
-          <input id="id_name" type="text" name="name" required>
-      </p>
-      <input type="submit" value="Submit" />
-    </form>
-  </body>
-</html>
-=======
           <div class="col-6 mt-5">
           <h1>Bienvenido {{user.username }}</h1>
           </div>
@@ -47,12 +20,12 @@
                <div class="col-5 align-self-center">
                     <div class="row" style="height:17vh"></div>
                     <div class="row justify-content-center datos-card pt-3 pb-2">
-                         <h2>Luigui´s Pizzas</h2>
-                         <h4 class="mb-4" name="Slogan">Una receta diferente para compartir</h4>
-                         <label>Ubicación: <span id="ubi">Calle 4 no. 23402 Col. Centro</span></label>
-                         <label>Telefono de celular: <span id="phone">614-2218222</span></label>
-                         <label>Sitio web: <span id="web">www.mrluiguispizzas.com</span></label>
-                         <label>Correo: <span id="email">mrluiguispizzas@gmail.com.mx</span></label>
+                         <h2> {{user.staffs.stores.store_name}} </h2>
+                         <h4 class="mb-4" name="Slogan">{{user.staffs.stores.slogan}}</h4>
+                         <label>Ubicación: <span id="ubi">{{user.staffs.stores.address}}</span></label>
+                         <label>Telefono de celular: <span id="phone">{{user.staffs.stores.phone}}</span></label>
+                         <label>Sitio web: <span id="web">{{user.staffs.stores.email}}</span></label>
+                         <label>Correo: <span id="email">{{user.staffs.stores.sitio_web}}</span></label>
                     </div>
                     <div class="row" style="height:27vh"></div>
                </div>
@@ -64,5 +37,4 @@
                     <div class="row" style="height:27vh"></div>
                </div>
           </div>
->>>>>>> 08cd37b9b17c5b67542a6dfaa937c0cb7fb4f6a7
 {% endblock container %}

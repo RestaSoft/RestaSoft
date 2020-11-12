@@ -12,6 +12,7 @@ from django.db.utils import IntegrityError
 from django.contrib.auth.models import User
 from django.db import models
 from users.models import Staffs
+from users.models import Stores
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
@@ -84,18 +85,8 @@ def view_login(request):
 @login_required
 def home_view(request):
 
-    if request.method == 'GET':
-        return render(request, 'home.html')
-    elif request.method == 'POST':
-        form = StaffsForm(request.POST, request.FILES)
-        if form.is_valid():
-            new_image = imagen(  image = form.cleaned_data["image"],
-                                name = form.cleaned_data["name"]
-                                )
-            new_image.save()
-    return HttpResponseRedirect('/home/')
+     return render (request, 'home.html')
 
-    #return render(request, 'home.html')
 
 
 def nosotros_view(request):
