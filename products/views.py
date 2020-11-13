@@ -83,7 +83,7 @@ def delete_prod(request):
 
 
 
-
+#POR SI LAS DUDAS
 
 # def editar_prod(request):
 #     form = ProductsForm()
@@ -116,24 +116,22 @@ def editar_prod(request):
     
         return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
     if request.method == 'POST':
-        id_pro= request.POST["save"]
+        #SE ASIGNAN NUEVOS VALORES
+        description= request.POST["description"]
+        precio= request.POST["price"]
         nombre= request.POST["name"]
+        id_pro= request.POST["save"]
+        form = ProductsForm(request.POST )
         modify =Products.objects.get(id=id_pro)
-
-
+        modify.list_price=precio
         modify.product_name=nombre
+        #SI CONTIENE IMAGEN SE MODIFICARA.
+        if request.FILES:
+            imagen=request.FILES["img"]
+            modify.image_prod=imagen
+        #SE GUARDA EL ARTICULO
         modify.save()
         return productos(request)
-
-        print(modify)
-        #producto_a_modificar.product_name = editar
-
-        
-        # producto_a_modificar.product_name = editar.product_name
-        # producto_a_modificar.categoriesproduct=editar.categoriesproduct
-        # producto_a_modificar.list_price=editar.list_price
-        # producto_a_modificar.suppliers=editar.suppliers
-        # producto_a_modificar.image_prod=producto_a_modificar.image_prod
 
     return render(request, 'products/edit_products.html')
     
