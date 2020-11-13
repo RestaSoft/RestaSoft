@@ -73,9 +73,11 @@
                         <td>{{producto.categoriesproduct}}</td>
                         <td>${{producto.list_price}}.00</td>
                         <td><img class="img-tbl-prod mt-2 mb-4" src="{{producto.image_prod.url }}" alt="{{ user.get_full_name }}"/></td>
+
+
                         <form class="form-inline" action="{% url 'editar_prod' %}" method="GET">
                             {% csrf_token %}
-                            <td><button type="submit" class="btn btn-sm" name="edit" value="{{producto.product_name}}"><img
+                            <td><button type="submit" class="btn btn-sm" name="edit" value="{{producto}}"><img
                                         class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}"
                                         alt="edit-icon" /></button></td>
                         </form>
@@ -83,8 +85,7 @@
                         
                         <form class="form-inline" action="{% url 'delete_prod' %}" method="GET">
                         {% csrf_token %}
-                        <!-- Linea anterior a la modificacion de editar<td><a href=""><img class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}" alt="edit-icon"/></a></td>  -->
-                        <td><button type="submit" name="delete" value="{{producto.id}}" ><img 
+                        <td><button type="submit" class="btn btn-sm" name="delete" value="{{producto.id}}" ><img 
                                     class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
                                     alt="delete-icon" /></a></td>
                         </form>
