@@ -47,7 +47,6 @@ def nuevo(request):
 
         if form.is_valid():
             try:
-                
                 form.save()
                 return redirect("productos")
             except IntegrityError:
@@ -56,7 +55,7 @@ def nuevo(request):
 
 
     context = {'form':form}
-    #print(context)
+    print
 
     return render (request, 'products/newproduct.html', context)
 
