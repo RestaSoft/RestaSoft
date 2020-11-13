@@ -98,6 +98,7 @@ class Products(models.Model):
     list_price = models.IntegerField()
     suppliers = models.ForeignKey(Suppliers, on_delete=models.CASCADE)
     image_prod = CloudinaryField('image')
+
     def __str__(self):
         return str(self.product_name)
 

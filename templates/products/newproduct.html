@@ -13,10 +13,11 @@
 {% endblock title_dash %}
 
 {% block container %}
-         
+
     <div class="col-md-9 order-md-1">
-      <form class="needs-validation" method="POST">
+      <form  method="POST" action="{% url 'nuevo' %} " enctype="multipart/form-data">
         {% csrf_token %}
+        
         
         <div class="row">
           <div class="col-md-3 mb-3 ">
@@ -44,19 +45,21 @@
 
         <div class="row">
           <div class="col-md-3 mb-3">
-              <label type="number" for="cPrecio">Precio</label>
+              <label for="cPrecio">Precio</label>
                 {{form.list_price}}
             </div>
           </div>
         </div>
+
+        {% load cloudinary %}
         
         <div class="mb-3">
           <div class="col-md-3 mb-3">
-            <label for="Menu">Imagen</label>
-              <input type="file" class="form-control" accept=".pdf,.jpg,.png" id="menu" placeholder="Examinar">
+            <label for="Menu" id ="imagen_prod">Imagen</label>
+            {{form.image_prod}}
+              
           </div>
         </div>
-        
         <div class="mb-3">
           <div class="col-md-3 mb-3">
             <button class="btn btn-primary btn-lg " type="submit" name="submit">Añadir</button>
