@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from users.models import Products
+from users.models import Products,Stores,Staffs
 from .forms import ProductsForm
 # from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationFor
@@ -27,6 +27,8 @@ def logout_view(request):
 @login_required
 def productos(request):
     #redirect to templates in templates/products
+    
+    
     prod = Products.objects.all()
     
     return render (request, 'products/products.html',{"prod":prod})
@@ -121,7 +123,6 @@ def editar_prod(request):
         precio= request.POST["price"]
         nombre= request.POST["name"]
         id_pro= request.POST["save"]
-        form = ProductsForm(request.POST )
         modify =Products.objects.get(id=id_pro)
         modify.list_price=precio
         modify.product_name=nombre
