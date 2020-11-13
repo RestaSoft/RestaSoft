@@ -2,10 +2,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merienda+One&display=swap');
 
 
+
+html, body {
+  height: 100%;
+}
+
+/*
+* Base structure
+*/
+
+.base {
+  background-color: #333;
+  background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(255,255,255,0)), url(../img/fondo-login.jpg);
+  
+  /* Full height */
+  height: 100%;
+  opacity: 0.9;
+  color: #fff;  
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  
+}
+
 a,
 a:focus,
 a:hover {
   color: #fff;
+}
+
+h1 {
+  color: orange;
+  /* font-family: 'Lobster', cursive; */
+  font-family: 'Salsa';
+}
+
+h3 {
+  text-align: center;
 }
 
 /* Custom default button */
@@ -18,55 +54,12 @@ a:hover {
   border: .05rem solid #fff;
 }
 
-
-/*
- * Base structure
- */
-
-html,
-body {
-  height: 100%;
-  background-color: #333;
-  background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(255,255,255,0)), url(../img/fondo-login.jpg);
-
-  /* Full height */
-  height: 100%;
-  opacity: 0.9;
-
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-
-}
-
-
-body {
-  display: -ms-flexbox;
-  display: flex;
-  color: #fff;
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-}
-
 .cover-container {
   max-width: 62em;
 }
-
-h1 {
-    color: orange;
-    /* font-family: 'Lobster', cursive; */
-    font-family: 'Salsa';
-}
-
-h3 {
-  text-align: center;
-}
 /*
- * Header
- */
+* Header
+*/
 .masthead {
   margin-bottom: 2rem;
 }

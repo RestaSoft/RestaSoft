@@ -13,34 +13,41 @@
         <link rel="icon" type="image/png" href="{% static 'img/favicon2.png' %}"/>
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Salsa" />
     </head>
-  <body>
-      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-            <header class="masthead mb-auto">
-            <div class="inner">
-                <h1 class="masthead-brand">RestaSoft</h1>
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="#">Nosotros</a>
-                    <a class="nav-link" href="#">Contacto</a>
-                </nav>
-            </div>
-            </header>
 
-            <main role="main" class="inner cover col-4 align-self-center">
-                <div class="container-fluid">
-                    <div class="mt-1 pt-1">
-                        {% block container %}
-                        {% endblock%}
+    <body>
+
+        <div class="base" >
+
+            <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                <header class="masthead mb-auto">
+                    <div class="inner">
+                        <h1 class="masthead-brand">RestaSoft</h1>
+                        <nav class="nav nav-masthead justify-content-center">
+                            <a class="nav-link active" href="#">Nosotros</a>
+                            <a class="nav-link" href="#">Contacto</a>
+                        </nav>
                     </div>
-                </div>
-            </main>
+                </header>
 
-            <footer class="mastfoot mt-auto">
-                <div class="text-center">
-                    <p>
-                        &copy; Restasoft | 2020
-                    </p>
-                </div>
-            </footer>
+                <main role="main" class="inner cover col-4 align-self-center">
+                    <div class="container-fluid">
+                        <div class="mt-1 pt-1">
+                            {% block container %}
+                            {% endblock%}
+                        </div>
+                    </div>
+                </main>
+
+                <footer class="mastfoot mt-5">
+                    <div class="text-center">
+                        <p>
+                            &copy; Restasoft | 2020
+                        </p>
+                    </div>
+                </footer>
+            </div>
+
         </div>
-  </body>
+
+    </body>
 </html>
