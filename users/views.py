@@ -88,10 +88,10 @@ def home_view(request):
 
 
 def nosotros_view(request):
-    return render(request, 'nosotros.html')
+    return render(request, 'company/about_us.html')
 
 def contacto_view(request):    
-    return render(request, 'contacto.html')
+    return render(request, 'company/contact.html')
 
 def suscription_view(request):    
     return render(request, 'company/suscription.html')
