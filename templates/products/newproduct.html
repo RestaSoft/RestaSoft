@@ -14,7 +14,7 @@
 
 {% block container %}
 
-    <div class="col-md-9 order-md-1">
+    <div class="col-md-8 order-md-1">
       <form  method="POST" action="{% url 'nuevo' %} " enctype="multipart/form-data">
         {% csrf_token %}
         
@@ -50,7 +50,15 @@
             </div>
           </div>
         </div>
-
+        {{form.categoriesproduct.category_description.as_p}}
+        <div class="mb-3">
+          <div class="col-md-3 mb-3">
+            <label for="Menu" id ="imagen_prod" >Sucursal:</label>
+            {{form.stores}}
+              
+          </div>
+        </div>
+               
         {% load cloudinary %}
         
         <div class="mb-3">
@@ -67,4 +75,5 @@
         </div>
       </form>
     </div>
+    
 {% endblock container %}

@@ -7,7 +7,6 @@ from cloudinary.models import CloudinaryField
 
 class Stores(models.Model):
 
-
     store_name = models.CharField(max_length=100)
     phone = models.IntegerField()
     email = models.EmailField()
@@ -49,7 +48,6 @@ class Permission(models.Model):
 class Staffs(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-
     phone = models.IntegerField(blank=True, null=True)
     stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
     permission = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
@@ -98,6 +96,7 @@ class Products(models.Model):
     list_price = models.IntegerField()
     suppliers = models.ForeignKey(Suppliers, on_delete=models.CASCADE)
     image_prod = CloudinaryField('image')
+    stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return str(self.product_name)
