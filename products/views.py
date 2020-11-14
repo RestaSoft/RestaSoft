@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from users.models import Products
+from users.models import Products,Stores,Staffs
 from .forms import ProductsForm
 # from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationFor
@@ -27,6 +27,8 @@ def logout_view(request):
 @login_required
 def productos(request):
     #redirect to templates in templates/products
+    
+    
     prod = Products.objects.all()
     
     return render (request, 'products/products.html',{"prod":prod})
@@ -47,7 +49,6 @@ def nuevo(request):
 
         if form.is_valid():
             try:
-                
                 form.save()
                 return redirect("productos")
             except IntegrityError:
@@ -56,7 +57,7 @@ def nuevo(request):
 
 
     context = {'form':form}
-    #print(context)
+    print
 
     return render (request, 'products/newproduct.html', context)
 
@@ -80,19 +81,81 @@ def delete_prod(request):
     
     return render(request,'products/delete.html')
 
+
+
+
+
+#POR SI LAS DUDAS
+
+# def editar_prod(request):
+#     form = ProductsForm()
+#     if request.method == 'POST':
+#         #print(request.POST)
+#         form = ProductsForm(request.POST, request.FILES)
+
+#         if form.is_valid():
+#             try:
+#                 form.save()
+#                 return redirect("productos")
+#             except IntegrityError:
+                
+#                 return render(request, 'products/edit_products.html', {'error': 'Ya hay articulos iguales'})
+
+
+#     context = {'form':form}
+
+#     return render (request, 'products/edit_products.html', context)
+
+
+
 def editar_prod(request):
-    busqueda= request.GET["edit"]
-    #redirect to templates in templates/products
-    edit = Products.objects.filter(product_name__icontains=busqueda)
-    producto_a_modificar=edit.first()
     
-    return render (request, 'products/edit_products.html',
-    {"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
+    if request.method=='GET':
+        busqueda= request.GET["edit"]
+         #redirect to templates in templates/products
+        edit = Products.objects.filter(product_name__icontains=busqueda)
+        producto_a_modificar=edit.first()
+    
+        return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
+    if request.method == 'POST':
+        #SE ASIGNAN NUEVOS VALORES
+        description= request.POST["description"]
+        precio= request.POST["price"]
+        nombre= request.POST["name"]
+        id_pro= request.POST["save"]
+        modify =Products.objects.get(id=id_pro)
+        modify.list_price=precio
+        modify.product_name=nombre
+        #SI CONTIENE IMAGEN SE MODIFICARA.
+        if request.FILES:
+            imagen=request.FILES["img"]
+            modify.image_prod=imagen
+        #SE GUARDA EL ARTICULO
+        modify.save()
+        return productos(request)
+
+    return render(request, 'products/edit_products.html')
+    
+        
 
 
 
 def editar(request):
-
     
     return render (request, 'products/edit_products.html')
+#     form = ProductsForm()
+#     if request.method == 'POST':
+#         #print(request.POST)
+#         form = ProductsForm(request.POST, request.FILES)
+
+#         if form.is_valid():
+#             try:
+#                 form.save()
+#                 return redirect("productos")
+#             except IntegrityError:
+                
+#                 return render(request, 'products/newproduct.html', {'error': 'Producto en existencia'})
+#     context = {'form':form}
+
+     
 
