@@ -10,7 +10,7 @@
         <form class="form-signin" action="{% url 'newuser' %}" method="POST">
          {% csrf_token %}
             <img
-               class="rounded mx-auto d-block"
+               class="rounded mb-3 mx-auto d-block"
                 {% load static %}
                 src="{% static 'img/logo.png' %}"
                 alt=""

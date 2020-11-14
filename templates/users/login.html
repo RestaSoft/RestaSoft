@@ -10,10 +10,10 @@
 {% endblock title %}
 
 {% block container %}
-        <form class="form-signin" method="POST" action="{% url "login" %}">
+        <form class="form-signin " method="POST" action="{% url "login" %}">
             {% csrf_token %}
             <img
-               class="rounded mx-auto d-block"                
+               class="rounded mb-3 mx-auto d-block"                
                 src="{% static 'img/logo.png' %}"
                 alt=""
                 width="72"
@@ -52,7 +52,7 @@
                 Acceder
             </button>
             <div class= "d-flex flex-column mt-3">
-            <p class="m-auto">Crea una cuenta.<a href={% url 'newuser' %}>Regístrate</a> ahora</p>
+            <p class="m-auto">Crea una cuenta. <a href={% url 'newuser' %}>Regístrate</a> ahora</p>
         </div>
         </form>
             {% if error %}
