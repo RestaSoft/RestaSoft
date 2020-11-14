@@ -6,6 +6,7 @@
 html, body {
   height: 100%;
   background-color: rgb(22, 22, 22);
+  color:white;
 }
 
 /*
@@ -67,6 +68,11 @@ html, body {
   text-shadow: 3px 3px 3px #000000;
 }
 
+.suscrip {
+  border-left: 5px dotted #FF7A00;
+  padding-left: 15px;
+}
+
 section {
   padding: 10rem 0;
 }
@@ -85,6 +91,10 @@ header h1 {
 }
 
 header h1 span {
+  color:#00AE8F;
+}
+
+h4 {
   color:#00AE8F;
 }
 
