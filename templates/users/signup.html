@@ -10,7 +10,7 @@
         <form class="form-signin" action="{% url 'newuser' %}" method="POST">
          {% csrf_token %}
             <img
-               class="rounded mx-auto d-block"
+               class="rounded mb-3 mx-auto d-block"
                 {% load static %}
                 src="{% static 'img/logo.png' %}"
                 alt=""
@@ -22,26 +22,28 @@
                 <p class="alert alert-danger">{{ error }}</p>
              {% endif %}
             <p>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Nombre" name="first_name" required="true" />
+            <div class="row">
+                <div class=" col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Nombre" name="first_name" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Usuario" name="username" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Apellido" name="last_name" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="password" placeholder="Contraseña" name="passwd" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="email" placeholder="Correo electrónico" name="email" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="password" placeholder="Confirmar contraseña" name="passwd_confirmation" required="true" />
+                </div>
+                <div class="col-lg-12 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Nombre del Restaurant" name="Restaurant" required="true" />
+                </div>
             </div>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Apellido" name="last_name" required="true" />
-            </div>
-             <div class="form-group">
-                <input class="form-control" type="email" placeholder="Correo electrónico" name="email" required="true" />
-            </div>
-             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Restaurant" name="Restaurant" required="true" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Usuario" name="username" required="true" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="password" placeholder="Contraseña" name="passwd" required="true" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="password" placeholder="Confirmar contraseña" name="passwd_confirmation" required="true" />
-            </div>
-        <button class="btn btn-primary btn-block mt-5" type="submit">Registrarse</button>
+            <button class="btn btn-primary btn-block mt-3" type="submit">Registrarse</button>
 {% endblock container %}
