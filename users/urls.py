@@ -10,6 +10,7 @@ urlpatterns = [
     path('logout', users_views.logout_view, name="logout"),
     path('nosotros', users_views.nosotros_view, name="nosotros"),
     path('contacto', users_views.contacto_view, name="contacto"),
+    path('suscripcion', users_views.suscription_view, name="suscription"),
 
     ##path('password_change/',
     ##     auth_views.PasswordChangeView.as_view(template_name='registration/password_change.html'),
