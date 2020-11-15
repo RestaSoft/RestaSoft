@@ -73,6 +73,14 @@ html, body {
   padding-left: 15px;
 }
 
+.green {
+  color:#00AE8F
+}
+
+.orange {
+  color: #FF7A00;
+}
+
 section {
   padding: 10rem 0;
 }
