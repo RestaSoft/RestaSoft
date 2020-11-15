@@ -17,22 +17,23 @@
    <div class="col-md-8 order-md-5">
       <form  method="POST" action="{% url 'nuevo' %} " enctype="multipart/form-data">
         {% csrf_token %}
-         <div class="col-lg-8 mt-2 ml-5">
-            <div class="col-md-6 mb-3 ">
+         <div class="col-lg-12 mt-2 ml-5">
+            <div class="col-md-8 mb-3 ">
               <label for="Name">Nombre del platillo</label>
               <input type="text" class="form-control" id="platillo" placeholder="Platillo" value="" required>
               <!-- {{form.product_name}}-->
             </div>
-            <div class="col-md-6 mb-3">
-              <label for="Proveedor">Proveedor:</label>
-              <input type="text" class="form-control" id="suppliers" placeholder="Proveedor" value="" required>
-              <!--  {{form.suppliers}} -->
-            </div>
 
-            <div class="col-md-5 mb-3">
+            <div class="col-md-6 mb-3">
               <label for="category">Categoria</label>
               <input type="text" class="form-control" id="categoriesproduct" placeholder="Categoria" value="" required>
               <!-- {{form.categoriesproduct}}-->
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="Proveedor">Nombre del Proveedor:</label>
+              <input type="text" class="form-control" id="suppliers" placeholder="Proveedor" value="" required>
+              <!--  {{form.suppliers}} -->
             </div>
 
             <div class="col-md-5 mb-3">
@@ -50,16 +51,18 @@
             {% load cloudinary %}
             <div class="mb-3">
               <div class="col-md-3 mb-3">
-              <label for="Menu" id ="imagen_prod">Imagen</label>
-              {{form.image_prod}}
+              <!-- {{form.image_prod}} -->
+                <span class="btn btn-dark btn-sm btn-file">Agregar Imagen
+                  <input type="file" name="img">
+                </span>
+              </div>
             </div>
-        </div>
-        <div class="mb-3">
-          <div class="col-md-3 mb-3">
-            <button class="btn btn-primary btn-lg " type="submit" name="submit">Añadir</button>
-          </div>
+            <div class="mb-3">
+              <div class="col-md-3 mb-5">
+                <button class="btn btn-primary btn-sm mb-5" type="submit" name="submit">Añadir</button>
+              </div>
+            </div>
         </div>
       </form>
     </div>
-    
 {% endblock container %}
