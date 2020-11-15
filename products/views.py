@@ -27,8 +27,8 @@ def logout_view(request):
 @login_required
 def productos(request):
     #redirect to templates in templates/products
-    
-    
+
+
     prod = Products.objects.all()
     
     return render (request, 'products/products.html',{"prod":prod})
@@ -143,19 +143,6 @@ def editar_prod(request):
 def editar(request):
     
     return render (request, 'products/edit_products.html')
-#     form = ProductsForm()
-#     if request.method == 'POST':
-#         #print(request.POST)
-#         form = ProductsForm(request.POST, request.FILES)
-
-#         if form.is_valid():
-#             try:
-#                 form.save()
-#                 return redirect("productos")
-#             except IntegrityError:
-                
-#                 return render(request, 'products/newproduct.html', {'error': 'Producto en existencia'})
-#     context = {'form':form}
 
      
 
