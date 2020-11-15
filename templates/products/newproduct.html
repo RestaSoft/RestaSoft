@@ -14,66 +14,55 @@
 
 {% block container %}
 
-    <div class="col-md-8 order-md-1">
+   <div class="col-md-8 order-md-5">
       <form  method="POST" action="{% url 'nuevo' %} " enctype="multipart/form-data">
         {% csrf_token %}
-        
-        
-        <div class="row">
-          <div class="col-md-3 mb-3 ">
-            <label for="firstName">Nombre del platillo</label>
-            {{form.product_name}}
-            <div class="invalid-feedback">
-              Primero coloca el nombre del platillo
+         <div class="mt-2">
+            <div class="col-md-6 mb-3 ">
+              <label for="Name">Nombre del platillo</label>
+              <input type="text" class="form-control" id="platillo" placeholder="Platillo" value="" required>
+              <!-- {{form.product_name}}-->
             </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <label for="Proveedor">Proveedor:</label>
-            {{form.suppliers}}
-          </div>
-        </div>
+            <div class="col-md-6 mb-3">
+              <label for="category">categoría</label>
+              <input type="text" class="form-control" id="categoriesproduct" placeholder="categoría" value="" required>
+              <!-- {{form.categoriesproduct}}-->
+            </div>
 
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <label for="category">Categoria</label>
-            {{form.categoriesproduct}}
-          </div>
-        </div>
+            <div class="col-md-6 mb-3">
+              <label for="Proveedor">Nombre del Proveedor:</label>
+              <input type="text" class="form-control" id="suppliers" placeholder="Proveedor" value="" required>
+              <!--  {{form.suppliers}} -->
+            </div>
 
-        <div class="row">
-          <div class="col-md-3 mb-3">
+            <div class="col-md-5 mb-3">
               <label for="cPrecio">Precio</label>
-                {{form.list_price}}
+              <input type="number" class="form-control" id="categoriesproduct" placeholder="Precio" value="" required>
+              <!-- {{form.list_price}} -->
             </div>
-          </div>
-        </div>
-        {{form.categoriesproduct.category_description.as_p}}
-        <div class="mb-3">
-          <div class="col-md-3 mb-3">
-            <label for="Menu" id ="imagen_prod" >Sucursal:</label>
-            {{form.stores}}
-              
-          </div>
-        </div>
-               
-        {% load cloudinary %}
-        
-        <div class="mb-3">
-          <div class="col-md-3 mb-3">
-            <label for="Menu" id ="imagen_prod">Imagen</label>
-            {{form.image_prod}}
-              
-          </div>
-        </div>
-        <div class="mb-3">
-          <div class="col-md-3 mb-3">
-            <button class="btn btn-primary btn-lg " type="submit" name="submit">Añadir</button>
-          </div>
+
+            <!-- {{form.categoriesproduct.category_description.as_p}}-->
+            <div class="col-md-5 mb-3">
+              <label for="Menu" id ="imagen_prod" >Sucursal:</label>
+              <input type="text" class="form-control" id="stores" placeholder="Sucursal" value="" required>
+              <!-- {{form.stores}} -->
+            </div>
+
+            {% load cloudinary %}
+              <div class="col-md-3 mb-3">
+              <!-- {{form.image_prod}} -->
+              <label for="cPrecio">Subir logotipo:</label>
+                <span class="btn btn-dark btn-sm btn-file">Imagen
+                  <input type="file" name="img">
+                </span>
+              </div>
         </div>
       </form>
+      <div class="mb-3">
+              <div class="col-md-3 mb-5">
+                <button class="btn btn-primary btn-sm mb-5" type="submit" name="submit">Añadir producto</button>
+              </div>
+            </div>
     </div>
-    
 {% endblock container %}

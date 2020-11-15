@@ -10,10 +10,12 @@
 {% endblock title %}
 
 {% block container %}
-        <form class="form-signin" method="POST" action="{% url "login" %}">
+
+    <div class="col-6">
+        <form class="form-signin " method="POST" action="{% url "login" %}">
             {% csrf_token %}
             <img
-               class="rounded mx-auto d-block"                
+               class="rounded mb-3 mx-auto d-block"                
                 src="{% static 'img/logo.png' %}"
                 alt=""
                 width="72"
@@ -31,7 +33,7 @@
                     type="User"
                     id="inputEmail"
                     class="form-control"
-                    placeholder="usuario"
+                    placeholder="Usuario"
                     name="username"
                     required
                     autofocus
@@ -52,7 +54,7 @@
                 Acceder
             </button>
             <div class= "d-flex flex-column mt-3">
-            <p class="m-auto">Crea una cuenta.<a href={% url 'newuser' %}>Regístrate</a> ahora</p>
+            <p class="m-auto">Crea una cuenta. <a href={% url 'newuser' %}>Regístrate</a> ahora</p>
         </div>
         </form>
             {% if error %}
@@ -60,6 +62,8 @@
             <p class="m-auto"> Forgot your password? Click
             <a href="{% url 'password_reset'%}">here.</a> </p>
         </div>
+
+    </div>
     {% endif %}
 {% endblock container %}
 
