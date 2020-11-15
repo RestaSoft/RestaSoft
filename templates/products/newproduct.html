@@ -14,54 +14,39 @@
 
 {% block container %}
 
-    <div class="col-md-8 order-md-1">
+    <div class="col-md-8 order-md-5">
       <form  method="POST" action="{% url 'nuevo' %} " enctype="multipart/form-data">
         {% csrf_token %}
-        
-        
-        <div class="row">
-          <div class="col-md-3 mb-3 ">
-            <label for="firstName">Nombre del platillo</label>
+          <div class="col-md-5 mb-3 ">
+            <label for="Name">Nombre del platillo</label>
             {{form.product_name}}
-            <div class="invalid-feedback">
-              Primero coloca el nombre del platillo
-            </div>
           </div>
-        </div>
 
-        <div class="row">
           <div class="col-md-3 mb-3">
             <label for="Proveedor">Proveedor:</label>
             {{form.suppliers}}
           </div>
-        </div>
 
-        <div class="row">
           <div class="col-md-3 mb-3">
             <label for="category">Categoria</label>
             {{form.categoriesproduct}}
           </div>
-        </div>
 
-        <div class="row">
           <div class="col-md-3 mb-3">
               <label for="cPrecio">Precio</label>
                 {{form.list_price}}
-            </div>
           </div>
-        </div>
-        {{form.categoriesproduct.category_description.as_p}}
-        <div class="mb-3">
+        
+          {{form.categoriesproduct.category_description.as_p}}
           <div class="col-md-3 mb-3">
             <label for="Menu" id ="imagen_prod" >Sucursal:</label>
             {{form.stores}}
-              
           </div>
-        </div>
+
                
-        {% load cloudinary %}
+          {% load cloudinary %}
         
-        <div class="mb-3">
+          <div class="mb-3">
           <div class="col-md-3 mb-3">
             <label for="Menu" id ="imagen_prod">Imagen</label>
             {{form.image_prod}}
@@ -75,5 +60,6 @@
         </div>
       </form>
     </div>
+
     
 {% endblock container %}
