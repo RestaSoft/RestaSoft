@@ -7,7 +7,6 @@ from cloudinary.models import CloudinaryField
 
 class Stores(models.Model):
 
-
     store_name = models.CharField(max_length=100)
     phone = models.IntegerField()
     email = models.EmailField()
@@ -18,6 +17,7 @@ class Stores(models.Model):
     slogan = models.CharField(max_length=150,null=True)
     sitio_web = models.CharField(max_length=100, null=True)
     image_stor = CloudinaryField('image')
+
 
     def __str__(self):
         return str(self.store_name)
@@ -46,21 +46,6 @@ class Permission(models.Model):
 
 
 
-class Staffs(models.Model):
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    phone = models.IntegerField(blank=True, null=True)
-    stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
-    permission = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
-    active = models.BooleanField(('active'), default=True, null=True)
-    imagen_staf = CloudinaryField('image')
-
-    def __str__(self):
-        return str(self.user.username)
-    
-    class Meta:
-        verbose_name_plural = 'Staffs'
  
 
 
@@ -70,6 +55,9 @@ class CategoriesProduct(models.Model):
 
     def __str__(self):
         return str(self.category_name)
+
+    class Meta:
+        verbose_name_plural = 'Categories Products'
 
 
 
@@ -98,6 +86,8 @@ class Products(models.Model):
     list_price = models.IntegerField()
     suppliers = models.ForeignKey(Suppliers, on_delete=models.CASCADE)
     image_prod = CloudinaryField('image')
+    
+
     def __str__(self):
         return str(self.product_name)
 
@@ -105,7 +95,25 @@ class Products(models.Model):
         verbose_name_plural = 'Products'
 
 
+class Staffs(models.Model):
+    
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
+    phone = models.IntegerField(blank=True, null=True)
+    stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
+    permission = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
+    active = models.BooleanField(('active'), default=True, null=True)
+    imagen_staf = CloudinaryField('image')
+    products = models.ForeignKey(Products, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.user.username)
+    
+    class Meta:
+        verbose_name_plural = 'Staffs'
+
+
+        
 
 class Orders(models.Model):
     staffs = models.ForeignKey(Staffs, on_delete=models.CASCADE)

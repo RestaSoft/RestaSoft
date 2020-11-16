@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from users.models import Products
+from users.models import Stocks
+from users.models import Staffs
 from .forms import ProductsForm
 # from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationFor
@@ -26,6 +28,7 @@ def logout_view(request):
     return redirect('login.html')
 
 
+@login_required
 def productos(request):
     # redirect to templates in templates/products
     prod = Products.objects.all()
@@ -41,26 +44,26 @@ def buscar_prod(request):
     return render(request, 'products/products.html', {"prod": prod, "query": busqueda})
 
 
-@login_required
-def nuevo_prod(request):
-
+def nuevo(request):
+    form = ProductsForm()
     if request.method == 'POST':
-        product_name=request.POST['product_name']
-        list_price=request.POST['list_price']
-        category_name=request.POST['category_name']
-        first_name=request.POST['first_name']
-        image_prod=request.POST['image_prod']
+        #print(request.POST)
+        form = ProductsForm(request.POST, request.FILES)
 
-        product = Products.objects.create(product_name=product_name,list_price=list_price, categoriesproduct=category_name, suppliers=first_name, image_prod=image_prod)
-        product.product_name = request.POST['product_name']
-        product.list_price = request.POST['list_price'] 
-        product.categoriesproduct.category_name = request.POST['category_name']
-        product.suppliers.first_name = request.POST['first_name']
-        product.image_prod = request.POST ['image_prod']   
-        product.save()
+        if form.is_valid():
+            try:
+                
+                form.save()
+                return redirect("productos")
+            except IntegrityError:
+                
+                return render(request, 'products/newproduct.html', {'error': 'Username already taken'})
 
-    return render(request, 'products/newproduct.html')
 
+    context = {'form':form}
+    #print(context)
+
+    return render (request, 'products/newproduct.html', context)
 
 
 def delete_prod(request):

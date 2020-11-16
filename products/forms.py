@@ -6,7 +6,7 @@ class ProductsForm(ModelForm):
     class Meta:
         model = Products
         fields = '__all__'
-        imagen = forms.ImageField()
+
 
 class CategoriesProductForm(ModelForm):
     class Meta:

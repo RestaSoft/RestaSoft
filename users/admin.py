@@ -5,6 +5,7 @@ from .models import Suppliers
 from .models import CategoriesProduct
 from .models import Stores
 from .models import Permission
+from .models import Stocks
 
 # Register your models here.
 class StaffsAdmin(admin.ModelAdmin): #Muesta las variables que deseemos que se vean en el modelo administrativo
@@ -40,3 +41,5 @@ class StoresAdmin(admin.ModelAdmin):
 admin.site.register(Stores, StoresAdmin)
 
 admin.site.register(Permission)
+
+admin.site.register(Stocks)
