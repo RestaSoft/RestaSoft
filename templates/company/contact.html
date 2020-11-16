@@ -20,4 +20,65 @@
             </div>
         </section>
 
+        <div class="container col-8 pt-5">
+            <section class="mb-4">
+
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contactanos</h2>
+        <p class="text-center w-responsive mx-auto mb-5">Tienes alguna pregunta o duda? No dude en contactarnos directamente.
+        Nuestro equipo se pondrá en contacto contigo en cuestión de horas para ayudarte.</p>
+        <div class="row">
+
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form class="justify-content-center" id="contact-form" name="contact-form" method="POST">
+
+                
+                <div class="row">
+
+                    <div class="col-md-5">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Tu nombre</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-5">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Tu correo</label>
+                        </div>
+                    </div>
+                
+
+                </div>
+              
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Asunto</label>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="row">
+
+                    <div class="col-md-10">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Mensaje</label>
+                        </div>
+
+                    </div>
+                </div>
+                
+
+            </form>
+            <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Enviar</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        </section>
+        </div>
 {% endblock container %}
