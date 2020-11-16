@@ -63,6 +63,13 @@ git
                 <div class="col-lg-12 col-md-7 mb-3">
                     <input class="form-control" type="text" placeholder="Sitio Web" name="sitio_web" required="true" />
                 </div>
+                 {% load cloudinary %}
+        <div class="col-md-3 mb-3">
+          <!-- {{form.image_prod}} -->
+          <label for="cPrecio">Subir logotipo:</label>
+          <span class="btn btn-dark btn-sm btn-file">Imagen<input type="file" name="image_stor"></span>
+        </div>
+      </div>
             </div>
             <button class="btn btn-primary btn-block mt-1" type="submit">Registrarse</button>
 {% endblock container %}

@@ -63,6 +63,7 @@ def newuser(request):
         store.zip_code = request.POST ['zip']
         store.slogan = request.POST['slogan']
         store.sitio_web = request.POST ['sitio_web']
+        store.image_stor = request.POST ['image_stor']
         store.save()
 
     return render(request, 'users/signup.html')

@@ -5,6 +5,26 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
+class Stores(models.Model):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    store_name = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    city = models.CharField(max_length=50, null=True)
+    state = models.CharField(max_length=50, null=True)
+    zip_code = models.IntegerField(null=True)
+    slogan = models.CharField(max_length=150,null=True)
+    sitio_web = models.CharField(max_length=100, null=True)
+    image_stor = CloudinaryField('image')
+
+
+    def __str__(self):
+        return str(self.store_name)
+
+    class Meta:
+        verbose_name_plural = 'Stores'
+
 
 class Permission(models.Model):
 
@@ -30,7 +50,7 @@ class Staffs(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     phone = models.IntegerField(blank=True)
-    #stores = models.ForeignKey(Stores, on_delete=models.CASCADE)
+    stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
     permission = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
     active = models.BooleanField(('active'), default=True, null=True)
     imagen_staf = CloudinaryField('image')
@@ -41,26 +61,6 @@ class Staffs(models.Model):
     class Meta:
         verbose_name_plural = 'Staffs'
 
-
-class Stores(models.Model):
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    store_name = models.CharField(max_length=100)
-    address = models.CharField(max_length=100)
-    city = models.CharField(max_length=50, null=True)
-    state = models.CharField(max_length=50, null=True)
-    zip_code = models.IntegerField(null=True)
-    slogan = models.CharField(max_length=150,null=True)
-    sitio_web = models.CharField(max_length=100, null=True)
-    image_stor = CloudinaryField('image')
-
-
-    def __str__(self):
-        return str(self.store_name)
-
-    class Meta:
-        verbose_name_plural = 'Stores'
 
 
 class CategoriesProduct(models.Model):
