@@ -28,10 +28,15 @@ def logout_view(request):
 def productos(request):
     #redirect to templates in templates/products
 
-
+    usuario= request.POST["usuario"]
+    if usuario:
+        print(usuario)
+        prod = Products.objects.filter(stores_id=usuario)
+        return render (request, 'products/products.html',{"prod":prod})
     prod = Products.objects.all()
-    
     return render (request, 'products/products.html',{"prod":prod})
+    
+    
 
 def buscar_prod(request):
     
