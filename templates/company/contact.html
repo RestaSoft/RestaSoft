@@ -13,72 +13,68 @@
 
 {% block container %}
 
-        <section class="hero-image3 shero">
+    <section class="hero-image3 shero">
             <div class="container hero-text">
                 <h1 style="font-size:50px">Queremos saber de tí</h1>
                 <h5>Nos interesa conocerte</h5>
             </div>
-        </section>
+    </section>
 
-        <div class="container col-8 pt-5">
-            <section class="mb-4">
-
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Contactanos</h2>
-        <p class="text-center w-responsive mx-auto mb-5">Tienes alguna pregunta o duda? No dude en contactarnos directamente.
-        Nuestro equipo se pondrá en contacto contigo en cuestión de horas para ayudarte.</p>
-        <div class="row">
-
-        <div class="col-md-9 mb-md-0 mb-5">
-            <form class="justify-content-center" id="contact-form" name="contact-form" method="POST">
-
-                
-                <div class="row">
-
-                    <div class="col-md-5">
-                        <div class="md-form mb-0">
-                            <input type="text" id="name" name="name" class="form-control">
-                            <label for="name" class="">Tu nombre</label>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-5">
-                        <div class="md-form mb-0">
-                            <input type="text" id="email" name="email" class="form-control">
-                            <label for="email" class="">Tu correo</label>
-                        </div>
-                    </div>
-                
-
-                </div>
-              
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="md-form mb-0">
-                            <input type="text" id="subject" name="subject" class="form-control">
-                            <label for="subject" class="">Asunto</label>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="row">
-
-                    <div class="col-md-10">
-
-                        <div class="md-form">
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                            <label for="message">Mensaje</label>
-                        </div>
-
-                    </div>
-                </div>
-                
-
-            </form>
-            <div class="text-center text-md-left">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Enviar</a>
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center pt-5 pb-5">
+                    <h1 class="display-2">Contactanos</h1>
             </div>
-            <div class="status"></div>
         </div>
-        </section>
+    </div>
+
+  <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+    <div class="row">
+
+      <div class="col-lg-5 col-md-12 mb-0 mb-md-0">
+        <h3 class="font-weight-bold">Contactanos</h3>
+        <p class="text-muted">Tenemos la convicción de brindar las mejores experiencias a 
+        los usuarios de los restaurantes de esta ciudad, por ello esperamos responder cualquier duda
+        o pregunta que tenga</p>
+        <p><span class="font-weight-bold mr-2">Correo:</span><a href="">contact@mycompany.com</a></p>
+        <p><span class="font-weight-bold mr-2">Telefono:</span><a href="">+48 123 456 789</a></p>
+      </div>
+
+      <div class="col-lg-7 col-md-12 mb-4 mb-md-0">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="md-form md-outline mb-0">
+                <input type="text" id="form-first-name" class="form-control">
+                <label for="form-first-name">Nombre</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="md-form md-outline mb-0">
+                    <input type="text" id="form-last-name" class="form-control">
+                    <label for="form-last-name">Apellido</label>
+               </div>
+            </div>
         </div>
+        
+        <div class="md-form md-outline mt-3">
+          <input type="email" id="form-email" class="form-control">
+          <label for="form-email">Correo:</label>
+        </div>
+
+        <div class="md-form md-outline">
+          <input type="text" id="form-subject" class="form-control">
+          <label for="form-subject">Asunto</label>
+        </div>
+
+        <div class="md-form md-outline mb-3">
+          <textarea id="form-message" class="md-textarea form-control" rows="3"></textarea>
+          <label for="form-message">Mensaje:</label>
+        </div>
+
+        <button type="submit" class="btn btn-info btn-sm ml-0">Enviar<i class="far fa-paper-plane ml-2"></i></button>
+      </div>
+
+    </div>
+  </section>
+
 {% endblock container %}
