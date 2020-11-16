@@ -66,6 +66,8 @@ def newuser(request):
         store.image_stor = request.POST ['image_stor']
         store.save()
 
+        return redirect('login')
+
     return render(request, 'users/signup.html')
 
 
