@@ -8,17 +8,12 @@
             <a href="{% url 'nuevo' %}" class="nav-link text-light d-flex align-items-center">
                 <i class="material-icons mr-2">new_releases</i>Nuevo Producto
             </a>
-        </li>
-    <form action="{% url 'productos' %}" method="POST">
-        {% csrf_token %}
         <li class="nav-item">
-            <button type="submit" name="usuario" value="{{user.staffs.stores.id}}"> Producto
-            </button>
-            <!-- <a href="{% url 'productos' %}" class="nav-link text-light d-flex align-items-center"> -->
-                <i class="material-icons mr-2">local_dining</i>Productos
-            </a>
         </li>
-    </form>
+            <a href="{% url 'productos' %}" class="nav-link text-light d-flex align-items-center"> 
+             <i class="material-icons mr-2">local_dining</i>Productos
+            </a> 
+        </li>
         <li class="nav-item">
             <a href="{% url 'editar' %}" class="nav-link text-light d-flex align-items-center">
                 <i class="material-icons mr-2">edit</i>Editar
