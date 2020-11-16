@@ -29,17 +29,25 @@ def logout_view(request):
 @login_required
 def productos(request):
     #redirect to templates in templates/products
-    
-    
+
+    usuario= request.user
+    usuario=usuario.staffs.stores.id
+    if usuario:
+        print(usuario)
+        prod = Products.objects.filter(stores_id=usuario)
+        return render (request, 'products/products.html',{"prod":prod})
     prod = Products.objects.all()
-
-    return render(request, 'products/products.html', {"prod": prod})
-
+    return render (request, 'products/products.html',{"prod":prod})
+    
+    
 
 def buscar_prod(request):
-
-    busqueda = request.GET["prd"]
-    prod = Products.objects.filter(product_name__icontains=busqueda)
+    
+    usuario= request.user
+    usuario=usuario.staffs.stores.id
+    print(usuario)
+    busqueda= request.GET["prd"]
+    prod = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
 
     return render(request, 'products/products.html', {"prod": prod, "query": busqueda})
 
@@ -114,8 +122,10 @@ def editar_prod(request):
     
     if request.method=='GET':
         busqueda= request.GET["edit"]
+        usuario= request.user
+        usuario=usuario.staffs.stores.id
          #redirect to templates in templates/products
-        edit = Products.objects.filter(product_name__icontains=busqueda)
+        edit = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
         producto_a_modificar=edit.first()
     
         return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
@@ -145,19 +155,6 @@ def editar_prod(request):
 def editar(request):
     
     return render (request, 'products/edit_products.html')
-#     form = ProductsForm()
-#     if request.method == 'POST':
-#         #print(request.POST)
-#         form = ProductsForm(request.POST, request.FILES)
-
-#         if form.is_valid():
-#             try:
-#                 form.save()
-#                 return redirect("productos")
-#             except IntegrityError:
-                
-#                 return render(request, 'products/newproduct.html', {'error': 'Producto en existencia'})
-#     context = {'form':form}
 
      
 
