@@ -34,8 +34,8 @@ class CategoriesProductsAdmin(admin.ModelAdmin):
 admin.site.register(CategoriesProduct, CategoriesProductsAdmin)
 
 class StoresAdmin(admin.ModelAdmin):
-    list_display=("store_name", "email", "phone")
-    search_fields=("store_name", "phone")
+    list_display=("store_name",)
+    search_fields=("store_name",)
 
 
 admin.site.register(Stores, StoresAdmin)

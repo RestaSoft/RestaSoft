@@ -17,11 +17,11 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.db.utils import IntegrityError
 
-#Forms
+# Forms
 from users.forms import StaffsForm
-
-
+from .forms import StoresForm, UserForm
 
 
 @login_required
@@ -29,8 +29,6 @@ def logout_view(request):
     """ Logout a user """
     logout(request)
     return redirect('login.html')
-
-
 
 
 def newuser(request):
@@ -44,24 +42,30 @@ def newuser(request):
             return render(request, 'users/signup.html', {'error': 'Password do not match'})
 
         try:
-            #from users.models import Staffs
+            # from users.models import Staffs
             user = User.objects.create_user(username=username, password=password)
-         
+
         except IntegrityError:
             return render(request, 'users/signup.html', {'error': 'Username already taken'})
 
         user.first_name = request.POST['first_name']
         user.last_name = request.POST['last_name']
         user.email = request.POST['email']
-        user.restaurante= request.POST['restaurante']
         user.save()
 
-        staff=Staffs(user=user)
+        staff = Staffs(user=user)
+        staff.phone = request.POST['phone']
         staff.save()
+        store = Stores(user=user)
+        store.city = request.POST ['city']
+        store.address = request.POST['address']
+        store.store_name = request.POST['store_name']
+        store.zip_code = request.POST ['zip']
+        store.slogan = request.POST['slogan']
+        store.sitio_web = request.POST ['sitio_web']
+        store.save()
 
-        return redirect('login')
-
-    return render(request,'users/signup.html')
+    return render(request, 'users/signup.html')
 
 
 
@@ -76,23 +80,25 @@ def view_login(request):
 
         if user:
             login(request, user)
-            return redirect ('home')
+            return redirect('home')
         else:
-            return render(request,'users/login.html',{'error':'Invalid username and password'})
+            return render(request, 'users/login.html', {'error': 'Invalid username and password'})
 
-    return render (request, 'users/login.html')
+    return render(request, 'users/login.html')
 
 
 @login_required
 def home_view(request):
-     return render (request, 'home.html')
+    return render(request, 'home.html')
 
 
 def nosotros_view(request):
     return render(request, 'company/about_us.html')
 
-def contacto_view(request):    
+
+def contacto_view(request):
     return render(request, 'company/contact.html')
 
-def suscription_view(request):    
+
+def suscription_view(request):
     return render(request, 'company/suscription.html')
