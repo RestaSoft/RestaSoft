@@ -53,6 +53,7 @@ def newuser(request):
         user.first_name = request.POST['first_name']
         user.last_name = request.POST['last_name']
         user.email = request.POST['email']
+        user.restaurante= request.POST['restaurante']
         user.save()
 
         staff=Staffs(user=user)
@@ -84,16 +85,14 @@ def view_login(request):
 
 @login_required
 def home_view(request):
-
-
      return render (request, 'home.html')
 
 
-
 def nosotros_view(request):
+    return render(request, 'company/about_us.html')
 
-    return render(request, 'nosotros.html')
+def contacto_view(request):    
+    return render(request, 'company/contact.html')
 
-def contacto_view(request):
-    
-    return render(request, 'contacto.html')
+def suscription_view(request):    
+    return render(request, 'company/suscription.html')
