@@ -31,27 +31,35 @@ def productos(request):
     #redirect to templates in templates/products
 
     usuario= request.user
-    usuario=usuario.stores.id
-    if usuario:
-        print(usuario)
+    nombre = usuario.staffs.stores.store_name
+    
+    
+
+    if nombre != "Admin":
+        usuario = usuario.staffs.stores.id
         prod = Products.objects.filter(stores_id=usuario)
         return render (request, 'products/products.html',{"prod":prod})
+
     prod = Products.objects.all()
     return render (request, 'products/products.html',{"prod":prod})
     
     
-
+@login_required
 def buscar_prod(request):
     
     usuario= request.user
+    nombre = usuario.staffs.stores.store_name
     usuario=usuario.staffs.stores.id
-    print(usuario)
     busqueda= request.GET["prd"]
-    prod = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
-
+    
+    if nombre != "Admin":
+        prod = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
+        return render(request, 'products/products.html', {"prod": prod, "query": busqueda})
+    
+    prod = Products.objects.filter(product_name__icontains=busqueda)
     return render(request, 'products/products.html', {"prod": prod, "query": busqueda})
 
-
+@login_required
 def nuevo(request):
     form = ProductsForm()
     if request.method == 'POST':
@@ -72,7 +80,7 @@ def nuevo(request):
 
     return render (request, 'products/newproduct.html', context)
 
-
+@login_required
 def delete_prod(request):
 
     if request.method == 'GET':
@@ -93,45 +101,24 @@ def delete_prod(request):
 
 
 
-
-
-#POR SI LAS DUDAS
-
-# def editar_prod(request):
-#     form = ProductsForm()
-#     if request.method == 'POST':
-#         #print(request.POST)
-#         form = ProductsForm(request.POST, request.FILES)
-
-#         if form.is_valid():
-#             try:
-#                 form.save()
-#                 return redirect("productos")
-#             except IntegrityError:
-                
-#                 return render(request, 'products/edit_products.html', {'error': 'Ya hay articulos iguales'})
-
-
-#     context = {'form':form}
-
-#     return render (request, 'products/edit_products.html', context)
-
-
-
+@login_required
 def editar_prod(request):
     
     if request.method=='GET':
         busqueda= request.GET["edit"]
         usuario= request.user
+        nombre = usuario.staffs.stores.store_name
         usuario=usuario.staffs.stores.id
          #redirect to templates in templates/products
-        edit = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
+        if nombre != "Admin":
+            edit = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
+            producto_a_modificar=edit.first()
+            return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
+        edit = Products.objects.filter(product_name__icontains=busqueda)
         producto_a_modificar=edit.first()
-    
         return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
     if request.method == 'POST':
         #SE ASIGNAN NUEVOS VALORES
-        description= request.POST["description"]
         precio= request.POST["price"]
         nombre= request.POST["name"]
         id_pro= request.POST["save"]
@@ -151,10 +138,7 @@ def editar_prod(request):
         
 
 
-
+@login_required
 def editar(request):
     
     return render (request, 'products/edit_products.html')
-
-     
-
