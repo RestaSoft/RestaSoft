@@ -31,13 +31,14 @@ def productos(request):
     #redirect to templates in templates/products
 
     usuario= request.user
+    usu = usuario.staffs.stores.store_name
     usuario = usuario.staffs.stores.id
     
 
-    if usuario:
-        print(usuario)
+    if usu != "Admin":
         prod = Products.objects.filter(stores_id=usuario)
         return render (request, 'products/products.html',{"prod":prod})
+
     prod = Products.objects.all()
     return render (request, 'products/products.html',{"prod":prod})
     
