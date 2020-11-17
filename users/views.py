@@ -1,4 +1,4 @@
-
+''' Users Views. '''
 # Django
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
@@ -95,7 +95,7 @@ def view_login(request):
 
     return render(request, 'users/login.html')
 
-    
+
 
 @login_required
 def home_view(request):
