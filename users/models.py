@@ -6,6 +6,7 @@ from cloudinary.models import CloudinaryField
 
 
 class Stores(models.Model):
+    
 
     store_name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
