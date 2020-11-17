@@ -31,7 +31,9 @@ def productos(request):
     #redirect to templates in templates/products
 
     usuario= request.user
-    usuario=usuario.stores.id
+    usuario = usuario.staffs.stores.id
+    
+
     if usuario:
         print(usuario)
         prod = Products.objects.filter(stores_id=usuario)
@@ -40,7 +42,7 @@ def productos(request):
     return render (request, 'products/products.html',{"prod":prod})
     
     
-
+@login_required
 def buscar_prod(request):
     
     usuario= request.user
@@ -51,7 +53,7 @@ def buscar_prod(request):
 
     return render(request, 'products/products.html', {"prod": prod, "query": busqueda})
 
-
+@login_required
 def nuevo(request):
     form = ProductsForm()
     if request.method == 'POST':
@@ -72,7 +74,7 @@ def nuevo(request):
 
     return render (request, 'products/newproduct.html', context)
 
-
+@login_required
 def delete_prod(request):
 
     if request.method == 'GET':
@@ -117,7 +119,7 @@ def delete_prod(request):
 #     return render (request, 'products/edit_products.html', context)
 
 
-
+@login_required
 def editar_prod(request):
     
     if request.method=='GET':
@@ -151,7 +153,7 @@ def editar_prod(request):
         
 
 
-
+@login_required
 def editar(request):
     
     return render (request, 'products/edit_products.html')

@@ -7,8 +7,6 @@ from cloudinary.models import CloudinaryField
 
 class Stores(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
     store_name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     city = models.CharField(max_length=50, null=True)
