@@ -101,30 +101,6 @@ def delete_prod(request):
 
 
 
-
-
-#POR SI LAS DUDAS
-
-# def editar_prod(request):
-#     form = ProductsForm()
-#     if request.method == 'POST':
-#         #print(request.POST)
-#         form = ProductsForm(request.POST, request.FILES)
-
-#         if form.is_valid():
-#             try:
-#                 form.save()
-#                 return redirect("productos")
-#             except IntegrityError:
-                
-#                 return render(request, 'products/edit_products.html', {'error': 'Ya hay articulos iguales'})
-
-
-#     context = {'form':form}
-
-#     return render (request, 'products/edit_products.html', context)
-
-
 @login_required
 def editar_prod(request):
     
@@ -143,7 +119,6 @@ def editar_prod(request):
         return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
     if request.method == 'POST':
         #SE ASIGNAN NUEVOS VALORES
-        description= request.POST["description"]
         precio= request.POST["price"]
         nombre= request.POST["name"]
         id_pro= request.POST["save"]
