@@ -16,7 +16,7 @@
 {% block container %}
      <form>
           {% csrf_token %}
-          <div class="row align-items-center justify-content-center vw-100 vh-100 data-home">
+          <div class="row align-items-center justify-content-center vw-90 vh-100 data-home">
                <div class="col-10 ">
                     <div class="row">
                          <div class="col-5 align-self-center">
@@ -33,7 +33,7 @@
                               <div class="row justify-content-center">
                               {% load cloudinary %}
                                    <div class="col-8">
-                                        <img class="img-fluid  mt-2 mb-4" src="{{user.stores.image.url }}" alt="{{ user.get_full_name }}"/>
+                                        <img class="img-fluid  mt-1 mb-2" src="{{user.stores.image.url }}" alt="{{ user.get_full_name }}"/>
                                    </div>
                               </div>
                          </div>
