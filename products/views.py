@@ -31,7 +31,7 @@ def productos(request):
     #redirect to templates in templates/products
 
     usuario= request.user
-    usuario=usuario.staffs.stores.id
+    usuario=usuario.stores.id
     if usuario:
         print(usuario)
         prod = Products.objects.filter(stores_id=usuario)
