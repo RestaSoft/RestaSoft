@@ -24,6 +24,8 @@ from cloudinary.forms import cl_init_js_callbacks
 from users.forms import StaffsForm
 from .forms import StoresForm, UserForm
 from .forms import PictureForm
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
 
 @login_required
 def logout_view(request):
@@ -86,9 +88,9 @@ def view_login(request):
 
         if user:
             login(request, user)
-            return redirect('home')
+            return redirect ('home')
         else:
-            return render(request, 'users/login.html', {'error': 'Invalid username and password'})
+            return render(request,'users/login.html',{'error':'Invalid username and password'})
 
     return render(request, 'users/login.html')
 
@@ -109,3 +111,5 @@ def contacto_view(request):
 
 def suscription_view(request):
     return render(request, 'company/suscription.html')
+
+

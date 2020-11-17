@@ -10,7 +10,6 @@
 {% endblock title %}
 
 {% block container %}
-
     <div class="col-6">
         <form class="form-signin " method="POST" action="{% url "login" %}">
             {% csrf_token %}
@@ -57,13 +56,11 @@
             <p class="m-auto">Crea una cuenta. <a href={% url 'newuser' %}>Regístrate</a> ahora</p>
         </div>
         </form>
-            {% if error %}
+        {% if error %}
         <div class="d-flex flex-column mt-3">
             <p class="m-auto"> Forgot your password? Click
             <a href="{% url 'password_reset'%}">here.</a> </p>
         </div>
-
-    </div>
     {% endif %}
 {% endblock container %}
 
