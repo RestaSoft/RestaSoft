@@ -1,0 +1,124 @@
+{% extends 'company/base_company.html' %} 
+{% load static %} 
+
+
+{% block title %}
+    <title>Únete</title>
+{% endblock title %} 
+
+{% block title_dash %}
+    <h1>Únete al equipo</h1>
+{% endblock title_dash %} 
+
+
+{% block container %}
+
+        <section class="hero-image1 shero">
+            <div class="container hero-text">
+                <h1 style="font-size:50px">Creamos experiencias...</h1>
+                <h5>Sé parte de este gran equipo</h5>
+            </div>
+        </section>
+
+        <div class="container col-8 pt-5">
+            <div class="row justify-content-end">
+                <div class="col-3">
+                    <button class="btn btn-success btn-block">¡ Quiero ser miembro !</button>
+                </div>
+            </div>
+
+            <div class="row justify-content-start pt-3">
+                <div class="col-5">
+                    <h4 class="pb-3">¡ Únete al equipo !</h4>
+                    <p class="suscrip">Para nosotros, tú eres una parte muy importante del negocio restaurantero 
+                    en la ciudad de Chihuahua, queremos ser parte de tu experiencia al brindar 
+                    el mejor servicio a muchos de los clientes que buscan calidad, productos, 
+                    variedad, sabor, confort y un incontable número de cualidades que estamos seguros 
+                    que tiene tu restaurante. </p>
+                </div>
+                <div class="col-5 align-self-center mx-auto">
+                    <img class="img-fluid" src="{% static 'img/team_goals.svg' %}" alt="team-goals">
+                </div>
+            </div>
+
+            <div class="row justify-content-end pt-4 pb-5">
+                <div class="col-5 align-self-center mx-auto">
+                    <img class="img-fluid" src="{% static 'img/friends.svg' %}" alt="team-goals">
+                </div>
+                <div class="col-5">
+                    <h4 class="pb-3">Queremos crecer juntos...</h4>
+                    <p class="suscrip">No es de cuates que solo uno crezca, creemos fuertemente en el trabajo en equipo,
+                    queremos hacer crecer tu negocio y crear experiencias juntos, por eso haremos todo lo posible con nuestros 
+                    sevicios para que seas un referente de punto de reunión en esta hermosa ciudad. Juntos haremos cosas increíbles.</p>
+                </div>
+            </div>            
+        </div>
+
+        <div class="container col-12 pt-5">
+            <div class="row justify-content-center bg-dark">
+                <div class="col-12 text-center pt-5 pb-5">
+                    <h1 class="display-2">Pero, ¿qué ofrecemos?</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-6 pt-5 pb-5">
+
+            <div class="row justify-content-center pt-4 pb-5">
+                <div class="col-12">
+                    <h4 class="pb-3 orange">No te preocupes, mejor ocúpate...</h4>
+                    <p>Con RestaSoft ya no te preocupas por que a cocina le llegue 
+                    correcta la información de los platillos, que al cobrar no te falte información para el cobro, 
+                    o que tu inventario este escaso y te quedes sin meterial para la preparación, tampoco te preocupas 
+                    por monitorear a tus empleados... con RestaSoft te ocupas de tus clientes y del 
+                    servicio que reciben, pues nosotros hacemos lo demás por tí de una manera rápida y eficaz con un
+                    sistema web que puedes consultar en cualquier parte donde te encuentres, ya no necesitas estar en
+                    tu oficina para saber qué es lo que esta pasando en tu restaurante.</p>
+                </div>
+            </div>           
+
+            <div class="row d-flex justify-content-around pt-5 pb-4">
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 100px">room_service</i></span><br>Servicio</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 100px">verified_user</i></span><br>Seguridad</label>
+                </div><div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 100px">track_changes</i></span><br>Seguimiento</label>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-around pt-4 pb-4">
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 100px">timer</i></span><br>Rapidez</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 100px">timeline</i></span><br>Administración</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 100px">spa</i></span><br>Confort</label>
+                </div>
+            </div>    
+
+            <div class="row d-flex justify-content-around pt-4 pb-5">
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 100px">supervisor_account</i></span><br>Control</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 100px">star_border</i></span><br>Calidad</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 100px">tap_and_play</i></span><br>Tecnología</label>
+                </div>
+            </div>            
+        </div>
+
+        <div class="container col-12">
+            <div class="row justify-content-center bg-success">
+                <div class="col-12 text-center pt-5 pb-5">
+                    <h1 class="display-4">Hagámos mejor las cosas</h1>
+                </div>
+            </div>
+        </div>
+
+{% endblock container %}

@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+#from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,6 +29,18 @@ SECRET_KEY = '#3wbt=@e$v-=do$+u=lxb4jix)yf1w&mg$$w1djbgk569r2%q8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+if DEBUG:
+    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+else:
+    EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST   = 'smtp.gmail.com'
+    EMAIL_HOST_USER = 'RestaSoftApp@gmail.com'
+    EMAIL_HOST_PASSWORD = 'zbsmzpxbcncpskap'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    DEFAUL_FROM_EMAIL = 'RestaSoft restore password <noreply@restasoft.com>'
 
 ALLOWED_HOSTS = []
 
@@ -41,10 +58,14 @@ INSTALLED_APPS = [
     'products',
     'users',
     'orders',
+    'cloudinary',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -109,7 +130,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-eu'
 
 TIME_ZONE = 'UTC'
 
@@ -134,6 +156,8 @@ STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
 
+#STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -142,4 +166,19 @@ STATICFILES_FINDERS = [
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
+
 LOGIN_URL = 'login/'
+
+cloudinary.config( 
+  cloud_name = "restasoft",
+  api_key = "896216273392577", 
+  api_secret = "OCVM1eDls0Sn_KYWmM0usO2wXOg",
+)
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'restaSoftApp@gmail.com'
+EMAIL_HOST_PASSWORD = 'restaSofrApp4'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

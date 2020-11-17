@@ -1,14 +1,17 @@
 {% extends 'users/base.html' %}
+{% load cloudinary %}
+
 {% block head_content %}
-    <title>Register</title>
+    <title>Sign-up</title>
 {% endblock head_content %}
 
 {% block title %}
-     <title>Signup</title>
+     <title>Registro</title>
 {% endblock title %}
-
+git
 {% block container %}
-        <form class="form-signin">
+        <form class="form-signin" action="{% url 'newuser' %}" method="POST" enctype="multipart/form-data">
+         {% csrf_token %}
             <img
                class="rounded mx-auto d-block"
                 {% load static %}
@@ -17,26 +20,55 @@
                 width="72"
                 height="72"
             />
-            <h3 class="row justify-content-center">Please Register</h3>
+            <h3 class="row justify-content-center">Por favor regístrate</h3>
+             {% if error %}
+                <p class="alert alert-danger">{{ error }}</p>
+             {% endif %}
             <p>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Username" name="username" required="true" />
+            <div class="row">
+                <div class="col-lg-12 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Nombre del Restaurant" name="store_name" required="true" />
+                </div>
+                <div class=" col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Nombre" name="first_name" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Usuario" name="username" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Apellido" name="last_name" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="password" placeholder="Contraseña" name="passwd" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="email" placeholder="Correo electrónico" name="email" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="password" placeholder="Confirmar contraseña" name="passwd_confirmation" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="tel" placeholder="Telefono" name="phone" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Cuidad" name="city" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Direccion" name="address" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Codigo Zip" name="zip" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Sitio Web" name="sitio_web" required="true" />
+                </div>
+                <div class="col-lg-6 col-md-7 mb-3">
+                    <input class="form-control" type="text" placeholder="Slogan" name="slogan" required="true" />
+                </div>
+                <div class="col-lg-12 col-md-7 mb-3">
+                    <input type="file" name="image"/>
+                </div>
             </div>
-            <div class="form-group">
-                <input class="form-control" type="password" placeholder="Password" name="passwd" required="true" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="password" placeholder="Password confirmation" name="passwd_confirmation" required="true" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="First name" name="first_name" required="true" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Last name" name="last_name" required="true" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="email" placeholder="Email address" name="email" required="true" />
-            </div>
-        <button class="btn btn-primary btn-block mt-5" type="submit">Register</button>
+            <button class="btn btn-primary btn-block mt-1" type="submit">Registrarse</button>
         </form>
 {% endblock container %}
