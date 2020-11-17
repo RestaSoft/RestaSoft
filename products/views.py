@@ -155,6 +155,3 @@ def editar_prod(request):
 def editar(request):
     
     return render (request, 'products/edit_products.html')
-
-     
-

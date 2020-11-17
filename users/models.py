@@ -151,3 +151,5 @@ class Stocks(models.Model):
         verbose_name_plural = 'Stocks'
 
 
+
+
