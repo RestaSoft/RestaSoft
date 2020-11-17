@@ -16,7 +16,7 @@ class Stores(models.Model):
     zip_code = models.IntegerField(null=True)
     slogan = models.CharField(max_length=150,null=True)
     sitio_web = models.CharField(max_length=100, null=True)
-    image_stor = CloudinaryField('image')
+    image = CloudinaryField('image')
 
 
     def __str__(self):
@@ -149,4 +149,5 @@ class Stocks(models.Model):
 
     class Meta:
         verbose_name_plural = 'Stocks'
+
 

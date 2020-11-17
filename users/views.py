@@ -18,11 +18,12 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.db.utils import IntegrityError
+from cloudinary.forms import cl_init_js_callbacks
 
 # Forms
 from users.forms import StaffsForm
 from .forms import StoresForm, UserForm
-
+from .forms import PictureForm
 
 @login_required
 def logout_view(request):
@@ -63,7 +64,9 @@ def newuser(request):
         store.zip_code = request.POST ['zip']
         store.slogan = request.POST['slogan']
         store.sitio_web = request.POST ['sitio_web']
-        store.image_stor = request.POST ['image_stor']
+        #store.image = request.POST ['image']
+        if request.method == 'POST' and request.FILES['image']:
+            store.image = request.FILES['image']
         store.save()
 
         return redirect('login')
@@ -92,6 +95,7 @@ def view_login(request):
 
 @login_required
 def home_view(request):
+
     return render(request, 'home.html')
 
 

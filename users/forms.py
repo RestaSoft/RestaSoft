@@ -4,6 +4,7 @@
 from users.models import Staffs, Stores, User
 from django import forms
 from django.forms import ModelForm
+from .models import Stores
 
 
 class StaffsForm(forms.Form):
@@ -21,3 +22,8 @@ class UserForm(ModelForm):
     class Meta:
         model = User
         fields ='__all__'
+
+class PictureForm(forms.Form):
+    image = forms.ImageField()
+
+        

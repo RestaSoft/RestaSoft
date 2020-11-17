@@ -2,6 +2,7 @@ from django.urls import path, include
 from users import views as users_views
 from django.contrib.auth import views as auth_views
 
+
 urlpatterns = [
     
     # Users view
