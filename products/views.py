@@ -106,7 +106,7 @@ def delete_prod(request):
 def editar_prod(request):
     
     if request.method=='GET':
-        busqueda= request.GET["ed"]
+        busqueda= request.GET["edit"]
         usuario= request.user
         nombre = usuario.staffs.stores.store_name
         usuario=usuario.staffs.stores.id
