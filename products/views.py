@@ -76,6 +76,7 @@ def nuevo(request):
         modify.product_name=nombre
         modify.save()
         return productos(request)
+        
 
     return render(request, 'products/newproduct.html')
     
