@@ -63,20 +63,16 @@ def buscar_prod(request):
 def nuevo(request):
     form = ProductsForm()
     if request.method == 'POST':
-        #print(request.POST)
+        print(request.POST)
         form = ProductsForm(request.POST, request.FILES)
-
         if form.is_valid():
             try:
                 form.save()
                 return redirect("productos")
-            except IntegrityError:
-                
+            except IntegrityError:            
+
                 return render(request, 'products/newproduct.html', {'error': 'Username already taken'})
-
-
     context = {'form':form}
-    print
 
     return render (request, 'products/newproduct.html', context)
 
