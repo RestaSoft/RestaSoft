@@ -66,8 +66,7 @@ def nuevo(request):
         nombre= request.POST["name"]
         cat_nom= request.POST["categoria"]
         desc= request.POST['description']
-        stor_name = request.POST['select']
-        #sto = Stores.objects.create(user=iduser,store_name=stor_name)
+        #stor_name = request.POST['select']
         cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
         modify =Products.objects.create(product_name=nombre, list_price=precio, categoriesproduct=cat)
         if request.method == 'POST' and request.FILES['image']:
