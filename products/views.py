@@ -131,6 +131,12 @@ def editar_prod(request):
         precio= request.POST["price"]
         nombre= request.POST["name"]
         id_pro= request.POST["save"]
+        descri= request.POST["description"]
+        nomb= request.POST["catname"]
+        print(nomb)
+        cat = CategoriesProduct.objects.filter(category_name=nomb)
+        cat = cat.first()
+        cat.category_description=descri
         modify =Products.objects.get(id=id_pro)
         modify.list_price=precio
         modify.product_name=nombre
@@ -139,7 +145,9 @@ def editar_prod(request):
             imagen=request.FILES["img"]
             modify.image_prod=imagen
         # SE GUARDA EL ARTICULO
+        cat.save()
         modify.save()
+        
         return productos(request)
 
     return render(request, 'products/edit_products.html')
