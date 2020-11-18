@@ -67,13 +67,13 @@ def nuevo(request):
         cat_nom= request.POST["categoria"]
         desc= request.POST['description']
         stor_name = request.POST['select']
-        #sto = Stores.objects.create(user=iduser,store_name=stor_name)
+        #creacion de objetos
         cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
-        modify =Products.objects.create(product_name=nombre, list_price=precio, categoriesproduct=cat)
+        tienda = Stores.objects.get(store_name=stor_name)
+        modify =Products.objects.create(product_name=nombre, list_price=precio, categoriesproduct=cat, stores=tienda)
+
         if request.method == 'POST' and request.FILES['image']:
             modify.image_prod = request.FILES['image']
-        modify.list_price=precio
-        modify.product_name=nombre
         modify.save()
         return productos(request)
         
