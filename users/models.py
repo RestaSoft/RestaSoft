@@ -97,7 +97,7 @@ class Products(models.Model):
     product_name = models.CharField(max_length=50)
     categoriesproduct = models.ForeignKey(CategoriesProduct, on_delete=models.CASCADE)
     list_price = models.IntegerField()
-    suppliers = models.ForeignKey(Suppliers, on_delete=models.CASCADE)
+    suppliers = models.ForeignKey(Suppliers, on_delete=models.CASCADE, null=True)
     image_prod = CloudinaryField('image')
     stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
 
