@@ -34,7 +34,6 @@
         <div class="col-md-6 mb-3">
           <label for="Descripcion">Descripcion:</label>
           <input class="form-control" id="Description" name="description" rows="3" cols="50">{{prod_mod.categoriesproduct.category_description}}
-          <!--  {{form.suppliers}} -->
         </div>
 
         <div class="col-md-5 mb-3">
@@ -42,12 +41,12 @@
           <input type="number" class="form-control" id="Price" name="price" value="{{prod_mod.list_price}}" >
           <!-- {{form.list_price}} -->
         </div>
+        <!--  {{form.suppliers}} -->
 
         <!-- {{form.categoriesproduct.category_description.as_p}}-->
-        <div class="col-md-5 mb-3">
           <label for="store" id ="store" >Store:</label>
           <select name="select">
-            <option value="value1">{{user.staffs.stores.store_name}}</option>
+            <option value="{{user.staffs.stores.id}}">{{user.staffs.stores.store_name}}</option>
           </select>
           <!-- {{form.stores}} -->
         </div>
