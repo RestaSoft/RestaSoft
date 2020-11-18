@@ -67,13 +67,21 @@ def nuevo(request):
         cat_nom= request.POST["categoria"]
         desc= request.POST['description']
         stor_name = request.POST['select']
-        #sto = Stores.objects.create(user=iduser,store_name=stor_name)
-        cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
-        modify =Products.objects.create(product_name=nombre, list_price=precio, categoriesproduct=cat)
+        #creacion de objetos
+        usuario= request.user
+        nombre = usuario.staffs.stores.store_name
+        if nombre != "Admin":
+
+            cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
+            tienda = Stores.objects.get(store_name=nombre)
+            modify =Products.objects.create(product_name=nombre, list_price=precio, categoriesproduct=cat, stores=tienda)
+        if nombre == "Admin":
+        
+            return HttpResponse("Usuario "+ nombre +" no puede añadir productos")
+        
+
         if request.method == 'POST' and request.FILES['image']:
             modify.image_prod = request.FILES['image']
-        modify.list_price=precio
-        modify.product_name=nombre
         modify.save()
         return productos(request)
         
@@ -123,6 +131,12 @@ def editar_prod(request):
         precio= request.POST["price"]
         nombre= request.POST["name"]
         id_pro= request.POST["save"]
+        descri= request.POST["description"]
+        nomb= request.POST["catname"]
+        print(nomb)
+        cat = CategoriesProduct.objects.filter(category_name=nomb)
+        cat = cat.first()
+        cat.category_description=descri
         modify =Products.objects.get(id=id_pro)
         modify.list_price=precio
         modify.product_name=nombre
@@ -131,7 +145,9 @@ def editar_prod(request):
             imagen=request.FILES["img"]
             modify.image_prod=imagen
         # SE GUARDA EL ARTICULO
+        cat.save()
         modify.save()
+        
         return productos(request)
 
     return render(request, 'products/edit_products.html')
