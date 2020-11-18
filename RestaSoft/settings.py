@@ -61,6 +61,8 @@ INSTALLED_APPS = [
     'cloudinary',
 ]
 
+#CRISPY_TEMPLATE_PACK = 'bootstrap'
+
 
 
 MIDDLEWARE = [

@@ -77,6 +77,7 @@ def newuser(request):
 
 
 
+
 def view_login(request):
     ''' Login view '''
 
@@ -95,10 +96,10 @@ def view_login(request):
     return render(request, 'users/login.html')
 
 
+
 @login_required
 def home_view(request):
-
-    return render(request, 'home.html')
+        return render(request, 'home.html')
 
 
 def nosotros_view(request):
@@ -111,5 +112,4 @@ def contacto_view(request):
 
 def suscription_view(request):
     return render(request, 'company/suscription.html')
-
 

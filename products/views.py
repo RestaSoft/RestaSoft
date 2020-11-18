@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from users.models import Products,Stores,Staffs
+from users.models import Products, Stores, Staffs, CategoriesProduct
 from .forms import ProductsForm
 # from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationFor
@@ -28,53 +28,58 @@ def logout_view(request):
 
 @login_required
 def productos(request):
-    #redirect to templates in templates/products
+    # redirect to templates in templates/products
 
-    usuario= request.user
+    usuario = request.user
     nombre = usuario.staffs.stores.store_name
-    
-    
 
     if nombre != "Admin":
         usuario = usuario.staffs.stores.id
         prod = Products.objects.filter(stores_id=usuario)
-        return render (request, 'products/products.html',{"prod":prod})
+        return render(request, 'products/products.html', {"prod": prod})
 
     prod = Products.objects.all()
-    return render (request, 'products/products.html',{"prod":prod})
-    
-    
+    return render(request, 'products/products.html', {"prod": prod})
+
+
 @login_required
 def buscar_prod(request):
-    
-    usuario= request.user
+
+    usuario = request.user
     nombre = usuario.staffs.stores.store_name
-    usuario=usuario.staffs.stores.id
-    busqueda= request.GET["prd"]
-    
+    usuario = usuario.staffs.stores.id
+    busqueda = request.GET["prd"]
+
     if nombre != "Admin":
-        prod = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
+        prod = Products.objects.filter(
+            product_name__icontains=busqueda).filter(stores_id=usuario)
         return render(request, 'products/products.html', {"prod": prod, "query": busqueda})
-    
+
     prod = Products.objects.filter(product_name__icontains=busqueda)
     return render(request, 'products/products.html', {"prod": prod, "query": busqueda})
 
+
 @login_required
 def nuevo(request):
-    form = ProductsForm()
     if request.method == 'POST':
-        print(request.POST)
-        form = ProductsForm(request.POST, request.FILES)
-        if form.is_valid():
-            try:
-                form.save()
-                return redirect("productos")
-            except IntegrityError:            
+        precio= request.POST["price"]
+        nombre= request.POST["name"]
+        cat_nom= request.POST["categoria"]
+        desc= request.POST['description']
+        stor_name = request.POST['select']
+        #sto = Stores.objects.create(user=iduser,store_name=stor_name)
+        cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
+        modify =Products.objects.create(product_name=nombre, list_price=precio, categoriesproduct=cat)
+        if request.method == 'POST' and request.FILES['image']:
+            modify.image_prod = request.FILES['image']
+        modify.list_price=precio
+        modify.product_name=nombre
+        modify.save()
+        return productos(request)
+        
 
-                return render(request, 'products/newproduct.html', {'error': 'Username already taken'})
-    context = {'form':form}
-
-    return render (request, 'products/newproduct.html', context)
+    return render(request, 'products/newproduct.html')
+    
 
 @login_required
 def delete_prod(request):
@@ -101,11 +106,11 @@ def delete_prod(request):
 def editar_prod(request):
     
     if request.method=='GET':
-        busqueda= request.GET["edit"]
+        busqueda= request.GET["ed"]
         usuario= request.user
         nombre = usuario.staffs.stores.store_name
         usuario=usuario.staffs.stores.id
-         #redirect to templates in templates/products
+         # redirect to templates in templates/products
         if nombre != "Admin":
             edit = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
             producto_a_modificar=edit.first()
@@ -114,18 +119,18 @@ def editar_prod(request):
         producto_a_modificar=edit.first()
         return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
     if request.method == 'POST':
-        #SE ASIGNAN NUEVOS VALORES
+        # SE ASIGNAN NUEVOS VALORES
         precio= request.POST["price"]
         nombre= request.POST["name"]
         id_pro= request.POST["save"]
         modify =Products.objects.get(id=id_pro)
         modify.list_price=precio
         modify.product_name=nombre
-        #SI CONTIENE IMAGEN SE MODIFICARA.
+        # SI CONTIENE IMAGEN SE MODIFICARA.
         if request.FILES:
             imagen=request.FILES["img"]
             modify.image_prod=imagen
-        #SE GUARDA EL ARTICULO
+        # SE GUARDA EL ARTICULO
         modify.save()
         return productos(request)
 
