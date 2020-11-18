@@ -68,9 +68,17 @@ def nuevo(request):
         desc= request.POST['description']
         stor_name = request.POST['select']
         #creacion de objetos
-        cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
-        tienda = Stores.objects.get(store_name=stor_name)
-        modify =Products.objects.create(product_name=nombre, list_price=precio, categoriesproduct=cat, stores=tienda)
+        usuario= request.user
+        nombre = usuario.staffs.stores.store_name
+        if nombre != "Admin":
+
+            cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
+            tienda = Stores.objects.get(store_name=nombre)
+            modify =Products.objects.create(product_name=nombre, list_price=precio, categoriesproduct=cat, stores=tienda)
+        if nombre == "Admin":
+        
+            return HttpResponse("Usuario "+ nombre +" no puede añadir productos")
+        
 
         if request.method == 'POST' and request.FILES['image']:
             modify.image_prod = request.FILES['image']
