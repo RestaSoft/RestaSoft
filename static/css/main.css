@@ -93,6 +93,11 @@ html, body {
   padding: 10rem 0;
 }
 
+.fondo-opaco {
+  background-color:rgba(0,0,0,.5);
+  border-radius: 15px;
+}
+
 .separation {
   border: 1px solid silver;
   border-radius: 500px/8px;
