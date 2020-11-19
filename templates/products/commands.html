@@ -15,5 +15,33 @@
 
 
 {% block container %}
-
+<div class="row justify-content-center">
+    <div class="col-lg-11 mt-2">
+        <div class="row">
+            <table class="table table-hover table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Fecha de orden</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column1">1</td>
+                        <td class="column2">Orden Nueva</td>
+                        <td class="column3">2017-09-29 01:22</td>
+                        <td class="column4">Comida Rapida</td>
+                        <td class="column5">
+                        <form class="form-inline" method="GET">
+                            {% csrf_token %}
+                            
+                        </form></td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock container %}
