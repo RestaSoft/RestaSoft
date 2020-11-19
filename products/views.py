@@ -31,7 +31,10 @@ def productos(request):
     # redirect to templates in templates/products
 
     usuario = request.user
-    nombre = usuario.staffs.stores.store_name
+    if usuario.staffs.stores!=None:
+        nombre = usuario.staffs.stores.store_name
+    else:
+        return HttpResponse("NECESITA REALIZAR EL PAGO PARA SEGUIR")
 
     if nombre != "Admin":
         usuario = usuario.staffs.stores.id
