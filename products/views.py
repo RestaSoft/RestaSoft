@@ -109,6 +109,11 @@ def delete_prod(request):
 
 
 
+@login_required
+def comandas(request):
+    
+    return render (request, 'products/commands.html')
+
 
 @login_required
 def editar_prod(request):
