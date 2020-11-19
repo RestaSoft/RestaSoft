@@ -21,7 +21,7 @@
                 height="72"
             />
             <h3 class="text-center">Login</h3>
-            <h3 class="row justify-content-center">Ingresa sesión</h3>
+            <h3 class="row justify-content-center">Inicia sesión</h3>
                 {% if error %}
                      <p class="alert alert-danger" role="alert">{{error}}</p>
                  {% endif %}
@@ -53,7 +53,7 @@
                 Acceder
             </button>
             <div class= "d-flex flex-column mt-3">
-            <p class="m-auto">Crea una cuenta. <a href={% url 'newuser' %}>Regístrate</a> ahora</p>
+            <p class="m-auto">Crea una cuenta. <a href={% url 'newuser' %}>Regístrate ahora</a> </p>
         </div>
         </form>
         {% if error %}

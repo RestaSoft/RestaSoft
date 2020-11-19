@@ -12,6 +12,7 @@ urlpatterns = [
     path('editar',products_views.editar, name="editar"),
     path('editar_prod',products_views.editar_prod, name="editar_prod"),
     path('buscar_prod',products_views.buscar_prod, name="buscar_prod"),
+    path('comandas',products_views.comandas, name="comandas"),
     path('delete_prod',products_views.delete_prod, name="delete_prod"),
 
 ] 
