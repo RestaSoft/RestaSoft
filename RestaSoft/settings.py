@@ -46,6 +46,9 @@ else:
 ALLOWED_HOSTS = ['*']
 
 
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -177,11 +180,3 @@ cloudinary.config(
   api_key = "896216273392577", 
   api_secret = "OCVM1eDls0Sn_KYWmM0usO2wXOg",
 )
-
-
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 25
-EMAIL_HOST_USER = 'restaSoftApp@gmail.com'
-EMAIL_HOST_PASSWORD = 'restaSofrApp4'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

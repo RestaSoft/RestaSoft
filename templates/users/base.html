@@ -22,9 +22,18 @@
                 
                 {% include "users/navbar.html" %}
 
-                <main role="main" class="row inner cover col-8 justify-content-center align-self-center">
-                        {% block container %}
-                        {% endblock%}
+                <main role="main" class="row inner cover">
+                    <div class="col-12">
+                        <div class="row justify-content-center align-self-center">
+                            <div class="col-8">
+                                <img class="mb-3 mx-auto d-block" src="{% static 'img/logo.png' %}" alt="RestaSoft" width="72" />
+                                {% block container %}
+                                {% endblock%}
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
                 </main>
 
                 <footer class="mastfoot mt-5">
