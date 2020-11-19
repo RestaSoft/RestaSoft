@@ -31,18 +31,21 @@ SECRET_KEY = '#3wbt=@e$v-=do$+u=lxb4jix)yf1w&mg$$w1djbgk569r2%q8'
 DEBUG = True
 
 if DEBUG:
-    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
-
-else:
     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST   = 'smtp.gmail.com'
-    EMAIL_HOST_USER = 'RestaSoftApp@gmail.com'
-    EMAIL_HOST_PASSWORD = 'zbsmzpxbcncpskap'
+    EMAIL_HOST_USER = 'restasoftapp@gmail.com'
+    EMAIL_HOST_PASSWORD = 'restasoft14'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    DEFAUL_FROM_EMAIL = 'RestaSoft restore password <noreply@restasoft.com>'
+    DEFAUL_FROM_EMAIL = 'RestaSoft restore password <noreply@RestaSoft.com>'
 
-ALLOWED_HOSTS = []
+else:
+    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+
+ALLOWED_HOSTS = ['*']
+
+
 
 
 # Application definition
@@ -176,11 +179,3 @@ cloudinary.config(
   api_key = "896216273392577", 
   api_secret = "OCVM1eDls0Sn_KYWmM0usO2wXOg",
 )
-
-
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 25
-EMAIL_HOST_USER = 'restaSoftApp@gmail.com'
-EMAIL_HOST_PASSWORD = 'restaSofrApp4'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
