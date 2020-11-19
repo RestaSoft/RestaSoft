@@ -31,18 +31,19 @@ SECRET_KEY = '#3wbt=@e$v-=do$+u=lxb4jix)yf1w&mg$$w1djbgk569r2%q8'
 DEBUG = True
 
 if DEBUG:
-    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
-
-else:
     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST   = 'smtp.gmail.com'
-    EMAIL_HOST_USER = 'RestaSoftApp@gmail.com'
-    EMAIL_HOST_PASSWORD = 'zbsmzpxbcncpskap'
+    EMAIL_HOST_USER = 'restasoftapp@gmail.com'
+    EMAIL_HOST_PASSWORD = 'restasoft14'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    DEFAUL_FROM_EMAIL = 'RestaSoft restore password <noreply@restasoft.com>'
+    DEFAUL_FROM_EMAIL = 'RestaSoft restore password <noreply@RestaSoft.com>'
 
-ALLOWED_HOSTS = []
+else:
+    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
