@@ -22,17 +22,39 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
                         <th scope="col">Fecha de orden</th>
                         <th scope="col">Categoría</th>
-                        <th scope="col">Estado</th>
+                        <th scope="col">&nbsp;&nbsp;Estado</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="column1">1</td>
-                        <td class="column2">Orden Nueva</td>
-                        <td class="column3">2017-09-29 01:22</td>
+                        <td class="column2">
+                        Orden del dia
+                            <ul>
+                                <li>Papas fritas</li>
+                                <li>Hamburgesa sencilla</li>
+                            </ul>
+                        </td>
+                        <td class="column3">18-11-20 01:22</td>
+                        <td class="column4">Comida Rapida</td>
+                        <td class="column5">
+                        <form class="form-inline" method="GET">
+                                {% csrf_token %}
+                                <button class="btn btn-primary btn-sm mb-5" type="submit" name="submit">Terminado</button>
+                        </form></td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2</td>
+                        <td class="column2">
+                        Orden de ayer
+                            <ul>
+                                <li>Bola de Arroz</li>
+                            </ul>
+                        </td>
+                        <td class="column3">17-11-20 4:30</td>
                         <td class="column4">Comida Rapida</td>
                         <td class="column5">
                         <form class="form-inline" method="GET">
