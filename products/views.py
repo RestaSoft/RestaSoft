@@ -33,6 +33,9 @@ def productos(request):
     usuario = request.user
     if usuario.staffs.stores!=None:
         nombre = usuario.staffs.stores.store_name
+        #nombre=usuario.get_username()
+        #nombre.lower()
+        print(nombre)
     else:
         return render(request,'company/suscription.html')
 
