@@ -63,7 +63,7 @@ def buscar_prod(request):
 def nuevo(request):
     if request.method == 'POST':
         precio= request.POST["price"]
-        nombre= request.POST["name"]
+        nomb= request.POST["name"]
         cat_nom= request.POST["categoria"]
         desc= request.POST['description']
         stor_name = request.POST['select']
@@ -74,7 +74,7 @@ def nuevo(request):
 
             cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
             tienda = Stores.objects.get(store_name=nombre)
-            modify =Products.objects.create(product_name=nombre, list_price=precio, categoriesproduct=cat, stores=tienda)
+            modify =Products.objects.create(product_name=nomb, list_price=precio, categoriesproduct=cat, stores=tienda)
         if nombre == "Admin":
         
             return HttpResponse("Usuario "+ nombre +" no puede añadir productos")
