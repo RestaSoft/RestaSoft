@@ -10,23 +10,22 @@
 {% endblock title %}
 
 {% block container %}
-    <div class="col-6">
+    <div class="col-7">
+
         <form class="form-signin " method="POST" action="{% url "login" %}">
+
             {% csrf_token %}
             <img
-               class="rounded mb-3 mx-auto d-block"                
+               class="mt-5 mb-4 mx-auto d-block"                
                 src="{% static 'img/logo.png' %}"
-                alt=""
+                alt="RS"
                 width="72"
-                height="72"
             />
-            <h3 class="text-center">Login</h3>
-            <h3 class="row justify-content-center">Inicia sesión</h3>
-                {% if error %}
-                     <p class="alert alert-danger" role="alert">{{error}}</p>
-                 {% endif %}
-            <p>
-            <div class="mb-3">
+            <h3 class="row justify-content-center mb-3">Inicia sesión</h3>
+            {% if error %}
+                <p class="alert alert-danger" role="alert">{{error}}</p>
+            {% endif %}
+            <div class="mb-4">
                 <label for="inputUser" class="sr-only">Usuario</label>
                 <input
                     type="User"
@@ -38,30 +37,28 @@
                     autofocus
                 />
             </div>
-            <div class="mb-5">
-            <label for="inputPassword" class="sr-only">Contraseña</label>
-            <input
-                type="password"
-                id="inputPassword"
-                class="form-control"
-                placeholder="Contraseña"
-                name="password"
-                required
-            />
+
+            <div class="mb-4">
+                <label for="inputPassword" class="sr-only">Contraseña</label>
+                <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Contraseña" name="password" required />
+                {% if error %}
+                    <p class="m-auto"> ¿Olvidaste tu contraseña?
+                    <a class="text-warning" href="{% url 'password_reset'%}"> Haz click aqui.</a> </p>
+                {% endif %}
             </div>
+
+            
+
             <button class="btn btn-lg btn-warning btn-block" type="submit">
                 Acceder
             </button>
+
             <div class= "d-flex flex-column mt-3">
-            <p class="m-auto">Crea una cuenta. <a href={% url 'newuser' %}>Regístrate ahora</a> </p>
-        </div>
+                <p class="m-auto">Crea una cuenta. <a class="text-warning" href={% url 'newuser' %}><b>Regístrate ahora.</b></a> </p>
+            </div>
+
         </form>
-        {% if error %}
-        <div class="d-flex flex-column mt-3">
-            <p class="m-auto"> Forgot your password? Click
-            <a href="{% url 'password_reset'%}">here.</a> </p>
-        </div>
-    {% endif %}
+        
 {% endblock container %}
 
 {% comment %} {% if error %}

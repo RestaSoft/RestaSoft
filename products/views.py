@@ -31,7 +31,10 @@ def productos(request):
     # redirect to templates in templates/products
 
     usuario = request.user
-    nombre = usuario.staffs.stores.store_name
+    if usuario.staffs.stores!=None:
+        nombre = usuario.staffs.stores.store_name
+    else:
+        return render(request,'company/suscription.html')
 
     if nombre != "Admin":
         usuario = usuario.staffs.stores.id
@@ -61,29 +64,33 @@ def buscar_prod(request):
 
 @login_required
 def nuevo(request):
-    if request.method == 'POST':
-        precio= request.POST["price"]
-        nomb= request.POST["name"]
-        cat_nom= request.POST["categoria"]
-        desc= request.POST['description']
-        stor_name = request.POST['select']
-        #creacion de objetos
-        usuario= request.user
-        nombre = usuario.staffs.stores.store_name
-        if nombre != "Admin":
+    usuario = request.user
+    if usuario.staffs.stores!=None:
+        if request.method == 'POST':
+            precio= request.POST["price"]
+            nomb= request.POST["name"]
+            cat_nom= request.POST["categoria"]
+            desc= request.POST['description']
+            stor_name = request.POST['select']
+            #creacion de objetos
+            usuario= request.user
+            nombre = usuario.staffs.stores.store_name
+            if nombre != "Admin":
 
-            cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
-            tienda = Stores.objects.get(store_name=nombre)
-            modify =Products.objects.create(product_name=nomb, list_price=precio, categoriesproduct=cat, stores=tienda)
-        if nombre == "Admin":
-        
-            return HttpResponse("Usuario "+ nombre +" no puede añadir productos")
-        
+                cat = CategoriesProduct.objects.create(category_name=cat_nom, category_description=desc)
+                tienda = Stores.objects.get(store_name=nombre)
+                modify =Products.objects.create(product_name=nomb, list_price=precio, categoriesproduct=cat, stores=tienda)
+            if nombre == "Admin":
+            
+                return HttpResponse("Usuario "+ nombre +" no puede añadir productos")
+            
 
-        if request.method == 'POST' and request.FILES['image']:
-            modify.image_prod = request.FILES['image']
-        modify.save()
-        return productos(request)
+            if request.method == 'POST' and request.FILES['image']:
+                modify.image_prod = request.FILES['image']
+            modify.save()
+            return productos(request)
+    else:
+        return render(request,'company/suscription.html')
         
     return render(request, 'products/newproduct.html')
     
@@ -116,43 +123,46 @@ def comandas(request):
 
 @login_required
 def editar_prod(request):
-    
-    if request.method=='GET':
-        busqueda= request.GET["edit"]
-        usuario= request.user
-        nombre = usuario.staffs.stores.store_name
-        usuario=usuario.staffs.stores.id
-         # redirect to templates in templates/products
-        if nombre != "Admin":
-            edit = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
+    usuario = request.user
+    if usuario.staffs.stores!=None:
+        if request.method=='GET':
+            busqueda= request.GET["edit"]
+            usuario= request.user
+            nombre = usuario.staffs.stores.store_name
+            usuario=usuario.staffs.stores.id
+            # redirect to templates in templates/products
+            if nombre != "Admin":
+                edit = Products.objects.filter(product_name__icontains=busqueda).filter(stores_id=usuario)
+                producto_a_modificar=edit.first()
+                return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
+            edit = Products.objects.filter(product_name__icontains=busqueda)
             producto_a_modificar=edit.first()
             return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
-        edit = Products.objects.filter(product_name__icontains=busqueda)
-        producto_a_modificar=edit.first()
-        return render (request, 'products/edit_products.html',{"edit":edit,"query":busqueda,"prod_mod":producto_a_modificar})
-    if request.method == 'POST':
-        # SE ASIGNAN NUEVOS VALORES
-        precio= request.POST["price"]
-        nombre= request.POST["name"]
-        id_pro= request.POST["save"]
-        descri= request.POST["description"]
-        nomb= request.POST["catname"]
-        print(nomb)
-        cat = CategoriesProduct.objects.filter(category_name=nomb)
-        cat = cat.first()
-        cat.category_description=descri
-        modify =Products.objects.get(id=id_pro)
-        modify.list_price=precio
-        modify.product_name=nombre
-        # SI CONTIENE IMAGEN SE MODIFICARA.
-        if request.FILES:
-            imagen=request.FILES["img"]
-            modify.image_prod=imagen
-        # SE GUARDA EL ARTICULO
-        cat.save()
-        modify.save()
-        
-        return productos(request)
+        if request.method == 'POST':
+            # SE ASIGNAN NUEVOS VALORES
+            precio= request.POST["price"]
+            nombre= request.POST["name"]
+            id_pro= request.POST["save"]
+            descri= request.POST["description"]
+            nomb= request.POST["catname"]
+            print(nomb)
+            cat = CategoriesProduct.objects.filter(category_name=nomb)
+            cat = cat.first()
+            cat.category_description=descri
+            modify =Products.objects.get(id=id_pro)
+            modify.list_price=precio
+            modify.product_name=nombre
+            # SI CONTIENE IMAGEN SE MODIFICARA.
+            if request.FILES:
+                imagen=request.FILES["img"]
+                modify.image_prod=imagen
+            # SE GUARDA EL ARTICULO
+            cat.save()
+            modify.save()
+            
+            return productos(request)
+    else:
+        return render(request,'company/suscription.html')
 
     return render(request, 'products/edit_products.html')
     
@@ -161,5 +171,10 @@ def editar_prod(request):
 
 @login_required
 def editar(request):
+    usuario = request.user
+    if usuario.staffs.stores!=None:
+        return render (request, 'products/edit_products.html')
+
     
-    return render (request, 'products/edit_products.html')
+    
+    return render(request,'company/suscription.html')
