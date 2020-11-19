@@ -43,7 +43,7 @@
                         <td class="column5">
                         <form class="form-inline" method="GET">
                                 {% csrf_token %}
-                                <button class="btn btn-primary btn-sm mb-5" type="submit" name="submit">Terminado</button>
+                                <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">&nbsp;&nbsp;check</i></span></label>
                         </form></td>
                     </tr>
                     <tr>
@@ -59,7 +59,7 @@
                         <td class="column5">
                         <form class="form-inline" method="GET">
                             {% csrf_token %}
-                            
+                            <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">&nbsp;&nbsp;close</i></span></label>
                         </form></td>
                     </tr>
             </table>
