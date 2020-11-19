@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+{% endblock head_content %}
+
+{% block title %}
+    <title>Comandas</title>
+{% endblock title %}
+
+
+{% block title_dash %}
+    <h1>Comandas</h1>
+{% endblock title_dash %}
+
+
+{% block container %}
+<div class="row justify-content-center">
+    <div class="col-lg-11 mt-2">
+        <div class="row">
+            <table class="table table-hover table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Fecha de orden</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">&nbsp;&nbsp;Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column1">1</td>
+                        <td class="column2">
+                        Orden del dia
+                            <ul>
+                                <li>Papas fritas</li>
+                                <li>Hamburgesa sencilla</li>
+                            </ul>
+                        </td>
+                        <td class="column3">18-11-20 01:22</td>
+                        <td class="column4">Comida Rapida</td>
+                        <td class="column5">
+                        <form class="form-inline" method="GET">
+                                {% csrf_token %}
+                                <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">&nbsp;&nbsp;check</i></span></label>
+                        </form></td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2</td>
+                        <td class="column2">
+                        Orden de ayer
+                            <ul>
+                                <li>Bola de Arroz</li>
+                            </ul>
+                        </td>
+                        <td class="column3">17-11-20 4:30</td>
+                        <td class="column4">Comida Rapida</td>
+                        <td class="column5">
+                        <form class="form-inline" method="GET">
+                            {% csrf_token %}
+                            <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">&nbsp;&nbsp;close</i></span></label>
+                        </form></td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock container %}
