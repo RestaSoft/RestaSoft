@@ -124,3 +124,6 @@ def contacto_view(request):
 def suscription_view(request):
     return render(request, 'company/suscription.html')
 
+
+
+
