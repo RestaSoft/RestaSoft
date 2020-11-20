@@ -11,15 +11,6 @@
 git
 {% block container %}
         <form class="form-signin" action="{% url 'newuser' %}" method="POST" enctype="multipart/form-data">
-         {% csrf_token %}
-            <img
-               class="rounded mx-auto d-block"
-                {% load static %}
-                src="{% static 'img/logo.png' %}"
-                alt=""
-                width="72"
-                height="72"
-            />
             <h3 class="row justify-content-center">Por favor regístrate</h3>
              {% if error %}
                 <p class="alert alert-danger">{{ error }}</p>
