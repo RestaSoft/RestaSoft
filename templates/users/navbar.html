@@ -4,16 +4,16 @@
 
 {% block navbar %}
     
-    <nav class="navbar navbar-expand-md navbar-dark pb-3">
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark pb-3">
         <a class="navbar-brand" href="{% url 'login' %}"><img src="{% static 'img/RestaSoft.png'%}" width="200" alt="RestaSoft"></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" 
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                 aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class=""><i class="material-icons green" style="font-size:40px">menu</i></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}">Inicio</a>
@@ -28,8 +28,8 @@
                     <a class="nav-link" href="{% url 'suscription' %}">Únete</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-success ml-3 my-sm-0" type="submit">¡Suscríbete!</button>
+            <form class="form-inline justify-content-center my-2">
+                <button class="btn btn-sm btn-success mx-md-3 my-sm-0" type="submit">¡Suscríbete!</button>
             </form>
         </div>
     </nav>
