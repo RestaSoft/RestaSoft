@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merienda+One&display=swap');
 
+html {
+  font-size: medium;
+}
+
 .main {
   margin-left: 250px; /* Same as the width of the sidenav */
 }
@@ -25,13 +29,13 @@
   position: fixed;
 }
 
-h6 {
-  color:#00AE8F;
-}
-
 hr {
   height: 3px;
   background-color: rgb(94, 94, 94);
+}
+
+.green {
+  color:#00AE8F !important;
 }
 
 .title-home {
