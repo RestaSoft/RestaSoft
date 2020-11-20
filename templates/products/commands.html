@@ -21,47 +21,46 @@
             <table class="table table-hover table-sm">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Fecha de orden</th>
-                        <th scope="col">Categoría</th>
-                        <th scope="col">&nbsp;&nbsp;Estado</th>
+                        <th scope="col">N. de pedido</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Platillo</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">N.de mesa</th>
+                        <th scope="col">Mesero</th>
+                        <th scope="col">&nbsp;&nbsp;Estatus</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="column1">1</td>
-                        <td class="column2">
-                        Orden del dia
-                            <ul>
-                                <li>Papas fritas</li>
-                                <li>Hamburgesa sencilla</li>
-                            </ul>
-                        </td>
-                        <td class="column3">18-11-20 01:22</td>
-                        <td class="column4">Comida Rapida</td>
-                        <td class="column5">
-                        <form class="form-inline" method="GET">
-                                {% csrf_token %}
-                                <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">&nbsp;&nbsp;check</i></span></label>
-                        </form></td>
-                    </tr>
-                    <tr>
-                        <td class="column1">2</td>
-                        <td class="column2">
-                        Orden de ayer
-                            <ul>
-                                <li>Bola de Arroz</li>
-                            </ul>
-                        </td>
-                        <td class="column3">17-11-20 4:30</td>
-                        <td class="column4">Comida Rapida</td>
-                        <td class="column5">
-                        <form class="form-inline" method="GET">
+                <tr>
+                    <td class="column1">1024</td>
+                    <td class="column2">2<br>1<br>2</td>
+                    <td class="column3">Hamburguesa<br>Torta<br>Bolas de arroz</td>
+                    <td class="column4">19-11-20</td>
+                    <td class="column5">5:30</td>
+                    <td class="column6">4</td>
+                    <td class="column7">Adam H.</td>
+                    <td class="column8">
+                        <div class="col-md-3 mb-5">
                             {% csrf_token %}
-                            <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">&nbsp;&nbsp;close</i></span></label>
-                        </form></td>
-                    </tr>
+                            <button class="btn btn-primary btn-sm mb-5" type="submit" name="submit">Cerrar</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="column1">1025</td>
+                    <td class="column2">1<br>3</td>
+                    <td class="column3">Huevo<br>Hamburguesa</td>
+                    <td class="column4">20-11-20</td>
+                    <td class="column5">11:23</td>
+                    <td class="column6">5</td>
+                    <td class="column7">Diana J.</td>
+                    <td class="column8">
+                        <div class="col-md-3 mb-5">
+                            pendiente
+                        </div>
+                    </td>
+                </tr>        
             </table>
         </div>
     </div>

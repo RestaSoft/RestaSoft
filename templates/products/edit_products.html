@@ -41,14 +41,6 @@
 
     </div>
 
-    <!-- {% if edit  %}
-        <label>Articulos encontrados:{{edit|length}}</label> 
-        {% else %}
-        <label>No se encontraron productos <strong>{{query}}</strong></label> <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/> 
-        {% endif %} -->
-
-    <!-- {{form.product_name}} -->
-
     {% if query != None and query != '' and query != '/' and edit%}
         <div class="row justify-content-around mb-5" id="contenedor" >
 
@@ -66,13 +58,10 @@
                             <input type="text" class="form-control" id="Name" name="name"
                                 value="{{prod_mod.product_name}}" />
                         </div>
-                        <div class="row">
-                            <label for="categoria">Categoría</label>
-                        </div>
                         <div class="row mb-3">
-                            <textarea class="form-control" id="catname" name="catname" rows="3" cols="50" 
-                                >{{prod_mod.categoriesproduct.category_name}}</textarea>
-                        </div>
+
+                                <input type="hidden" name="catname" value="{{prod_mod.categoriesproduct.category_name}}"/>
+                        </div> 
                         <div class="row">
                             <label for="description">Descripción</label>
                         </div>
@@ -80,18 +69,6 @@
                             <textarea class="form-control" id="Description" name="description" rows="3" cols="50"
                                 >{{prod_mod.categoriesproduct.category_description}}</textarea>
                         </div>
-
-                        <div class="row">
-                            <label for="categoría">Categoría</label>
-                        </div>
-
-                        <!-- <div class="row">
-                            <select class="form-control" name"select_categoria">
-                                <option value="" selected>Comida China</option>
-                                <option value="" selected>Comida China</option>
-                            </select>
-                        </div>
-                         -->
 
                         <div class="row">
                             {{form.list_price}}
