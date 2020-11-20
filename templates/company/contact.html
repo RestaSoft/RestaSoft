@@ -34,8 +34,6 @@
         <div class="row">
 
             <div class="col-lg-4 col-md-12 mb-0 mb-md-0">
-
-                {% csrf_token %}
                 <img class="rounded mb-3 mx-auto d-block" src="{% static 'img/logo.png' %}" alt="" width="82" height="82" />
                 <p class="suscrip">Tenemos la convicción de brindar las mejores experiencias a 
                 los usuarios de los restaurantes de esta ciudad, por ello esperamos responder cualquier duda
@@ -52,7 +50,8 @@
             </div>
 
             
-
+        <form method="POST" action="{% url "contact" %}">
+            {% csrf_token %}
             <div class="col-lg-7 col-md-12 mb-4 mb-md-0">
                 <form>
                     <div class="row">
@@ -60,14 +59,20 @@
                         <div class="col-md-6">
                             <div class="md-form md-outline mb-0">
                                 <label for="form-first-name">Nombre</label>
-                                <input type="text" id="form-first-name" class="form-control">
+                                <input type="text" id="form-first-name" class="form-control" name= "nombre">
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="md-form md-outline mb-0">
                                 <label for="form-last-name">Apellido</label>
-                                <input type="text" id="form-last-name" class="form-control">
+                                <input type="text" id="form-last-name" class="form-control" name= "apellido">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form md-outline mb-0">
+                                <label for="form-last-name">Telefono</label>
+                                <input type="text" id="form-last-name" class="form-control" name= "telefono">
                             </div>
                         </div>
 
@@ -75,26 +80,23 @@
 
                     <div class="md-form md-outline mt-3">
                         <label for="form-email">Correo:</label>
-                        <input type="email" id="form-email" class="form-control">
+                        <input type="email" id="form-email" class="form-control" name= "correo">
                     </div>
 
                     <div class="md-form md-outline mt-3">
                         <label for="form-subject">Asunto:</label>
-                        <input type="text" id="form-subject" class="form-control">
+                        <input type="text" id="form-subject" class="form-control" name= "asunto">
                     </div>
 
                     <div class="md-form md-outline mt-3">
                         <label for="form-message">Mensaje:</label>
-                        <textarea id="form-message" class="md-textarea form-control" rows="3"></textarea>
+                        <textarea id="form-message" class="md-textarea form-control" rows="3" name= "mensaje"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-info btn-md mt-3 ml-0">Enviar<i class="far fa-paper-plane ml-2"></i></button>
-                    
-                </form>
+                </div>
             </div>
-
-
-        </div>
+        </form>
   </section>
 
 {% endblock container %}
