@@ -35,7 +35,19 @@ hr {
 }
 
 .green {
-  color:#00AE8F !important;
+    color: #00ae8f !important;
+}
+
+.bg-green {
+    background-color: #00ae8f !important;
+}
+
+.orange {
+    color: #ff7a00;
+}
+
+.bg-orange {
+    background-color: #ff7a00;
 }
 
 .title-home {
