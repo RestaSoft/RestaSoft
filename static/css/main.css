@@ -110,6 +110,11 @@ body {
     background-color: #ff7a00;
 }
 
+.bg-gray {
+    background-color: rgb(102, 102, 102);
+    /* background-image: linear-gradient( to bottom, rgb(22, 22, 22,1),rgba(102,102, 102)50%); */
+}
+
 .shero {
     padding: 10rem 0;
 }
@@ -203,6 +208,93 @@ footer {
     color: #ff7a00 !important;
 }
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+.pricing-table{
+    color:#ffffff;
+}
+
+.pricing-table .block-heading {
+    padding-top: 50px;
+    margin-bottom: 40px;
+    text-align: center; 
+}
+
+.pricing-table .block-heading p {
+    text-align: center;
+    max-width: 420px;
+    margin: auto;
+    opacity: 0.7; 
+}
+
+.pricing-table .heading {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 174, 143, 0.5); 
+}
+
+.pricing-table .item {
+    background-color: #353535;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+    border-top: 4px solid #00ae8f;
+    padding: 30px;
+    overflow: hidden;
+    position: relative; 
+}
+
+.pricing-table .col-md-5:not(:last-child) .item {
+    margin-bottom: 30px; 
+}
+
+.pricing-table .item button {
+    font-weight: 600; 
+}
+
+.pricing-table .ribbon {
+    width: 160px;
+    height: 32px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0px 2px 3px rgba(230, 228, 228, 0.25);
+    background: #ff7a00;
+    transform: rotate(45deg);
+    position: absolute;
+    right: -42px;
+    top: 20px;
+    padding-top: 7px; 
+}
+
+.pricing-table .item p {
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.7; 
+}
+
+.pricing-table .features .feature {
+    font-weight: 600;
+}
+
+.pricing-table .features h4 {
+    text-align: center;
+    font-size: 18px;
+    padding: 5px; 
+}
+
+.pricing-table .price h4 {
+    margin: 15px 0;
+    font-size: 45px;
+    text-align: center;
+    color: #00ae8f; 
+}
+
+.pricing-table .buy-now button {
+    text-align: center;
+    margin: auto;
+    font-weight: 600;
+    padding: 9px 0; 
+}
 
 @media (min-width: 48em) {
     .masthead-brand {
