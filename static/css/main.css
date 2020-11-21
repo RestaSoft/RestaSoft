@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Merienda+One&display=swap");
 
+html {
+    font-size: 1.1rem !important;
+}
+
 html,
 body {
     height: 100%;
     background-color: rgb(22, 22, 22);
     color: white;
-    font-size: medium;
 }
 
 /*
@@ -15,9 +18,13 @@ body {
 .base {
     background-color: #333;
     background-image: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 1),
-            rgba(255, 255, 255, 0)
+            to top,
+            rgba(22, 22, 22, 1),
+            rgba(22, 22, 22, .5),
+            rgba(255, 255, 255, 0)30%,
+            rgba(0, 0, 0, .1)70%,
+            rgba(0, 0, 0, .7),
+            rgba(0, 0, 0, 1)
         ),
         url(../img/fondo-login.jpg);
 
@@ -189,6 +196,7 @@ footer {
 
 .hr-footer {
     background-color: rgb(173, 173, 173);
+    width: 95vw;
 }
 
 .social-media:hover {
