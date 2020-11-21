@@ -27,18 +27,22 @@
                         {% csrf_token %}
 
                         {% if error %}
-                            <p class="alert alert-danger" role="alert">{{error}}</p>
+                            <div class="row justify-content-center">
+                                <div class="col-10 mb-2">
+                                    <p class="alert alert-danger" role="alert">{{error}}</p>
+                                </div>
+                            </div>
                         {% endif %}
 
                         <div class="row justify-content-center">
-                            <div class="col-8 mb-4">
+                            <div class="col-10 mb-4">
                                 <label for="inputUser" class="sr-only">Usuario</label>
                                 <input type="User" id="inputEmail" class="form-control" placeholder="Usuario" name="username" required autofocus />
                             </div>
                         </div>
 
                         <div class="row justify-content-center">
-                            <div class="col-8 mb-4">
+                            <div class="col-10 mb-4">
                                 <label for="inputPassword" class="sr-only">Contraseña</label>
                                 <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Contraseña" name="password" required />
                                 {% if error %}
@@ -49,7 +53,7 @@
                         </div>
 
                         <div class="row justify-content-center">
-                            <div class="col-8 mb-4">
+                            <div class="col-10 mb-4">
                                 <button class="btn bg-orange btn-block text-light" type="submit"><b>Acceder</b></button>
                             </div>
                         </div>
