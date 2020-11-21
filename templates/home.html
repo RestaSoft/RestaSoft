@@ -10,7 +10,7 @@
 {% endblock title %}
 
 {% block title_dash %}
-     <h1 class="title-home">Bienvenido {{user.first_name }}</h1>
+     <h1 class="title-home">Bienvenid@ {{user.first_name }}</h1>
 {% endblock title_dash %}
 
 {% block container %}
@@ -45,7 +45,7 @@
                          </div>
                          
                          <div class="col-7 align-self-center">
-                              <img class="rounded mx-auto d-block" style="width: 50%;" src="{{user.stores.image.url }}" alt="{{ user.get_full_name }}"/>
+                              <img class="mx-auto d-block" style="width: 50%;" src="{{user.stores.image.url }}" alt="{{ user.get_full_name }}"/>
                          </div>
 
                     </div>
