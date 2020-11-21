@@ -13,46 +13,160 @@
 
 {% block container %}
 
-        <section class="hero-image2 shero">
-            <div class="container hero-text">
-                <h1 style="font-size:50px">¿Quiénes somos?</h1>
-                <h5>Queremos verte crecer</h5>
-            </div>
-        </section>
+    <section class="hero-image2 shero">
+        <div class="container hero-text">
+            <h1 style="font-size:50px">¿Quiénes somos?</h1>
+            <h5>Queremos verte crecer</h5>
+        </div>
+    </section>
 
-        <div class="container col-8 pt-5">
-            <div class="row justify-content-center">
-                <div class="col-3"><hr class="separation"></div>
-                <div class="col-12 text-center pt-2 pb-2">
-                    <h1 class="display-5">- Nunca se ha tratado de lo que haces, si no, de cómo lo haces -</h1>
+    <div class="container col-8 pt-5">
+        <div class="row justify-content-center">
+            <div class="col-3"><hr class="separation"></div>
+            <div class="col-12 text-center pt-2 pb-2">
+                <h1 class="display-5">- Nunca se ha tratado de lo que haces, si no, de cómo lo haces -</h1>
+            </div>
+            <div class="col-3"><hr class="separation"></div>
+        </div>
+    </div>
+
+    <div class="container col-8 pt-5 pb-5">
+        <div class="row justify-content-center pt-3">
+            <div class="col-12">
+                <h4 class="mb-3 pl-2 pr-2">Somos como tú</h4>
+            </div>
+            <div class="col-6">                    
+                <p>Somos una empresa joven y orgullosamente Chihuahuense, comprometidos 
+                con brindar las mejores experiencias a los usuarios de los restaurantes de esta ciudad, 
+                creando tecnologías que ayuden a los clientes como a los dueños de los restaurentes a 
+                disfrutar más del lugar.</p>
+                <p>Tenemos la convicción de que las personas visitan un lugar por la experiencia que viven en él,
+                y si esta fue de su agrado, estan dispuestos a volver e incluso a hacerlo con mas gente.</p>
+            </div>
+            <div class="col-6">
+                <p>En RestaSoft queremos crear esas grandes experiencias para tus clientes y que tú disfrutes de tu negocio,
+                queremos compartir logros junto con todos nuestros socios, queremos crecer a la par de ellos
+                y es por eso que para nosotros primero esta tu restaurante, porque si tú creces, nosotros también.</p>
+            </div>       
+        </div>
+    </div>
+
+    <section class="hero-image4 shero">
+    </section> 
+    <div class="container col-8 pt-5 pb-5">
+
+        <div class="row justify-content-center pt-3">
+            <div class="col-12">
+                <h4 class="mb-3 pl-2 pr-2">Nuestro Origen</h4>
+            </div>
+            <div class="col-6">                    
+                <p>RestaSoft surge como una idea a mediados del año 2020, 
+                como respuesta a la experiencia de la administración manual 
+                existente en los distintos restaurantes en la ciudad de Chihuahua.</p>
+                <p>En RestaSoft tenemos la convicción de siempre demostrar a los 
+                clientes de los restaurantes y al personal que en ellos laboran, 
+                cómo es que se puede mejorar su experiencia, a través de las nuevas tecnologías
+                y herramientas.</p>
+            </div>
+            <div class="col-6">
+                <div class="col-5 align-self-center mx-auto">
+                    <img class="img-fluid" src="{% static 'img/logo.png' %}" alt="team-goals">
                 </div>
-                <div class="col-3"><hr class="separation"></div>
+            </div>       
+        </div>
+    </div>
+
+    <section class="hero-image3 shero">
+        <div class="container hero-text">
+            <h1 style="font-size:50px">Queremos saber de tí</h1>
+                <h5>Nos interesa conocerte</h5>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-12 text-center pt-5 pb-5">
+                <h1 class="display-4">Contáctanos</h1>
+                <h5 class="mb-8 pl-8 pr-2">Con gusto te ayudaremos</h5>
             </div>
         </div>
+    </div>
 
-        <div class="container col-8 pt-5 pb-5">
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
 
-            <div class="row justify-content-center pt-3">
-                <div class="col-12">
-                    <h4 class="mb-3 pl-2 pr-2">Somos como tú</h4>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-12 mb-0 mb-md-0">
+
+                {% csrf_token %}
+                <img class="rounded mb-3 mx-auto d-block" src="{% static 'img/logo.png' %}" alt="" width="82" height="82" />
+                <p class="suscrip">Tenemos la convicción de brindar las mejores experiencias a 
+                los usuarios de los restaurantes de esta ciudad, por ello esperamos responder cualquier duda
+                o pregunta que tengas, con gusto la responderemos.</p>
+
+                <div class="col-lg-12 col-md-12 mb-4 mb-md-0">
+                    <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">mail</i></span>&nbsp;&nbsp; contacto@restasoft.com</label>
                 </div>
-                <div class="col-6">                    
-                    <p>Somos una empresa joven y orgullosamente Chihuahuense, comprometidos 
-                    con brindar las mejores experiencias a los usuarios de los restaurantes de esta ciudad, 
-                    creando tecnologías que ayuden a los clientes como a los dueños de los restaurentes a 
-                    disfrutar más del lugar.</p>
-                    <p>Tenemos la convicción de que las personas visitan un lugar por la experiencia que viven en él,
-                    y si esta fue de su agrado, estan dispuestos a volver e incluso a hacerlo con mas gente.</p>
+
+                <div class="col-lg-12 col-md-12 mb-4 mb-md-0">
+                    <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">call</i></span>&nbsp;&nbsp;614-2345678</label>
                 </div>
-                <div class="col-6">
-                    <p>En RestaSoft queremos crear esas grandes experiencias para tus clientes y que tú disfrutes de tu negocio,
-                    queremos compartir logros junto con todos nuestros socios, queremos crecer a la par de ellos
-                    y es por eso que para nosotros primero esta tu restaurante, porque si tú creces, nosotros también.</p>
-                </div>       
+
             </div>
-        </div>
 
-        <section class="hero-image4 shero">
-        </section> 
+            
+
+            <div class="col-lg-7 col-md-12 mb-4 mb-md-0">
+                <form>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="md-form md-outline mb-0">
+                                <label for="form-first-name">Nombre</label>
+                                <input type="text" id="form-first-name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="md-form md-outline mb-0">
+                                <label for="form-last-name">Apellido</label>
+                                <input type="text" id="form-last-name" class="form-control">
+                            </div>
+                        </div>
+                        
+
+                        <div class="col-md-6">
+                            <div class="md-form md-outline mb-0 mt-3">
+                                <label for="form-last-name">Teléfono:</label>
+                                <input type="text" id="form-last-name" class="form-control" name= "telefono">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="md-form md-outline mb-0 mt-3">
+                                <label for="form-email">Correo:</label>
+                                <input type="email" id="form-email" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md-form md-outline mt-3">
+                        <label for="form-subject">Asunto:</label>
+                        <input type="text" id="form-subject" class="form-control">
+                    </div>
+
+                    <div class="md-form md-outline mb-2 mt-3">
+                        <label for="form-message">Mensaje:</label>
+                        <textarea id="form-message" class="md-textarea form-control" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-info btn-lg btn-md mt-3 ml-0">Enviar<i class="far fa-paper-plane ml-2"></i></button>
+                    
+                </form>
+            </div>
+
+
+        </div>
+  </section>
 
 {% endblock container %}
