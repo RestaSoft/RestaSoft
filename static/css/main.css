@@ -181,6 +181,21 @@ nav .active {
     text-shadow: 3px 3px 3px #000000;
 }
 
+
+footer {
+    background-color: rgb(14, 14, 14);
+    color: rgb(173, 173, 173);
+}
+
+.hr-footer {
+    background-color: rgb(173, 173, 173);
+}
+
+.social-media:hover {
+    color: #ff7a00 !important;
+}
+
+
 @media (min-width: 48em) {
     .masthead-brand {
         float: left;
