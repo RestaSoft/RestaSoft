@@ -92,7 +92,7 @@
         </div>
     </div>
 
-    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+    <section class="px-md-5 pb-5 mx-md-5 text-center text-lg-left dark-grey-text">
 
         <div class="row">
 
@@ -104,11 +104,11 @@
                 los usuarios de los restaurantes de esta ciudad, por ello esperamos responder cualquier duda
                 o pregunta que tengas, con gusto la responderemos.</p>
 
-                <div class="col-lg-12 col-md-12 mb-4 mb-md-0">
+                <div class="col-lg-12 col-md-12 pt-4 pb-2 mb-md-0">
                     <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">mail</i></span>&nbsp;&nbsp; contacto@restasoft.com</label>
                 </div>
 
-                <div class="col-lg-12 col-md-12 mb-4 mb-md-0">
+                <div class="col-lg-12 col-md-12 pb-2 mb-md-0">
                     <label class="d-flex"><span class="green"><i class="material-icons" style="font-size: 25px">call</i></span>&nbsp;&nbsp;614-2345678</label>
                 </div>
 
@@ -117,7 +117,9 @@
             
 
             <div class="col-lg-7 col-md-12 mb-4 mb-md-0">
-                <form>
+                <form method="POST" action="{% url 'contact' %}" class="">
+                    {% csrf_token %}
+
                     <div class="row">
 
                         <div class="col-md-6">
