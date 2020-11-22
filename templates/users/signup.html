@@ -8,67 +8,166 @@
 {% block title %}
      <title>Registro</title>
 {% endblock title %}
-git
+
 {% block container %}
-        <form class="form-signin" action="{% url 'newuser' %}" method="POST" enctype="multipart/form-data">
-         {% csrf_token %}
-            <img
-               class="rounded mx-auto d-block"
-                {% load static %}
-                src="{% static 'img/logo.png' %}"
-                alt=""
-                width="72"
-                height="72"
-            />
-            <h3 class="row justify-content-center">Por favor regístrate</h3>
-             {% if error %}
-                <p class="alert alert-danger">{{ error }}</p>
-             {% endif %}
-            <p>
-            <div class="row">
-                <div class="col-lg-12 col-md-7 mb-3">
-                    <input class="form-control" type="text" placeholder="Nombre del Restaurant" name="store_name" required="true" />
-                </div>
-                <div class=" col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="text" placeholder="Nombre" name="first_name" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="text" placeholder="Usuario" name="username" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="text" placeholder="Apellido" name="last_name" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="password" placeholder="Contraseña" name="passwd" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="email" placeholder="Correo electrónico" name="email" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="password" placeholder="Confirmar contraseña" name="passwd_confirmation" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="tel" placeholder="Telefono" name="phone" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="text" placeholder="Cuidad" name="city" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="text" placeholder="Direccion" name="address" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="text" placeholder="Codigo Zip" name="zip" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="text" placeholder="Sitio Web" name="sitio_web" required="true" />
-                </div>
-                <div class="col-lg-6 col-md-7 mb-3">
-                    <input class="form-control" type="text" placeholder="Slogan" name="slogan" required="true" />
-                </div>
-                <div class="col-lg-12 col-md-7 mb-3">
-                    <input type="file" name="image"/>
+
+    <div class="row justify-content-center pt-3 mb-5">
+
+        <div class="col-12 fondo-opaco p-3">
+
+            <div class="row justify-content-center text-center mb-5 pt-3">
+                <div class="col-10 text-center">
+                    <h3><b>Puedes expresar tus buenos deseos con muchas palabras, pero una de las más importantes es... </b></h3>
                 </div>
             </div>
-            <button class="btn btn-primary btn-block mt-1" type="submit">Registrarse</button>
-        </form>
+
+            <div class="row justify-content-center text-center mb-5 pb-3 pt-3">
+                <div class="col-10 text-center">
+                    <h1 CLASS="display-2"><b>¡BIENVENIDO!</b></h1>
+                </div>
+            </div>
+
+            <div class="row justify-content-center text-center mb-5 pb-3">
+                <div class="col-10 text-center">
+                    <h5>Nos agrada saber que te gusta trabajar en equipo, sin duda, una de las mejores 
+                    partes de esto es el poder colaborar con personas que les apasiona lo que hacen,
+                    para nosotros, tú eres la pieza clave en este camino.</h5>
+                </div>
+            </div>
+
+            <div class="row justify-content-center text-center mb-3 py-3">
+                <div class="col-12">
+                    <h1 class="">- Registrar cuenta -</h1>
+                </div>
+            </div>
+
+            <div class="row justify-content-center align-self-center">
+                <div class="col-12">
+
+                    <form class="form-signin" action="{% url 'newuser' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {% if error %}
+                            <p class="alert alert-danger">{{ error }}</p>
+                        {% endif %}
+                        <div class="row  pl-5">
+                            <div class="col-6">
+                                <div class="row">  
+                                    <div class=" col-lg-11 col-md-7 mb-3">
+                                        <label for="first_name" class="orange">Nombre</label>
+                                        <input class="form-control" type="text" placeholder="Nombre..." name="first_name" required="true" />
+                                    </div>
+                                </div>
+                                <div class="row">  
+                                    <div class="col-lg-11 col-md-7 mb-3">
+                                        <label for="last_name" class="orange">Apellidos</label>
+                                        <input class="form-control" type="text" placeholder="Apellidos..." name="last_name" required="true" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">  
+                                    <div class="col-lg-11 col-md-7 mb-3">
+                                        <label for="store_name" class="orange">Restaurante</label>
+                                        <input class="form-control" type="text" placeholder="Restaurante..." name="store_name" required="true" />
+                                    </div>
+                                </div>
+                                <div class="row">  
+                                    <div class="col-lg-11 col-md-7 mb-3">
+                                        <label for="slogan" class="orange">Slogan</label>
+                                        <input class="form-control" type="text" placeholder="Slogan..." name="slogan" required="true" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row  pl-5">
+                            <div class="col-6 mb-5 pb-3">
+                                <div class="row">  
+                                    <div class="col-lg-11 col-md-7 mb-3">
+                                        <label for="address" class="orange">Dirección</label>
+                                        <input class="form-control" type="text" placeholder="Calle y número..." name="address" required="true" />
+                                    </div>
+                                </div>
+                                <div class="row">  
+                                    <div class="col-lg-7 col-md-7 mb-3">
+                                        <label for="city" class="orange">Ciudad</label>
+                                        <input class="form-control" type="text" placeholder="Cuidad" name="city" required="true" />
+                                    </div>
+                                </div>
+                                <div class="row">  
+                                    <div class="col-lg-4 col-md-7 mb-3">
+                                        <label for="zip" class="orange">Código Postal</label>
+                                        <input class="form-control" type="text" placeholder="Código Postal..." name="zip" required="true" />
+                                    </div>
+                                </div>                        
+                            </div>
+
+                            <div class="col-6 mb-5 pb-3">
+                                <div class="row">  
+                                    <div class="col-lg-7 col-md-7 mb-3">
+                                        <label for="phone" class="orange">Teléfono</label>
+                                        <input class="form-control" type="tel" placeholder="Teléfono" name="phone" required="true" />
+                                    </div>
+                                </div>
+                                <div class="row">  
+                                    <div class="col-lg-11 col-md-7 mb-3">
+                                        <label for="email" class="orange">Correo electrónico</label>
+                                        <input class="form-control" type="email" placeholder="Correo electrónico..." name="email" required="true" />
+                                    </div>
+                                </div>
+                                <div class="row">  
+                                    <div class="col-lg-11 col-md-7 mb-3">
+                                        <label for="sitio_web" class="orange">Sitio web</label>
+                                        <input class="form-control" type="text" placeholder="Sitio Web..." name="sitio_web" required="true" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="row pl-5">
+                            <div class="col-6 mb-4">
+                                <div class="row">  
+                                    <div class="col-lg-11 col-md-7 mb-3">
+                                        <label for="username" class="orange">Usuario</label>
+                                        <input class="form-control" type="text" placeholder="Usuario..." name="username" required="true" />
+                                    </div>
+                                </div>
+                                <div class="row">  
+                                    <div class="col-lg-11 col-md-7 mb-3">
+                                        <label for="passwd" class="orange">Contraseña</label>
+                                        <input class="form-control" type="password" placeholder="Contraseña..." name="passwd" required="true" />
+                                    </div>
+                                </div>
+                                <div class="row">  
+                                    <div class="col-lg-11 col-md-7 mb-3">
+                                        <label for="passwd_confirmation" class="orange">Confirmar contraseña</label>
+                                        <input class="form-control" type="password" placeholder="Contraseña..." name="passwd_confirmation" required="true" />
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="col-6 ">
+                                <div class="row">  
+                                    <div class="col-lg-7 col-md-7 mb-5">
+                                        <label for="image" class="orange">Logotipo de Restaurante</label><br>
+                                        <span class="btn btn-dark btn-block btn-file">Subir archivo<input type="file" name="image"></span>
+                                    </div>
+                                </div>
+                                <div class="row">  
+                                    <div class="col-lg-7 col-md-7 mt-5 pt-4">
+                                        <button class="btn btn-lg btn-primary btn-block mt-1" type="submit">Registrarse</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+        
 {% endblock container %}

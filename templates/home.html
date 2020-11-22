@@ -10,10 +10,11 @@
 {% endblock title %}
 
 {% block title_dash %}
-     <h1 class="title-home">Bienvenido {{user.first_name }}</h1>
+     <h1 class="title-home">Bienvenid@ {{user.first_name }}</h1>
 {% endblock title_dash %}
 
 {% block container %}
+<<<<<<< HEAD
      <form>
           {% csrf_token %}
           <div class="row align-items-center justify-content-center vh-100 vw-100 data-home">
@@ -27,18 +28,54 @@
                                    <label>Telefono de celular: <span id="phone">{{user.staffs.phone}}</span></label>
                                    <label>Correo electrónico: <span id="web">{{user.email}}</span></label>
                                    <label>Sitio web:  <span id="email">{{user.stores.sitio_web}}</span></label>
+=======
+     
+          <div class="row align-items-center justify-content-center h-75">
+
+               <div class="col-10">
+
+                    <div class="row justify-content-center">
+
+                         <div class="col-5 align-self-center">
+                              <div class="row text-center datos-card pt-4 pb-5">
+                                   <div class="col-12">
+                                        <h2>{{user.stores.store_name}}</h2>
+                                   </div>
+                                   <div class="col-12">
+                                        <h5 class="mb-4" name="Slogan">{{user.stores.slogan}}</h5>
+                                   </div>
+                                   <div class="col-12">
+                                        <label><span id="ubi" class="d-flex align-items-center"><i class="material-icons">location_on</i>&nbsp;&nbsp;{{user.stores.address}}</span></label>
+                                   </div>
+                                   <div class="col-12">
+                                        <label><span id="phone" class="d-flex align-items-center"><i class="material-icons">local_phone</i>&nbsp;&nbsp;{{user.staffs.phone}}</span></label>
+                                   </div>
+                                   <div class="col-12">
+                                        <label><span id="mail" class="d-flex align-items-center"><i class="material-icons">mail</i>&nbsp;&nbsp;{{user.email}}</span></label>
+                                   </div>
+                                   <div class="col-12">
+                                        <label><span id="web" class="d-flex align-items-center"><i class="material-icons">phonelink</i>&nbsp;&nbsp;{{user.stores.sitio_web}}</span></label>
+                                   </div>
+>>>>>>> f94b39a38ddaa1dd8d90be1edd7e793f89c11335
                               </div>
                          </div>
+                         
                          <div class="col-7 align-self-center">
+<<<<<<< HEAD
                               <div class="row justify-content-center">
                               {% load cloudinary %}
                                    <div class="col-8">
                                         <img class="img-fluid mt-2 mb-4" src="{{user.stores.image.url }}" alt="{{ user.get_full_name }}"/>
                                    </div>
                               </div>
+=======
+                              <img class="mx-auto d-block" style="width: 50%;" src="{{user.stores.image.url }}" alt="{{ user.get_full_name }}"/>
+>>>>>>> f94b39a38ddaa1dd8d90be1edd7e793f89c11335
                          </div>
+
                     </div>
+
                </div>
+
           </div>
-     </form>
 {% endblock container %}

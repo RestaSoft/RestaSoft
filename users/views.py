@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Exception
 from django.db.utils import IntegrityError
@@ -15,7 +17,7 @@ from users.models import Staffs
 from users.models import Stores
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.db.utils import IntegrityError
 from cloudinary.forms import cl_init_js_callbacks
@@ -31,7 +33,7 @@ from django.core.mail import EmailMultiAlternatives
 def logout_view(request):
     """ Logout a user """
     logout(request)
-    return redirect('login.html')
+    return redirect('/')
 
 
 def newuser(request):
@@ -77,6 +79,7 @@ def newuser(request):
 
 
 
+
 def view_login(request):
     ''' Login view '''
 
@@ -95,10 +98,10 @@ def view_login(request):
     return render(request, 'users/login.html')
 
 
+
 @login_required
 def home_view(request):
-
-    return render(request, 'home.html')
+        return render(request, 'home.html')
 
 
 def nosotros_view(request):
@@ -106,10 +109,21 @@ def nosotros_view(request):
 
 
 def contacto_view(request):
+
+    if request.method == 'POST':
+        asun = request.POST ['asunto']
+        mensaj = request.POST ['mensaje'] + " " + request.POST ['correo'] + ", " + request.POST ['nombre'] + " " + request.POST ['apellido'] + ", " + request.POST['telefono']
+
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = ["restasoftapp@gmail.com"]
+        send_mail(asun, mensaj, email_from, recipient_list)
+        return render(request, 'company/gracias.html')
     return render(request, 'company/contact.html')
 
 
 def suscription_view(request):
     return render(request, 'company/suscription.html')
+
+
 
 

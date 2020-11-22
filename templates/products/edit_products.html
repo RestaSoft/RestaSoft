@@ -41,23 +41,15 @@
 
     </div>
 
-    <!-- {% if edit  %}
-        <label>Articulos encontrados:{{edit|length}}</label> 
-        {% else %}
-        <label>No se encontraron productos <strong>{{query}}</strong></label> <input type="text" class="form-control" id="edit" name="edit" placeholder="Producto..."/> 
-        {% endif %} -->
-
-    <!-- {{form.product_name}} -->
-
     {% if query != None and query != '' and query != '/' and edit%}
-        <div class="row justify-content-around mb-5" id="contenedor" style="background-color:blue">
+        <div class="row justify-content-around mb-5" id="contenedor" >
 
             <div class="container">
 
                 <form class="form-inline" action="{% url 'editar_prod' %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     
-                    <div class="col-lg-5 mt-5 ml-5" style="background-color:red">
+                    <div class="col-lg-5 mt-5 ml-5">
                         <div class="row">
                             <label for="name">Nombre</label>
                         </div>
@@ -66,27 +58,17 @@
                             <input type="text" class="form-control" id="Name" name="name"
                                 value="{{prod_mod.product_name}}" />
                         </div>
+                        <div class="row mb-3">
 
+                                <input type="hidden" name="catname" value="{{prod_mod.categoriesproduct.category_name}}"/>
+                        </div> 
                         <div class="row">
                             <label for="description">Descripción</label>
                         </div>
-
                         <div class="row mb-3">
                             <textarea class="form-control" id="Description" name="description" rows="3" cols="50"
                                 >{{prod_mod.categoriesproduct.category_description}}</textarea>
                         </div>
-
-                        <div class="row">
-                            <label for="categoría">Categoría</label>
-                        </div>
-
-                        <div class="row">
-                            <select class="form-control" name"select_categoria">
-                                <option value="" selected>Comida China</option>
-                                <option value="" selected>Comida China</option>
-                            </select>
-                        </div>
-                        
 
                         <div class="row">
                             {{form.list_price}}
@@ -98,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-5 ml-5" style="background-color:red">
+                    <div class="col-lg-5 ml-5" >
                         <div class="row">
                             <label for="file-upload" class="custom-file-upload ">Imagen</label>
                         </div>
@@ -109,7 +91,7 @@
                         </div>
 
                         <div class="row">
-                            <img class="img-tbl-prod mt-2 mb-4" src="{{prod_mod.image_prod.url }}" alt="{{ user.get_full_name }}"/>
+                            <img class="img-tbl-prod mt-2 mb-4" style="width: 50%; height: auto;" src="{{prod_mod.image_prod.url }}" alt="{{ user.get_full_name }}"/>
                         </div>
 
                         <div class="row mt-3">
