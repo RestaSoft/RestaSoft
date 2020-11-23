@@ -14,11 +14,7 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-<<<<<<< HEAD
-# from decouple import config
-=======
 #from decouple import config
->>>>>>> f94b39a38ddaa1dd8d90be1edd7e793f89c11335
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
