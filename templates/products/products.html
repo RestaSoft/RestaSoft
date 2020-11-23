@@ -27,18 +27,19 @@
                     <button class="btn btn-primary btn-sm my-4 my-sm-0" type="submit">Buscar</button>
                 </form>
             </nav>
-
         </div>
+
+        
         {% if query != None and query != ''  %}
         <div class="column"><p>Estas buscando: <strong>{{query}}</strong></p></div>
 
         {% if  prod %}
         <div class="column">
-            <p>Articulos encontrados:{{prod|length}}</p>
+            <p class="text-success"><b>Artículos encontrados: {{prod|length}}</b></p>
         </div>
         {% else %}
         <div class="column">
-            <p>No se han encontrado articulos!</p>
+            <p class="text-danger"><b>No se han encontrado artículos.</b></p>
         </div>
 
         {% endif %}
