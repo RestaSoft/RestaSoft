@@ -24,7 +24,7 @@
                 <form class="form-inline" action="{% url 'buscar_prod' %}" method="GET">
                     <input class="form-control mr-sm-2" type="text" name="prd" placeholder="Buscar..."
                         aria-label="Search" />
-                    <button class="btn btn-outline-warning btn-sm my-4 my-sm-0" type="submit">Buscar</button>
+                    <button class="btn btn-primary btn-sm my-4 my-sm-0" type="submit">Buscar</button>
                 </form>
             </nav>
 
@@ -64,7 +64,7 @@
 
                 {% for producto in prod %}
 
-                <tbody>
+                <tbody class="bg-tbl">
 
                     <tr>
                         <th scope="row">{{producto.id}}</th>
@@ -72,13 +72,13 @@
                         <td>{{producto.categoriesproduct.category_description}}</td>
                         <td>{{producto.categoriesproduct}}</td>
                         <td>${{producto.list_price}}.00</td>
-                        <td><img class="img-tbl-prod mt-2 mb-4" src="{{producto.image_prod.url }}" alt="{{ user.get_full_name }}"/></td>
+                        <td><img class="img-tbl-prod" src="{{producto.image_prod.url }}" alt="{{ user.get_full_name }}"/></td>
 
 
                         <form class="form-inline" action="{% url 'editar_prod' %}" method="GET">
                             {% csrf_token %}
                             <td><button type="submit" class="btn btn-sm" name="edit" value="{{producto}}"><img
-                                        class="img-tbl-action mt-2 mb-4" src="{% static 'img/editar.svg' %}"
+                                        class="img-tbl-action " src="{% static 'img/editar.svg' %}"
                                         alt="edit-icon" /></button></td>
                         </form>
 
@@ -86,7 +86,7 @@
                         <form class="form-inline" action="{% url 'delete_prod' %}" method="GET">
                         {% csrf_token %}
                         <td><button type="submit" class="btn btn-sm" name="delete" value="{{producto.id}}" ><img 
-                                    class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
+                                    class="img-tbl-action" src="{% static 'img/trash.svg' %}"
                                     alt="delete-icon" /></a></td>
                         </form>
 
