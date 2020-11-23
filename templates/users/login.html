@@ -13,7 +13,7 @@
 
     <div class="row justify-content-center align-self-center text-center pt-3">
 
-        <div class="col-7 fondo-opaco p-3">
+        <div class="col-5 fondo-opaco p-3">
 
             <div class="row justify-content-center text-center mb-3">
                 <div class="col-12">
@@ -27,23 +27,37 @@
                         {% csrf_token %}
 
                         {% if error %}
-                            <p class="alert alert-danger" role="alert">{{error}}</p>
+                            <div class="row justify-content-center">
+                                <div class="col-10 mb-2">
+                                    <p class="alert alert-danger" role="alert">{{error}}</p>
+                                </div>
+                            </div>
                         {% endif %}
-                        <div class="mb-4">
-                            <label for="inputUser" class="sr-only">Usuario</label>
-                            <input type="User" id="inputEmail" class="form-control" placeholder="Usuario" name="username" required autofocus />
+
+                        <div class="row justify-content-center">
+                            <div class="col-10 mb-4">
+                                <label for="inputUser" class="sr-only">Usuario</label>
+                                <input type="User" id="inputEmail" class="form-control" placeholder="Usuario" name="username" required autofocus />
+                            </div>
                         </div>
 
-                        <div class="mb-4">
-                            <label for="inputPassword" class="sr-only">Contraseña</label>
-                            <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Contraseña" name="password" required />
-                            {% if error %}
-                                <p class="m-auto"> ¿Olvidaste tu contraseña?
-                                <a class="text-warning" href="{% url 'password_reset'%}"> Haz click aqui.</a> </p>
-                            {% endif %}
+                        <div class="row justify-content-center">
+                            <div class="col-10 mb-4">
+                                <label for="inputPassword" class="sr-only">Contraseña</label>
+                                <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Contraseña" name="password" required />
+                                {% if error %}
+                                    <p class="m-auto"> ¿Olvidaste tu contraseña?
+                                    <a class="text-warning" href="{% url 'password_reset'%}"> Haz click aqui.</a> </p>
+                                {% endif %}
+                            </div>
                         </div>
 
-                        <button class="btn btn-sm btn-warning btn-block" type="submit">Acceder</button>
+                        <div class="row justify-content-center">
+                            <div class="col-10 mb-4">
+                                <button class="btn bg-orange btn-block text-light" type="submit"><b>Acceder</b></button>
+                            </div>
+                        </div>
+                        
                     </form>
 
                     <div class= "d-flex flex-column mt-3">
@@ -99,7 +113,7 @@
         <a href="{% url 'password_reset'%}">here.</a> </p>
     </div>
 {% endif %} {% endcomment %}
-<<<<<<< HEAD
+{% comment %} <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
 =======
@@ -116,4 +130,7 @@
 >>>>>>> brendadev
 >>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619
 =======
->>>>>>> 36673765224ed1db64ebd3d7e04bf7767696b1d8
+>>>>>>> 36673765224ed1db64ebd3d7e04bf7767696b1d8 {% endcomment %}
+
+
+

@@ -18,13 +18,13 @@
     
         {% include "aside.html" %}
 
-        <div class="main main-home" >
+        <div class="main-home" >
 
-            <div class="container vw-100">
+            <div class="container-fluid w-100">
 
                 <div class="row justify-content-between">
                     
-                    <div class="col-6 mt-5 ml-5">
+                    <div class="col-9 mt-5 ml-5">
                         {% block title_dash %} {% endblock %}
                     </div>
 
@@ -34,7 +34,7 @@
 
                 </div>
                     
-                    {% block container %} {% endblock %}
+                {% block container %} {% endblock %}
                 
 
             </div>

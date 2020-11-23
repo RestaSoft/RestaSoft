@@ -1,143 +1,170 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merienda+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Merienda+One&display=swap");
 
 html {
-  font-size: medium;
+    font-size: medium;
 }
 
+body {
+    background-color: rgb(22, 22, 22);
+}
+
+
 .main {
-  margin-left: 250px; /* Same as the width of the sidenav */
+    margin-left: 250px; /* Same as the width of the sidenav */
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.5), rgba(0,0,0,0.5), rgba(22,22,22,1)95%),url(../img/prod5.jpg);
+
+    /* Full height */
+    height: 100%;
+    /* opacity: 0.9; */
+    color: white;
+
+    /* Center and scale the image nicely */
+    background-position: center;
 }
 
 .main-home {
-  margin-left: 250px; /* Same as the width of the sidenav */
+    margin-left: 250px; /* Same as the width of the sidenav */
 
-  background-image: url(../img/pizzeria_fondo.jpg);
+    background-image: url(../img/kitchen.jpg);
 
-  /* Full height */
-  height: 100%;
-  opacity: 0.9;
+    /* Full height */
+    height: 100%;
+    color: white;
 
-  color:white;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+}
 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
+.bg-tbl {
+    background-color: rgba(255, 255, 255,0.8);
+    /* background-image: linear-gradient( to bottom, rgb(22, 22, 22,1),rgba(102,102, 102)50%); */
 }
 
 hr {
-  height: 3px;
-  background-color: rgb(94, 94, 94);
+    height: 3px;
+    background-color: rgb(220, 220, 220);
 }
 
 .green {
-  color:#00AE8F !important;
+    color: #00ae8f !important;
+}
+
+.bg-green {
+    background-color: #00ae8f !important;
+}
+
+.orange {
+    color: #ff7a00;
+}
+
+.bg-orange {
+    background-color: #ff7a00;
 }
 
 .title-home {
-  color: white;
-  text-shadow: 3px 3px 3px #000000;
-  /* font-family: 'Salsa'; */
+    color: white;
+    text-shadow: 3px 3px 3px #000000;
+    /* font-family: 'Salsa'; */
 }
 
-.datos-card{
-  background-color: rgba(0,0,0,.7);
-  box-shadow: white;
-  border-radius: 10px;
+.datos-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 6px #fff;
+    border-radius: 10px;
 }
 
 .data-home {
-  margin-top: -60px;
+    margin-top: -60px;
 }
 
 .resta-nav {
-  position: fixed;
-  bottom:25;
-  margin-left: 75;
-  font-family: 'Salsa', cursive;
+    position: fixed;
+    bottom: 25;
+    margin-left: 75;
+    font-family: "Salsa", cursive;
 }
 
 /* The sidenav */
 aside {
-  width: 250px;
-  height: 100%;
-  position: fixed;
-  top:0;
-  bottom: 0;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
-ul.nav a:hover { 
-  color: #FF7A00 !important; 
+ul.nav a:hover {
+    color: #ff7a00 !important;
 }
 
 .resta-nav {
-  position: fixed;
-  bottom:25;
-  margin-left: 50;
-  font-family: 'Salsa', cursive;
+    position: fixed;
+    bottom: 25;
+    margin-left: 50;
+    font-family: "Salsa", cursive;
 }
 
 .img-sidebar {
-  /* Centrar imagen*/
-  display:block;
-  margin:auto;
+    /* Centrar imagen*/
+    display: block;
+    margin: auto;
 
-  width:60;
-  height:73;
+    width: 80;
 }
 
 .img-tbl-prod {
-  width:50;
-  height:33;
+    width: 50;
+    height: 33;
 }
 
 .img-tbl-action {
-  width:40;
-  height:26;
+    width: 40;
+    height: 26;
 }
 
 .img-btn-out {
-  width:10;
-  height:10;
+    width: 10;
+    height: 10;
 }
 
 .btn-file {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
-.btn-file input[type=file] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  min-width: 100%;
-  min-height: 100%;
-  font-size: 100px;
-  text-align: right;
-  filter: alpha(opacity=0);
-  opacity: 0;
-  outline: none;
-  background: white;
-  cursor: inherit;
-  display: block;
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }
 
 .img-edit-prod {
-  width: 300;
-  height: 198;
+    width: 300;
+    height: 198;
 }
 
 .btn {
-  border-radius: 50px;
+    border-radius: 50px;
 }
 
-
-
-
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
