@@ -36,8 +36,8 @@ def logout_view(request):
     return redirect('/')
 
 
-def notice(request):
-    return render(request,  'users/notice.html')
+#def notice(request):
+#    return render(request,  'users/notice.html')
 
 def newuser(request):
     """ Sign up view """
