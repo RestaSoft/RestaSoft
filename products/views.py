@@ -149,7 +149,7 @@ def editar_prod(request):
             descri= request.POST["description"]
             nomb= request.POST["catname"]
             print(nomb)
-            cat = CategoriesProduct.objects.filter(category_name=nomb)
+            cat = CategoriesProduct.objects.filter(id=nomb)
             cat = cat.first()
             cat.category_description=descri
             modify =Products.objects.get(id=id_pro)

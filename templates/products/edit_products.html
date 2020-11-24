@@ -63,8 +63,9 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-10">
-                                    <label for="catname">Categoría</label>
-                                    <input type="text" class="form-control" name="catname" value="{{prod_mod.categoriesproduct.category_name}}"/>
+                                    <!-- <label for="catname">Categoría</label> -->
+                                    <input type="hidden" class="form-control" name="catname" value="{{prod_mod.categoriesproduct.id}}"/>
+                                    <!-- #category_name -->
                                 </div>
                             </div> 
                             <div class="row mb-3">
