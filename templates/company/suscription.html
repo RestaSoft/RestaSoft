@@ -133,7 +133,28 @@
                                     <div class="price mt-5">
                                         <h4>$7,500 <span style="font-size:20px">MXN</span></h4>
                                     </div>
-                                    <button class="btn btn-block btn-outline-primary mt-5" type="submit">COMPRAR</button>
+                                <form id="paypal-button-container-basic">
+                                    <div id="paypal-button-container-basic"></div>
+                                        <script src="https://www.paypal.com/sdk/js?client-id=AU2Tna0W4YsJd_ttxhS1mXHJ78q1AfJfDKtdVa7hqzBAaIfFfrPw2-NuQuN4cpjiQoiFcTtxJ26TigT0&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+                                        <script>
+                                        paypal.Buttons({
+                                            style: {
+                                                shape: 'rect',
+                                                color: 'blue',
+                                                layout: 'vertical',
+                                                label: 'paypal'
+                                            },
+                                            createSubscription: function(data, actions) {
+                                                return actions.subscription.create({
+                                                'plan_id': 'P-6A318566UK294741RL66JFRQ'
+                                                });
+                                            },
+                                            onApprove: function(data, actions) {
+                                                alert(data.subscriptionID);
+                                            }
+                                        }).render('#paypal-button-container-basic');
+                                        </script>
+                                </form>
                                 </div>
                             </div>
 
@@ -152,7 +173,28 @@
                                     <div class="price mt-5">
                                         <h4>$13,800 <span style="font-size:20px">MXN</span></h4>
                                     </div>
-                                    <button class="btn btn-block btn-primary mt-5" type="submit">COMPRAR</button>
+                                    <form id="paypal-button-container-pro">
+                                        <div id="paypal-button-container-pro"></div>
+                                            <script src="https://www.paypal.com/sdk/js?client-id=AU2Tna0W4YsJd_ttxhS1mXHJ78q1AfJfDKtdVa7hqzBAaIfFfrPw2-NuQuN4cpjiQoiFcTtxJ26TigT0&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+                                            <script>
+                                            paypal.Buttons({
+                                            style: {
+                                            shape: 'rect',
+                                            color: 'silver',
+                                            layout: 'vertical',
+                                            label: 'paypal'
+                                            },
+                                            createSubscription: function(data, actions) {
+                                                return actions.subscription.create({
+                                                'plan_id': 'P-5D916900HB012961TL66I36I'
+                                                });
+                                            },
+                                            onApprove: function(data, actions) {
+                                                alert(data.subscriptionID);
+                                            }
+                                        }).render('#paypal-button-container-pro');
+                                        </script>
+                                    </form>
                                 </div>
                             </div>
 
@@ -170,14 +212,16 @@
                                     <div class="price mt-5">
                                         <h4>$25,200 <span style="font-size:20px">MXN</span></h4>
                                     </div>
-                                    <button class="btn btn-block btn-outline-primary mt-5" type="submit">Premium</button>
+
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </section>
             </div>
         </div>
+</script>
 
         <div class="container col-12">
             <div class="row justify-content-center bg-success">
