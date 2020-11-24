@@ -117,8 +117,11 @@ def delete_prod(request):
 
 @login_required
 def comandas(request):
-    
-    return render (request, 'products/commands.html')
+    usuario = request.user
+    if usuario.staffs.stores!=None:
+        return render (request, 'products/commands.html')
+    else:
+        return render (request,'users/notice.html')
 
 
 @login_required
