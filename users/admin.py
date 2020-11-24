@@ -9,8 +9,8 @@ from .models import Stocks
 
 # Register your models here.
 class StaffsAdmin(admin.ModelAdmin): #Muesta las variables que deseemos que se vean en el modelo administrativo
-    list_display=("phone",)
-    search_fields=("phone",) #Campo de busqueda
+    list_display=("user", "phone")
+    search_fields=("user", "phone") #Campo de busqueda
 
 admin.site.register(Staffs, StaffsAdmin)
 
