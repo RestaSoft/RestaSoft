@@ -5,28 +5,41 @@
 
 {% endblock head_content %}  
 {% block title %}
-<title>Productos</title>
+<title>Eliminar producto</title>
 {% endblock title %}
 
 
 {% block title_dash %}
-<div class="col-2 mt-5">
-    <h1>Productos</h1>
-</div>
+    <h1>Eliminar producto</h1>
 {% endblock title_dash %}
 
 
 {% block container %}
 
-<p>Estas seguro de borrar el producto: <strong>{{delete}}</strong> </p>
-<form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
-    {% csrf_token %}
-    <a href="{% url 'productos'%}">Cancel</a>
-    <button type="submit" name="delete" value="{{delete.id}}" ><img 
-        class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
-        alt="delete-icon" /></a></td>
-</form>
-</form>
+<div class="row align-items-center justify-content-center h-50">
+    <div class="col-10" >
+
+        <div class="row justify-content-center">
+            <div class="col-5 align-self-center">
+                <div class="row text-center datos-card pt-4 pb-5">
+                    <p>Estas seguro de querer borrar el producto: <strong>{{delete}}</strong> </p>
+                    <p>Una vez que sea borrado no se podra recuperar nuevamente</p>
+                    <form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
+                        <div class="col-10 mb-4">
+                            {% csrf_token %}
+                            <button href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></button>
+                            <a href="{% url 'productos'%}">Cancelar</a>
+                        </div>
+                        <button type="submit" name="delete" value="{{delete.id}}" ><img 
+                        class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
+                        alt="delete-icon" /></a></td>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
