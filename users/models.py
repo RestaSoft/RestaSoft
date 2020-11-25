@@ -96,7 +96,7 @@ class Suppliers(models.Model):
 class Products(models.Model):
     product_name = models.CharField(max_length=50)
     categoriesproduct = models.ForeignKey(CategoriesProduct, on_delete=models.CASCADE)
-    list_price = models.IntegerField()
+    list_price = models.DecimalField(max_digits=5, decimal_places=2)
     image_prod = CloudinaryField('image')
     stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
 

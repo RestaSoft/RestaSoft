@@ -33,11 +33,8 @@ def productos(request):
     usuario = request.user
     if usuario.staffs.stores!=None:
         nombre = usuario.staffs.stores.store_name
-        #nombre=usuario.get_username()
-        #nombre.lower()
-        print(nombre)
     else:
-        return render(request,'company/suscription.html')
+        return render(request,'users/notice.html')
 
     if nombre != "Admin":
         usuario = usuario.staffs.stores.id
@@ -74,7 +71,7 @@ def nuevo(request):
             nomb= request.POST["name"]
             cat_nom= request.POST["categoria"]
             desc= request.POST['description']
-            stor_name = request.POST['select']
+            
             #creacion de objetos
             usuario= request.user
             nombre = usuario.staffs.stores.store_name
@@ -93,7 +90,7 @@ def nuevo(request):
             modify.save()
             return productos(request)
     else:
-        return render(request,'company/suscription.html')
+        return render(request,'users/notice.html')
         
     return render(request, 'products/newproduct.html')
     
@@ -120,8 +117,11 @@ def delete_prod(request):
 
 @login_required
 def comandas(request):
-    
-    return render (request, 'products/commands.html')
+    usuario = request.user
+    if usuario.staffs.stores!=None:
+        return render (request, 'products/commands.html')
+    else:
+        return render (request,'users/notice.html')
 
 
 @login_required
@@ -149,7 +149,7 @@ def editar_prod(request):
             descri= request.POST["description"]
             nomb= request.POST["catname"]
             print(nomb)
-            cat = CategoriesProduct.objects.filter(category_name=nomb)
+            cat = CategoriesProduct.objects.filter(id=nomb)
             cat = cat.first()
             cat.category_description=descri
             modify =Products.objects.get(id=id_pro)
@@ -165,7 +165,7 @@ def editar_prod(request):
             
             return productos(request)
     else:
-        return render(request,'company/suscription.html')
+        return render(request,'users/notice.html')
 
     return render(request, 'products/edit_products.html')
     
@@ -180,4 +180,4 @@ def editar(request):
 
     
     
-    return render(request,'company/suscription.html')
+    return render(request,'users/notice.html')

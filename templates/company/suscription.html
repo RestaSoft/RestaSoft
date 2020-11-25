@@ -21,8 +21,6 @@
         </section>
 
         <div class="container col-8 pt-5">
-            
-
             <div class="row justify-content-start pt-3">
                 <div class="col-5">
                     <h4 class="pb-3">¡ Únete al equipo !</h4>
@@ -36,7 +34,6 @@
                     <img class="img-fluid" src="{% static 'img/team_goals.svg' %}" alt="team-goals">
                 </div>
             </div>
-
             <div class="row justify-content-end pt-4 pb-5">
                 <div class="col-5 align-self-center mx-auto">
                     <img class="img-fluid" src="{% static 'img/friends.svg' %}" alt="team-goals">
@@ -57,7 +54,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container col-6 pt-5">
 
             <div class="row justify-content-center pt-4 pb-5">
@@ -109,13 +105,13 @@
                 </div>
             </div>            
         </div>
-
         <div class="container col-12 pt-2 bg-gray">
             <div class="row justify-content-center">
                 <div class="col-12 text-center pt-5 pb-5">
                     <h1 class="display-2">Nuestros planes</h1>
                 </div>
                 <section class="pricing-table mb-5 pb-5">
+                <script src="https://www.paypal.com/sdk/js?client-id=AU2Tna0W4YsJd_ttxhS1mXHJ78q1AfJfDKtdVa7hqzBAaIfFfrPw2-NuQuN4cpjiQoiFcTtxJ26TigT0&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
                     <div class="container">
                         <div class="row justify-content-md-center">
 
@@ -131,12 +127,31 @@
                                         <h4><span class="feature">Funcionalidades</span>: <span class="value">Básico</span></h4>
                                     </div>
                                     <div class="price mt-5">
-                                        <h4>$7,500 <span style="font-size:20px">MXN</span></h4>
+                                        <h4>$1,875 <span style="font-size:20px">MXN</span></h4>
                                     </div>
-                                    <button class="btn btn-block btn-outline-primary mt-5" type="submit">COMPRAR</button>
+                                <form id="paypal-button-container-basic">
+                                    <div id="paypal-button-container-basic"></div>
+                                        <script>
+                                        paypal.Buttons({
+                                            style: {
+                                                shape: 'pill',
+                                                color: 'blue',
+                                                layout: 'vertical',
+                                                label: 'paypal'
+                                            },
+                                            createSubscription: function(data, actions) {
+                                                return actions.subscription.create({
+                                                'plan_id': 'P-37A80159WG838560PL66I2FY'
+                                                });
+                                            },
+                                            onApprove: function(data, actions) {
+                                                alert(data.subscriptionID);
+                                            }
+                                        }).render('#paypal-button-container-basic');
+                                        </script>
+                                </form>
                                 </div>
                             </div>
-
                             <div class="col-md-5 col-lg-4">
                                 <div class="item">
                                     <div class="ribbon">Más popular</div>
@@ -150,12 +165,31 @@
                                         <h4><span class="feature">Funcionalidades</span>: <span class="value">Pro</span></h4>
                                     </div>
                                     <div class="price mt-5">
-                                        <h4>$13,800 <span style="font-size:20px">MXN</span></h4>
+                                        <h4>$7,300 <span style="font-size:20px">MXN</span></h4>
                                     </div>
-                                    <button class="btn btn-block btn-primary mt-5" type="submit">COMPRAR</button>
+                                    <form id="paypal-button-container-pro">
+                                        <div id="paypal-button-container-pro"></div>
+                                            <script>
+                                            paypal.Buttons({
+                                            style: {
+                                            shape: 'pill',
+                                            color: 'silver',
+                                            layout: 'vertical',
+                                            label: 'paypal'
+                                            },
+                                            createSubscription: function(data, actions) {
+                                                return actions.subscription.create({
+                                                'plan_id': 'P-5D916900HB012961TL66I36I'
+                                                });
+                                            },
+                                            onApprove: function(data, actions) {
+                                                alert(data.subscriptionID);
+                                            }
+                                        }).render('#paypal-button-container-pro');
+                                        </script>
+                                    </form>
                                 </div>
                             </div>
-
                             <div class="col-md-5 col-lg-4">
                                 <div class="item">
                                     <div class="heading">
@@ -168,17 +202,39 @@
                                         <h4><span class="feature">Funcionalidades</span>: <span class="value">150GB</span></h4>
                                     </div>
                                     <div class="price mt-5">
-                                        <h4>$25,200 <span style="font-size:20px">MXN</span></h4>
+                                        <h4>$85,200 <span style="font-size:20px">MXN</span></h4>
                                     </div>
-                                    <button class="btn btn-block btn-outline-primary mt-5" type="submit">Premium</button>
+                                <form id="paypal-button-container-premium">
+                                    <div id="paypal-button-container-premium"></div>
+                                        <div id="paypal-button-container-premium"></div>
+                                            <script>
+                                            paypal.Buttons({
+                                                style: {
+                                                    shape: 'pill',
+                                                    color: 'gold',
+                                                    layout: 'vertical',
+                                                    label: 'paypal'
+                                                },
+                                                createSubscription: function(data, actions) {
+                                                    return actions.subscription.create({
+                                                    'plan_id': 'P-1PC25152MG498573JL66I4OA'
+                                                    });
+                                                },
+                                                onApprove: function(data, actions) {
+                                                    alert(data.subscriptionID);
+                                                }
+                                            }).render('#paypal-button-container-premium');
+                                            </script>
+                                    </form>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </section>
             </div>
         </div>
-
+</script>
         <div class="container col-12">
             <div class="row justify-content-center bg-success">
                 <div class="col-12 text-center pt-5 pb-5">
