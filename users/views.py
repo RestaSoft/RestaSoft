@@ -114,12 +114,12 @@ def nosotros_view(request):
 def contacto_view(request):
 
     if request.method == 'POST':
-        asun = request.POST ['asunto']
+        asunto = request.POST ['asunto']
         mensaj = request.POST ['mensaje'] + " " + request.POST ['correo'] + ", " + request.POST ['nombre'] + " " + request.POST ['apellido'] + ", " + request.POST['telefono']
 
         email_from = settings.EMAIL_HOST_USER
         recipient_list = ["restasoftapp@gmail.com"]
-        send_mail(asun, mensaj, email_from, recipient_list)
+        send_mail(asunto, mensaj, email_from, recipient_list)
         return render(request, 'company/gracias.html')
     return render(request, 'company/contact.html')
 
