@@ -5,16 +5,27 @@
 
 {% endblock head_content %}  
 {% block title %}
-<title>Eliminar Productos</title>
+<title>Productos</title>
 {% endblock title %}
 
 
 {% block title_dash %}
-    <h1>Eliminar Productos</h1>
+    <h1>Eliminar producto</h1>
 {% endblock title_dash %}
 
 
 {% block container %}
+
+<!--<p>Estas seguro de borrar el producto: <strong>{{delete}}</strong> </p>
+<form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'productos'%}">Cancel</a>
+    <button type="submit" name="delete" value="{{delete.id}}" ><img 
+        class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
+        alt="delete-icon" /></a></td>
+</form>
+</form> -->
+
 <div class="row align-items-center justify-content-center ">
     <p>Estas seguro de querer borrar el producto: <strong>&nbsp;{{delete}}</strong> </p>
         <form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
@@ -22,16 +33,18 @@
             {% csrf_token %}
                 <div class="row">
                     <div class="col-sm">
-                    <button href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></button>
-                    <!--<a href="{% url 'productos'%}">Cancelar</a>-->
-                </div>
-                <div class="col-sm">
-                    <button value="{{delete.id}}" class="btn bg-orange btn-block text-light" type="submit"><b>Eliminar</b></button>
-                    <!--<button type="submit" name="delete" value="{{delete.id}}" ><img 
-                    class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
-                    alt="delete-icon" /></a></td>-->
+                        <button href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></button>
+                        <!--<a href="{% url 'productos'%}">Cancelar</a>-->
+                    </div>
+                    <div class="col-sm">
+                        <button value="{{delete.id}}" class="btn bg-orange btn-block text-light" type="submit"><b>Eliminar</b></button>
+                        <!--<button type="submit" name="delete" value="{{delete.id}}" ><img 
+                        class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
+                        alt="delete-icon" /></a></td>-->
                 </div>
             </div>
         </form>
 </div>
+
+
 {% endblock container %}
