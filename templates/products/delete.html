@@ -26,9 +26,9 @@
 </form>
 </form> -->
 
-<div class="row align-items-center justify-content-center ">
+<div class="row align-items-center text-align-center justify-content-center ">
     <p>Estas seguro de querer borrar el producto: <strong>&nbsp;{{delete}}</strong> </p>
-        <form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
+        <form  action="{% url 'delete_prod' %}" method="POST">
             <div class="container">
             {% csrf_token %}
                 <div class="row">
