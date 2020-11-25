@@ -5,43 +5,32 @@
 
 {% endblock head_content %}  
 {% block title %}
-<title>Eliminar producto</title>
+<title>Eliminar Productos</title>
 {% endblock title %}
 
 
 {% block title_dash %}
-    <h1>Eliminar producto</h1>
+    <h1>Eliminar Productos</h1>
 {% endblock title_dash %}
 
 
 {% block container %}
-
-<div class="row align-items-center justify-content-center h-50">
-    <div class="col-10" >
-
-        <div class="row justify-content-center">
-            <div class="col-5 align-self-center">
-                <div class="row text-center datos-card pt-4 pb-5">
-                    <p>Estas seguro de querer borrar el producto: <strong>{{delete}}</strong> </p>
-                    <p>Una vez que sea borrado no se podra recuperar nuevamente</p>
-                    <form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
-                        <div class="col-10 mb-4">
-                            {% csrf_token %}
-                            <button href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></button>
-                            <a href="{% url 'productos'%}">Cancelar</a>
-                        </div>
-                        <button type="submit" name="delete" value="{{delete.id}}" ><img 
-                        class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
-                        alt="delete-icon" /></a></td>
-                    </form>
-                </div>
+    <div class="row align-items-center justify-content-center ">
+        <div class="col-5 align-self-center">
+            <div class="row text-center datos-card pt-4 pb-5">
+                <p>Estas seguro de querer borrar el producto: <strong>{{delete}}</strong> </p>
+                <p>Una vez que sea borrado no se podra recuperar nuevamente</p>
+                <form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
+                    <div class="col-10 mb-4">
+                        {% csrf_token %}
+                        <button href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></button>
+                        <a href="{% url 'productos'%}">Cancelar</a>
+                    </div>
+                    <button type="submit" name="delete" value="{{delete.id}}" ><img 
+                    class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
+                    alt="delete-icon" /></a></td>
+                </form>
             </div>
         </div>
     </div>
-</div>
-
-
-
-
-
 {% endblock container %}
