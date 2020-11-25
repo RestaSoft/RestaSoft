@@ -18,19 +18,51 @@
     <div class="row align-items-center justify-content-center ">
         <div class="col-5 align-self-center">
             <div class="row text-center datos-card pt-4 pb-5">
-                <p>Estas seguro de querer borrar el producto: <strong>{{delete}}</strong> </p>
-                <p>Una vez que sea borrado no se podra recuperar nuevamente</p>
+                <p>Estas seguro de querer borrar el producto: <strong>&nbsp;{{delete}}</strong> </p>
                 <form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
-                    <div class="col-10 mb-4">
+                    <div class="col-12 mb-12">
                         {% csrf_token %}
-                        <button href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></button>
-                        <a href="{% url 'productos'%}">Cancelar</a>
+                        <div class="row justify-content-center">
+                            <div class="col-6 mb-6">
+                                <button href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></button>
+                            </div>
+                            <div class="col-6 mb-6">
+                                <button value="{{delete.id}}" class="btn bg-orange btn-block text-light" type="submit"><b>Eliminar</b></button>
+                            </div>
+                        </div>
+                        <!--<a href="{% url 'productos'%}">Cancelar</a>-->
+
+                        <!--<button type="submit" name="delete" value="{{delete.id}}" ><img 
+                        class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
+                        alt="delete-icon" /></a></td>-->
                     </div>
-                    <button type="submit" name="delete" value="{{delete.id}}" ><img 
-                    class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
-                    alt="delete-icon" /></a></td>
                 </form>
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center align-self-center">
+                <div class="col-12">
+
+                    <form class="form-signin" action="{% url 'newuser' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row  pl-5">
+                            <div class="col-6">
+                            <div class="row">  
+                                    <div class="col-lg-7 col-md-7 mt-5 pt-4">
+                                        <button class="btn btn-lg btn-primary btn-block mt-1" type="submit">Registrarse</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">  
+                                    <div class="col-lg-7 col-md-7 mt-5 pt-4">
+                                        <button class="btn btn-lg btn-primary btn-block mt-1" type="submit">Registrarse</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 {% endblock container %}
