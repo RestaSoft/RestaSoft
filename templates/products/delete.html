@@ -23,21 +23,22 @@
     <button type="submit" name="delete" value="{{delete.id}}" ><img 
         class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
         alt="delete-icon" /></a></td>
+        &nbsp;
 </form>
 </form> -->
 
 <div class="row align-items-center text-align-center justify-content-center ">
-    <p>Estas seguro de querer borrar el producto: <strong>&nbsp;{{delete}}</strong> </p>
-        <form  action="{% url 'delete_prod' %}" method="POST">
+    <p>Estas seguro de querer borrar el producto: <strong>{{delete}}</strong> </p>
+        <form class="form-inline" action="{% url 'delete_prod' %}" method="POST">
             <div class="container">
             {% csrf_token %}
                 <div class="row">
                     <div class="col-sm">
-                        <button href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></button>
+                        <a href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></a>
                         <!--<a href="{% url 'productos'%}">Cancelar</a>-->
                     </div>
                     <div class="col-sm">
-                        <button value="{{delete.id}}" class="btn bg-orange btn-block text-light" type="submit"><b>Eliminar</b></button>
+                        <button value="{{delete.id}}" class="btn bg-orange btn-block text-light" type="submit"name="delete"><b>Eliminar</b></button>
                         <!--<button type="submit" name="delete" value="{{delete.id}}" ><img 
                         class="img-tbl-action mt-2 mb-4" src="{% static 'img/trash.svg' %}"
                         alt="delete-icon" /></a></td>-->
