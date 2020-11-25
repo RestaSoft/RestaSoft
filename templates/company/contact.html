@@ -12,7 +12,7 @@
 
 
 {% block container %}
-    <form class="form-signin" action="{% url 'contact' %}" method="POST">
+    <form action="{% url 'contact' %}" method="POST">
         {% csrf_token %}
 
         <section class="hero-image3 shero">
