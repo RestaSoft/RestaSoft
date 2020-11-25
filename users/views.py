@@ -120,8 +120,9 @@ def contacto_view(request):
         email_from = settings.EMAIL_HOST_USER
         recipient_list = ["restasoftapp@gmail.com"]
         send_mail(asunto, mensaj, email_from, recipient_list)
+        return render(request, 'company/gracias.html')
         
-    return render(request, 'company/gracias.html')
+    return render(request, 'company/contact.html')
 
 
 def suscription_view(request):
