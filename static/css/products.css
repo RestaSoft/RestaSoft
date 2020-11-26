@@ -81,12 +81,6 @@ hr {
     margin-top: -60px;
 }
 
-.resta-nav {
-    position: fixed;
-    bottom: 25;
-    margin-left: 75;
-    font-family: "Salsa", cursive;
-}
 
 /* The sidenav */
 aside {
@@ -99,13 +93,32 @@ aside {
 
 ul.nav a:hover {
     color: #ff7a00 !important;
+    border-left: 5px solid #ff7a00;
+    background: rgb(100, 100, 100);
+}
+
+.nav li {
+    /* outline: 1px solid #424242; */
+    font-size:1.3rem;
+    border-top:1px solid #424242;
+    border-bottom: 1px solid #424242;
+}
+
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .resta-nav {
-    position: fixed;
     bottom: 25;
-    margin-left: 50;
     font-family: "Salsa", cursive;
+    font-size:1.3em;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .img-sidebar {
