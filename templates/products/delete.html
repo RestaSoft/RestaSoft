@@ -43,7 +43,7 @@
 
             <div class="row justify-content-center text-center mb-3">
                 <div class="col-12">
-                    <h1>Aviso de seguridad </h1>
+                    <h1 class="text-danger">Aviso de seguridad </h1>
                     
                 </div>
             </div>
@@ -55,9 +55,11 @@
                     <form class="form-signin " method="POST" action="{% url 'delete_prod' %}">
                         {% csrf_token %}
                         <div class="row justify-content-center ">
-                            <div class="col-10 mb-4">
+                            <div class="col-md-5 mb-5 mt-5">
                                 <a href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></a>
-                                <button value="{{delete.id}}" class="btn bg-orange btn-block text-light" type="submit"name="delete"><b>Eliminar</b></button>
+                            </div>
+                            <div class="col-md-5 mb-5 mt-5">
+                                <button value="{{delete.id}}" class="btn  bg-orange btn-block text-light" type="submit"name="delete"><b>Eliminar</b></button>
                             </div>
                         </div>
                         
@@ -70,22 +72,4 @@
         </div>
 
     </div>
-
-
-<div class="row justify-content-center">
-    <div class="col-lg-5 mt-5">
-        <div class="row ">
-        {% csrf_token %}
-            <h1>Aviso de seguridad </h1>
-            <p>Estas seguro de querer eliminar el producto: 
-            <strong>{{delete}}</strong> </p>
-            <div class="col-md-5 mb-5 mt-5">
-                <a href="{% url 'productos'%}" class="btn bg-orange btn-block text-light" type="submit"><b>Cancelar</b></a>
-            </div>
-            <div class="col-md-5 mb-5 mt-5">
-                <button value="{{delete.id}}" class="btn  bg-orange btn-block text-light" type="submit"name="delete"><b>Eliminar</b></button>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock container %}
