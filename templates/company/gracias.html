@@ -1,6 +1,38 @@
-<html>
-    <body>
+{% extends 'company/base_company.html' %} 
+{% load static %} 
 
-        Gracias por enviar la informancion, modificar el template :D Gracias
-    </body>
-</html>
+
+{% block title %}
+    <title>Agradecimiento</title>
+{% endblock title %} 
+
+{% block title_dash %}
+    <h1>Agradecimiento/h1>
+{% endblock title_dash %} 
+
+
+{% block container %}
+
+        <div class="container col-12 pt-5">
+            <div class="row justify-content-center bg-green">
+                <div class="col-12 text-center pt-5 pb-5">
+                    <h1 class="display-2">!Gracias por contactarnos¡</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container col-6 pt-5">
+
+            <div class="row justify-content-center pt-4 pb-5">
+                <div class="col-12">
+                    <h4 class="pb-3 orange">Gracias por tu información</h4>
+                    <p>En RestaSoft esperamos brindarle la mejor atencion a nuestros
+                    usuarios, en nuestro servicio como al responder cualquier duda. En 
+                    los siguientes dias esperamos responder su duda con claridad, la 
+                    información se le brindara a su correo electronico registrado.</p>
+                    <p>De ser necesaria mayor información o ayuda porfavor de 
+                    comunicarse al telefono: 614-2345678</p>
+                </div>
+            </div>                       
+        </div>
+        
+{% endblock container %}

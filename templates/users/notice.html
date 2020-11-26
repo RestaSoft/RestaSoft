@@ -19,18 +19,18 @@
                 <div class="col-10">
                     <h2 class="mb-3">Aviso</h2>
                     <p class="pt-8">Lo sentimos, para poder disfrutar de
-                    todos los beneficios, es necesario activar tu cuenta. Por el momento
-                    tu cuenta se encuentra inactiva</p>
+                    todos los beneficios, es necesario pagar su suscripción.
+                    Favor de realizar el pago de su suscripción, para continuar.</p>
                 </div>
             </div>
 
             <div class="row justify-content-center align-self-center pt-3 pb-3">
                 <div class="col-6">
-                    <form method="POST" action="{% url 'home' %}">
+                    <form method="POST" action="{% url 'suscription' %}#suscriptions">
                         {% csrf_token %}
                         <div class="row form-group">
                             <div class="col-12">
-                                <button class="btn btn-sm btn-primary btn-block" type="submit">Regresar al inicio</button>
+                                <button class="btn btn-sm btn-primary btn-block" type="submit">Suscribirse</button>
                             </div>
                         </div>
                     </form>
