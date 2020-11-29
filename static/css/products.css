@@ -181,3 +181,29 @@ ul.nav a:hover {
         font-size: 18px;
     }
 }
+
+/*  Extra Small devices */
+@media screen and (min-width: 575px) {
+    
+}
+
+
+/*  Small devices */
+@media screen and (min-width: 575px) {
+    
+}
+
+/* Medium devices */
+@media screen and (min-width: 575px) {
+    
+}
+
+/* Large devices */
+@media screen and (min-width: 575px) {
+    
+}
+
+/* Extra Large devices */
+@media screen and (min-width: 575px) {
+    
+}
