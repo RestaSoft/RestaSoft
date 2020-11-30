@@ -50,7 +50,7 @@ class Staffs(models.Model):
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    phone = models.IntegerField(blank=True)
+    phone = models.BigIntegerField()
     stores = models.ForeignKey(Stores, on_delete=models.CASCADE, null=True)
     permission = models.ForeignKey(Permission, on_delete=models.CASCADE, null=True)
     active = models.BooleanField(('active'), default=True, null=True)
