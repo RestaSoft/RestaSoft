@@ -1,0 +1,1 @@
+web: gunicorn RestaSoft.wsgi.py --log-file -
