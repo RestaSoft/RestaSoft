@@ -590,4 +590,3 @@ eventup/media/
 users/migrations/
 users/__pycache__/
 posts/migrations/
-media/
