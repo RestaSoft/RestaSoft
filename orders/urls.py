@@ -5,5 +5,5 @@ from orders import views as orders_views
 
 urlpatterns = [
  # Django
-    path('', orders_views.home, name="home"),
+    path('', orders_views.home_view_orders, name="homeOrders"),
 ] 

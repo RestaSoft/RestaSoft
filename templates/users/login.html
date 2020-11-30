@@ -1,0 +1,136 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block head_content %}
+
+{% endblock head_content %}
+
+{% block title %}
+     <title>Inicio de sesión</title>
+{% endblock title %}
+
+{% block container %}
+
+    <div class="row justify-content-center align-self-center text-center pt-3">
+
+        <div class="col-sm-12 col-md-8 col-lg-5 fondo-opaco p-3">
+
+            <div class="row justify-content-center text-center mb-3">
+                <div class="col-12">
+                    <h3 class="">Inicia sesión</h3>
+                </div>
+            </div>
+
+            <div class="row justify-content-center align-self-center">
+                <div class="col-12">
+                    <form class="form-signin " method="POST" action="{% url "login" %}">
+                        {% csrf_token %}
+
+                        {% if error %}
+                            <div class="row justify-content-center">
+                                <div class="col-10 mb-2">
+                                    <p class="alert alert-danger" role="alert">{{error}}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <div class="row justify-content-center">
+                            <div class="col-10 mb-4">
+                                <label for="inputUser" class="sr-only">Usuario</label>
+                                <input type="User" id="inputEmail" class="form-control" placeholder="Usuario" name="username" required autofocus />
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-10 mb-4">
+                                <label for="inputPassword" class="sr-only">Contraseña</label>
+                                <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Contraseña" name="password" required />
+                                {% if error %}
+                                    <p class="m-auto"> ¿Olvidaste tu contraseña?
+                                    <a class="text-warning" href="{% url 'password_reset'%}"> Haz click aqui.</a> </p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-10 mb-4">
+                                <button class="btn bg-orange btn-block text-light" type="submit"><b>Acceder</b></button>
+                            </div>
+                        </div>
+                        
+                    </form>
+
+                    <div class= "d-flex flex-column mt-3">
+                        <p class="m-auto">Crea una cuenta. <a class="text-warning" href={% url 'newuser' %}><b>Regístrate ahora.</b></a> </p>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+        
+{% endblock container %}
+
+{% comment %} {% if error %}
+    <p class="alert alert-danger" role="alert">{{error}}</p>
+{% endif %}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <!-- <button type="submit" class="btn">Login</button>-->
+    <button type="submit" class="button"><span>Login </span></button>
+  
+  </form>
+</div>
+<div class="bg"></div>
+
+</body>
+</html>
+=======
+=======
+>>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619
+=======
+>>>>>>> 36673765224ed1db64ebd3d7e04bf7767696b1d8
+<form method="POST" action="{% url "login" %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <input class="form-control mb-2" type="text" placeholder="Username" name="username" />
+        <input class="form-control" type="text" placeholder="Password" name="password" />
+    </div>
+    <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+
+    <div class= "d-flex flex-column mt-3">
+        <p class="m-auto">You don't have an account, <a href={% url 'signup' %}>Sign Up</a> now</p>
+    </div>
+</form>
+{% if error %}
+    <div class="d-flex flex-column mt-3">
+        <p class="m-auto"> Forgot your password? Click
+        <a href="{% url 'password_reset'%}">here.</a> </p>
+    </div>
+{% endif %} {% endcomment %}
+{% comment %} <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> be3cb568ae1ec9f4eb7125eafcfe7394587a5dab
+=======
+=======
+    <!-- <button type="submit" class="btn">Login</button>-->
+    <button type="submit" class="button"><span>Login </span></button>
+  
+  </form>
+</div>
+<div class="bg"></div>
+
+</body>
+</html>
+>>>>>>> brendadev
+>>>>>>> 4b3b705893dedbabf78e330d2abd2f160c28b619
+=======
+>>>>>>> 36673765224ed1db64ebd3d7e04bf7767696b1d8 {% endcomment %}
+
+
+

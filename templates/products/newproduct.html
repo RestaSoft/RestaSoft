@@ -1,0 +1,97 @@
+  
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block head_content %}
+{% endblock head_content %}
+
+{% block title %}
+     <title>Nuevo Producto</title>
+{% endblock title %}
+
+{% block title_dash %}
+        <h1>Nuevo producto</h1>
+{% endblock title_dash %}
+
+{% block container %}
+
+<div class="row justify-content-center">
+
+
+    <div class="col-11 mt-2">
+
+        <form  method="POST" action="{% url 'nuevo' %} " enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="row">
+
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-10 mb-3 ">
+                            <label for="Name" class="orange">Nombre del platillo</label>
+                            <input type="text" class="form-control" id="Name" name="name"value="{{prod_mod.product_name}}"  required/>
+                            <!-- {{form.product_name}}-->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-10 mb-3">
+                            <label for="category" class="orange">Categoría</label>
+                            <input class="form-control" id="categoria" name="categoria" rows="3" cols="50" required>{{prod_mod.categoriesproduct.category_name}}
+                            <!-- {{form.categoriesproduct}}-->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-10 mb-3">
+                            <label for="Descripcion" class="orange">Descripcion:</label>
+                            <input class="form-control" id="Description" name="description" rows="3" cols="50"  required>{{prod_mod.categoriesproduct.category_description}}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3 mb-3">
+                            <label for="cPrecio" class="orange">Precio</label>
+                            <input type="text" class="form-control" id="Price" name="price" value="{{prod_mod.list_price}}"  required>
+                            <!-- {{form.list_price}} -->
+                        </div>
+                    </div>
+                    <!--  {{form.suppliers}} -->
+
+                    <!-- {{form.categoriesproduct.category_description.as_p}}-->
+
+                    <div class="row">
+                        <div class="col-md-5 mb-3" style="display:none">
+                            <label for="store" id ="store" >Store:</label>
+                            <select name="select">
+                                <option value="{{user.staffs.stores.store_name}}">{{user.staffs.stores.store_name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-5 mt-3 ml-5">
+                    <div class="row mb-3">
+                        <!-- {{form.stores}} -->
+                        <div class="col-4 mb-5">
+                            <label for="image" class="orange">Imagen</label><br>
+                            <span class="btn btn-dark btn-block btn-file">Subir archivo<input type="file" name="image" required></span>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-6 mb-5">            
+                            <button class="btn btn-primary btn-block mb-5" type="submit" name="submit">Añadir producto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+</div>
+      
+{% endblock container %}

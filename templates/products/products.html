@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+{% endblock head_content %}
+
+{% block title %}
+    <title>Productos</title>
+{% endblock title %}
+
+
+{% block title_dash %}
+    <h1>Productos</h1>
+{% endblock title_dash %}
+
+
+{% block container %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-11 mt-2">
+        <div class="row justify-content-end">
+            <nav class="navbar navbar-dark">
+                <form class="form-inline" action="{% url 'buscar_prod' %}" method="GET">
+                    <input class="form-control mr-sm-2" type="text" name="prd" placeholder="Buscar..."
+                        aria-label="Search" />
+                    <button class="btn btn-primary btn-sm my-4 my-sm-0" type="submit">Buscar</button>
+                </form>
+            </nav>
+        </div>
+
+        
+        {% if query != None and query != ''  %}
+        <div class="column"><p>Estas buscando: <strong>{{query}}</strong></p></div>
+
+        {% if  prod %}
+        <div class="column">
+            <p class="text-success"><b>Artículos encontrados: {{prod|length}}</b></p>
+        </div>
+        {% else %}
+        <div class="column">
+            <p class="text-danger"><b>No se han encontrado artículos.</b></p>
+        </div>
+
+        {% endif %}
+
+        {% endif %}
+
+
+        <div class="row">
+            <table class="table table-hover table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                </thead>
+
+
+                {% for producto in prod %}
+
+                <tbody class="bg-tbl">
+
+                    <tr>
+                        <th scope="row">{{producto.id}}</th>
+                        <td>{{producto.product_name}}</td>
+                        <td>{{producto.categoriesproduct.category_description}}</td>
+                        <td>{{producto.categoriesproduct}}</td>
+                        <td>${{producto.list_price}}</td>
+                        <td><img class="img-tbl-prod" src="{{producto.image_prod.url }}" alt="{{ user.get_full_name }}"/></td>
+
+
+                        <form class="form-inline" action="{% url 'editar_prod' %}" method="GET">
+                            {% csrf_token %}
+                            <td><button type="submit" class="btn btn-sm" name="edit" value="{{producto}}"><img
+                                        class="img-tbl-action " src="{% static 'img/editar.svg' %}"
+                                        alt="edit-icon" /></button></td>
+                        </form>
+
+                        
+                        <form class="form-inline" action="{% url 'delete_prod' %}" method="GET">
+                        {% csrf_token %}
+                        <td><button type="submit" class="btn btn-sm" name="delete" value="{{producto.id}}" ><img 
+                                    class="img-tbl-action" src="{% static 'img/trash.svg' %}"
+                                    alt="delete-icon" /></a></td>
+                        </form>
+
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+{% endblock container %}

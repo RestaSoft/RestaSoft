@@ -5,11 +5,12 @@ from .models import Suppliers
 from .models import CategoriesProduct
 from .models import Stores
 from .models import Permission
+from .models import Stocks
 
 # Register your models here.
 class StaffsAdmin(admin.ModelAdmin): #Muesta las variables que deseemos que se vean en el modelo administrativo
-    list_display=("first_name", "last_name","email","phone", "active", "username")
-    search_fields=("first_name", "username") #Campo de busqueda
+    list_display=("user", "phone")
+    search_fields=("user", "phone") #Campo de busqueda
 
 admin.site.register(Staffs, StaffsAdmin)
 
@@ -33,10 +34,12 @@ class CategoriesProductsAdmin(admin.ModelAdmin):
 admin.site.register(CategoriesProduct, CategoriesProductsAdmin)
 
 class StoresAdmin(admin.ModelAdmin):
-    list_display=("store_name", "email", "phone")
-    search_fields=("store_name", "phone")
+    list_display=("store_name",)
+    search_fields=("store_name",)
 
 
 admin.site.register(Stores, StoresAdmin)
 
 admin.site.register(Permission)
+
+admin.site.register(Stocks)

@@ -1,0 +1,246 @@
+{% extends 'company/base_company.html' %} 
+{% load static %} 
+
+
+{% block title %}
+    <title>Suscripciones</title>
+{% endblock title %} 
+
+{% block title_dash %}
+    <h1>Únete al equipo</h1>
+{% endblock title_dash %} 
+
+
+{% block container %}
+
+        <section class="hero-image1 shero">
+            <div class="container hero-text">
+                <h1 style="font-size:50px">Creamos experiencias...</h1>
+                <h5>Sé parte de este gran equipo</h5>
+            </div>
+        </section>
+
+        <div class="container col-8 pt-5">
+            <div class="row justify-content-start pt-3">
+                <div class="col-5">
+                    <h4 class="pb-3">¡ Únete al equipo !</h4>
+                    <p class="suscrip">Para nosotros, tú eres una parte muy importante del negocio restaurantero 
+                    en la ciudad de Chihuahua, queremos ser parte de tu experiencia al brindar 
+                    el mejor servicio a muchos de los clientes que buscan calidad, productos, 
+                    variedad, sabor, confort y un incontable número de cualidades que estamos seguros 
+                    que tiene tu restaurante. </p>
+                </div>
+                <div class="col-5 align-self-center mx-auto">
+                    <img class="img-fluid" src="{% static 'img/team_goals.svg' %}" alt="team-goals">
+                </div>
+            </div>
+            <div class="row justify-content-end pt-4 pb-5">
+                <div class="col-5 align-self-center mx-auto">
+                    <img class="img-fluid" src="{% static 'img/friends.svg' %}" alt="team-goals">
+                </div>
+                <div class="col-5">
+                    <h4 class="pb-3">Queremos crecer juntos...</h4>
+                    <p class="suscrip">No es de cuates que solo uno crezca, creemos fuertemente en el trabajo en equipo,
+                    queremos hacer crecer tu negocio y crear experiencias juntos, por eso haremos todo lo posible con nuestros 
+                    servicios para que seas un referente de punto de reunión en esta hermosa ciudad. Juntos haremos cosas increíbles.</p>
+                </div>
+            </div>            
+        </div>
+
+        <div class="container col-12 pt-5">
+            <div class="row justify-content-center bg-green">
+                <div class="col-12 text-center pt-5 pb-5">
+                    <h1 class="display-2">Pero, ¿qué ofrecemos?</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container col-6 pt-5">
+
+            <div class="row justify-content-center pt-4 pb-5">
+                <div class="col-12">
+                    <h4 class="pb-3 orange">No te preocupes, mejor ocúpate...</h4>
+                    <p>Con RestaSoft ya no te preocupas por que a cocina le llegue 
+                    correcta la información de los platillos, que al cobrar no te falte información para el cobro, 
+                    o que tu inventario este escaso y te quedes sin meterial para la preparación, tampoco te preocupas 
+                    por monitorear a tus empleados... con RestaSoft te ocupas de tus clientes y del 
+                    servicio que reciben, pues nosotros hacemos lo demás por tí de una manera rápida y eficaz con un
+                    sistema web que puedes consultar en cualquier parte donde te encuentres, ya no necesitas estar en
+                    tu oficina para saber qué es lo que esta pasando en tu restaurante.</p>
+                </div>
+            </div>           
+
+            <div class="row d-flex justify-content-center pt-3 pb-4">
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 50px">room_service</i></span><br>Servicio</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 50px">verified_user</i></span><br>Seguridad</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 50px">track_changes</i></span><br>Seguimiento</label>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center pt-4 pb-4">
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 50px">timer</i></span><br>Rapidez</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 50px">timeline</i></span><br>Administración</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 50px">spa</i></span><br>Confort</label>
+                </div>
+            </div>    
+
+            <div class="row d-flex justify-content-center pt-4 pb-5">
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 50px">supervisor_account</i></span><br>Control</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 50px">star_border</i></span><br>Calidad</label>
+                </div>
+                <div class="col-3 align-self-center text-center">
+                    <label><span class="green"><i class="material-icons" style="font-size: 50px">tap_and_play</i></span><br>Tecnología</label>
+                </div>
+            </div>            
+        </div>
+        <div class="container col-12 pt-2 bg-gray" id="suscriptions">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center pt-5 pb-5">
+                    <h1 class="display-2">Nuestros planes</h1>
+                </div>
+                <section class="pricing-table mb-5 pb-5">
+                <script src="https://www.paypal.com/sdk/js?client-id=AU2Tna0W4YsJd_ttxhS1mXHJ78q1AfJfDKtdVa7hqzBAaIfFfrPw2-NuQuN4cpjiQoiFcTtxJ26TigT0&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+
+                            <div class="col-md-5 col-lg-4">
+                                <div class="item">
+                                    <div class="heading">
+                                        <h3>BÁSICO</h3>
+                                    </div>
+                                    <p>Visualización de comandas en cocina.</p>
+                                    <div class="features">
+                                        <h4><span class="feature">Full Support</span>: <span class="value">No</span></h4>
+                                        <h4><span class="feature">Duración</span>: <span class="value">3 meses</span></h4>
+                                        <h4><span class="feature">Funcionalidades</span>: <span class="value">Básico</span></h4>
+                                    </div>
+                                    <div class="price mt-5">
+                                        <h4>$1,875 <span style="font-size:20px">MXN</span></h4>
+                                    </div>
+                                <form id="paypal-button-container-basic">
+                                    <div id="paypal-button-container-basic"></div>
+                                        <script>
+                                        paypal.Buttons({
+                                            style: {
+                                                shape: 'pill',
+                                                color: 'blue',
+                                                layout: 'vertical',
+                                                label: 'paypal'
+                                            },
+                                            createSubscription: function(data, actions) {
+                                                return actions.subscription.create({
+                                                'plan_id': 'P-37A80159WG838560PL66I2FY'
+                                                });
+                                            },
+                                            onApprove: function(data, actions) {
+                                                alert(data.subscriptionID);
+                                            }
+                                        }).render('#paypal-button-container-basic');
+                                        </script>
+                                </form>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-lg-4">
+                                <div class="item">
+                                    <div class="ribbon">Más popular</div>
+                                    <div class="heading">
+                                        <h3>PRO</h3>
+                                    </div>
+                                    <p>Adminstración de catálogo de productos.</p>
+                                    <div class="features">
+                                        <h4><span class="feature">Full Support</span>: <span class="value">Yes</span></h4>
+                                        <h4><span class="feature">Duración</span>: <span class="value">6 meses</span></h4>
+                                        <h4><span class="feature">Funcionalidades</span>: <span class="value">Pro</span></h4>
+                                    </div>
+                                    <div class="price mt-5">
+                                        <h4>$7,300 <span style="font-size:20px">MXN</span></h4>
+                                    </div>
+                                    <form id="paypal-button-container-pro">
+                                        <div id="paypal-button-container-pro"></div>
+                                            <script>
+                                            paypal.Buttons({
+                                            style: {
+                                            shape: 'pill',
+                                            color: 'silver',
+                                            layout: 'vertical',
+                                            label: 'paypal'
+                                            },
+                                            createSubscription: function(data, actions) {
+                                                return actions.subscription.create({
+                                                'plan_id': 'P-5D916900HB012961TL66I36I'
+                                                });
+                                            },
+                                            onApprove: function(data, actions) {
+                                                alert(data.subscriptionID);
+                                            }
+                                        }).render('#paypal-button-container-pro');
+                                        </script>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-lg-4">
+                                <div class="item">
+                                    <div class="heading">
+                                        <h3>PREMIUM</h3>
+                                    </div>
+                                    <p>Administración de inventario y proveedores.</p>
+                                    <div class="features">
+                                        <h4><span class="feature">Full Support</span>: <span class="value">Yes</span></h4>
+                                        <h4><span class="feature">Duración</span>: <span class="value">12 meses</span></h4>
+                                        <h4><span class="feature">Funcionalidades</span>: <span class="value">150GB</span></h4>
+                                    </div>
+                                    <div class="price mt-5">
+                                        <h4>$85,200 <span style="font-size:20px">MXN</span></h4>
+                                    </div>
+                                <form id="paypal-button-container-premium">
+                                    <div id="paypal-button-container-premium"></div>
+                                        <div id="paypal-button-container-premium"></div>
+                                            <script>
+                                            paypal.Buttons({
+                                                style: {
+                                                    shape: 'pill',
+                                                    color: 'gold',
+                                                    layout: 'vertical',
+                                                    label: 'paypal'
+                                                },
+                                                createSubscription: function(data, actions) {
+                                                    return actions.subscription.create({
+                                                    'plan_id': 'P-1PC25152MG498573JL66I4OA'
+                                                    });
+                                                },
+                                                onApprove: function(data, actions) {
+                                                    alert(data.subscriptionID);
+                                                }
+                                            }).render('#paypal-button-container-premium');
+                                            </script>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+</script>
+        <div class="container col-12">
+            <div class="row justify-content-center bg-success">
+                <div class="col-12 text-center pt-5 pb-5">
+                    <h1 class="display-4">Hagámos mejor las cosas</h1>
+                </div>
+            </div>
+        </div>
+
+{% endblock container %}

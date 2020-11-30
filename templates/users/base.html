@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% block head_content %} {% endblock %}
+
+        {% block title %} {% endblock %}
+        
+        {% load static %}
+        {% load cloudinary %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+        <link rel="icon" type="image/png" href="{% static 'img/favicon2.png' %}"/>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Salsa" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="base" >
+
+            <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                
+                {% include "users/navbar.html" %}
+
+                <main role="main" class="row inner cover">
+                    <div class="col-12">
+                        <div class="row justify-content-center align-self-center">
+                            <div class="col-12">
+                                <img class="mb-3 mx-auto d-block" src="{% static 'img/logo.png' %}" alt="RestaSoft" width="72" />
+                                {% block container %}
+                                {% endblock%}
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                </main>
+                
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+    
+</html>
