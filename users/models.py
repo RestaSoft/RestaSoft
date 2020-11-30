@@ -44,6 +44,8 @@ class Permission(models.Model):
 
 
 
+
+
 class Staffs(models.Model):
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
