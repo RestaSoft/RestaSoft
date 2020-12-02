@@ -14,7 +14,6 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-#from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,21 +30,19 @@ SECRET_KEY = '#3wbt=@e$v-=do$+u=lxb4jix)yf1w&mg$$w1djbgk569r2%q8'
 DEBUG = True
 
 if DEBUG:
+    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+else:
     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST   = 'smtp.gmail.com'
     EMAIL_HOST_USER = 'restasoftapp@gmail.com'
-    EMAIL_HOST_PASSWORD = 'restasoft14'
+    EMAIL_HOST_PASSWORD = 'wkkpravhbpvvjuqu'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
     DEFAUL_FROM_EMAIL = 'RestaSoft restore password <noreply@RestaSoft.com>'
 
-else:
-    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
-
 
 ALLOWED_HOSTS = ['*']
-
-
 
 
 
@@ -106,14 +103,25 @@ WSGI_APPLICATION = 'RestaSoft.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
 
+else :
+    import dj_database_url
+    from decouple import config
 
+    DATABASES = {
+        'default':
+            dj_database_url.config(
+                default=config('DATABASE_URL')
+            )
+    }
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -154,17 +162,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
 
-#STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
