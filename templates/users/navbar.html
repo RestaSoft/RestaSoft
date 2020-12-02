@@ -1,6 +1,8 @@
 {% load static %}
 {% load cloudinary %}
 
+<!-- main.css -->
+
 
 {% block navbar %}
     
@@ -15,17 +17,17 @@
 
         <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item pt-4 py-md-0">
                     <a class="nav-link" href="{% url 'login' %}">Inicio</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item pt-2 py-md-0">
                     <a class="nav-link" href="{% url 'about_us' %}">Nosotros</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item pt-2 pb-4 py-md-0">
                     <a class="nav-link" href="{% url 'suscription' %}">Suscripciones</a>
                 </li>
             </ul>
-            <div class="form-inline justify-content-center my-2">
+            <div class="d-none d-sm-block form-inline justify-content-center my-2">
                 <a href="{% url 'suscription' %}#suscriptions" class="btn btn-sm btn-outline-success mx-md-3 my-sm-0 px-5" style="box-shadow: 3px 3px 6px #000000;"><b>¡Suscríbete!</b></a>
             </div>
         </div>
