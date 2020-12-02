@@ -89,10 +89,7 @@ body {
     text-shadow: 3px 3px 3px #000000;
 }
 
-.suscrip {
-    border-left: 5px dotted #ff7a00;
-    padding-left: 15px;
-}
+
 
 .green {
     color: #00ae8f !important;
@@ -296,6 +293,9 @@ footer {
     padding: 9px 0; 
 }
 
+
+
+
 @media (min-width: 48em) {
     .masthead-brand {
         float: left;
@@ -330,5 +330,23 @@ footer {
     .navbar-collapse {
         background-color: rgba(0, 0, 0, 0.5) ;
     }
+    .material-icons {
+        font-size: 30px !important;
+    }
     
 } 
+
+
+
+@media (min-width:768px) {
+    .suscrip {
+        border-left: 5px dotted #ff7a00;
+        padding-left: 15px;
+    }
+
+    .material-icons {
+        font-size: 50px !important;
+    }
+    
+} 
+
