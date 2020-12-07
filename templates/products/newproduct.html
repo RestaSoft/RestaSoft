@@ -23,7 +23,7 @@
         <form  method="POST" action="{% url 'nuevo' %} " enctype="multipart/form-data">
             {% csrf_token %}
 
-            <div class="row">
+            <div class="row mb-5">
 
                 <div class="col-6">
                     <div class="row">
@@ -71,21 +71,19 @@
                 </div>
 
 
-                <div class="col-lg-5 mt-3 ml-5">
-                    <div class="row mb-3">
+                <div class="col-6">
+                    <div class="row">
                         <!-- {{form.stores}} -->
-                        <div class="col-4 mb-5">
+                        <div class="col-5 mb-3">
                             <label for="image" class="orange">Imagen</label><br>
                             <span class="btn btn-dark btn-block btn-file">Subir archivo<input type="file" name="image" required></span>
                         </div>
-                    </div>
-                    
-                    <div class="row mb-3">
-                        <div class="col-6 mb-5">            
-                            <button class="btn btn-primary btn-block mb-5" type="submit" name="submit">Añadir producto</button>
-                        </div>
-                    </div>
+                    </div>                    
                 </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3"><button class="btn btn-lg btn-primary btn-block mb-5" type="submit" name="submit">Añadir producto</button></div>
             </div>
         </form>
 
