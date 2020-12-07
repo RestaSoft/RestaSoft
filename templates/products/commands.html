@@ -18,8 +18,8 @@
 <div class="row justify-content-center">
     <div class="col-lg-11 mt-2">
         <div class="row">
-            <table class="table table-hover table-sm">
-                <thead class="thead-dark">
+            <table class="table table-hover table-sm table-striped">
+                <thead class="thead-dark text-center">
                     <tr>
                         <th scope="col">N. de pedido</th>
                         <th scope="col">Cantidad</th>
@@ -32,35 +32,62 @@
                     </tr>
                 </thead>
                 <tbody class="bg-tbl">
-                <tr>
-                    <td class="column1">1024</td>
-                    <td class="column2">2<br>1<br>2</td>
-                    <td class="column3">Hamburguesa<br>Torta<br>Bolas de arroz</td>
-                    <td class="column4">19-11-20</td>
-                    <td class="column5">5:30</td>
-                    <td class="column6">4</td>
-                    <td class="column7">Adam H.</td>
-                    <td class="column8">
-                        <div class="col-md-3 mb-5">
-                            {% csrf_token %}
-                            <button class="btn btn-primary btn-sm mb-5" type="submit" name="submit">Cerrar</button>
-                        </div>
+                <tr class="">
+                    <td class="text-center h3">1024</td>
+                    <td class="text-center">2<br>1<br>2</td>
+                    <td class="pb-4">Hamburguesa<br>Torta<br>Flautas de lomo</td>
+                    <td class="text-center">05-12-2020</td>
+                    <td class="text-center">12:43</td>
+                    <td class="text-center">4</td>
+                    <td class="text-center">Adam H.</td>
+                    <td class="form-group text-center">
+                        <button class="btn btn-success btn-sm mt-3" type="submit" name="submit">Cerrar</button>
                     </td>
                 </tr>
                 <tr>
-                    <td class="column1">1025</td>
-                    <td class="column2">1<br>3</td>
-                    <td class="column3">Huevo<br>Hamburguesa</td>
-                    <td class="column4">20-11-20</td>
-                    <td class="column5">11:23</td>
-                    <td class="column6">5</td>
-                    <td class="column7">Diana J.</td>
-                    <td class="column8">
-                        <div class="col-md-3 mb-5">
-                            pendiente
-                        </div>
+                    <td class="text-center h3">1025</td>
+                    <td class="text-center">1<br>3</td>
+                    <td class="pb-4">Montado de chile pasado<br>Hamburguesa</td>
+                    <td class="text-center">05-12-2020</td>
+                    <td class="text-center">12:57</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">Diana J.</td>
+                    <td class="text-center orange "><b>PENDIENTE</b></div>
                     </td>
-                </tr>        
+                </tr>
+                <tr>
+                    <td class="text-center h3">1026</td>
+                    <td class="text-center">1<br>1<br>2</td>
+                    <td class="pb-4">Burrito de lengua<br>Burrito de lomo<br>Papas con catsup</td>
+                    <td class="text-center">05-12-2020</td>
+                    <td class="text-center">13:03</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center">Adam H.</td>
+                    <td class="text-center orange "><b>PENDIENTE</b></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center h3">1027</td>
+                    <td class="text-center">1<br>1</td>
+                    <td class="pb-4">Hamburguesa especial<br>Aros de cebolla</td>
+                    <td class="text-center">05-12-2020</td>
+                    <td class="text-center">13:21</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">Jorge R.</td>
+                    <td class="text-center orange "><b>PENDIENTE</b></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center h3">1028</td>
+                    <td class="text-center">2<br>1</td>
+                    <td class="pb-4">Hamburguesa sencilla<br>Hamburguesa especial</td>
+                    <td class="text-center">05-12-2020</td>
+                    <td class="text-center">13:34</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">Andrea F.</td>
+                    <td class="text-center orange "><b>PENDIENTE</b></div>
+                    </td>
+                </tr> 
             </table>
         </div>
     </div>
